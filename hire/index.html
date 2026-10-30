@@ -171,6 +171,15 @@
   .calc-out .cap.on{opacity:1;transform:none}
   .calc-out .bd{font-size:.82rem;color:var(--muted);margin-top:8px}
   .calc-note{font-size:.78rem;color:var(--muted);margin-top:10px}
+  .guides{margin-top:28px}
+  .guides h3{font-size:1.1rem;margin:0 0 12px}
+  .guide-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .guide-cards a{display:block;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 18px;text-decoration:none;transition:border-color .15s,transform .15s}
+  .guide-cards a:hover{border-color:var(--brand);transform:translateY(-2px)}
+  .guide-cards b{display:block;line-height:1.45}
+  .guide-cards span{display:block;color:var(--muted);font-size:.85rem;margin-top:6px}
+  .guides .more{display:inline-block;margin-top:12px;color:var(--brand);font-weight:700;text-decoration:none;font-size:.92rem}
+  @media (max-width:760px){.guide-cards{grid-template-columns:1fr}}
   @media (prefers-reduced-motion:reduce){#bubbles{display:none}.step{opacity:1;transform:none}.step::after{transform:none}}
   @media (max-width:760px){
     .calc{grid-template-columns:1fr;padding:20px}
@@ -371,6 +380,15 @@
     <details><summary>適合哪些職缺？</summary><p>以中基層職缺為主，例如作業員、技術員、品管、倉管、助理工程師、行政與業務助理等。</p></details>
     <details><summary>服務哪些地區？</summary><p>全台都可以服務，歡迎直接告訴我們工作地點。</p></details>
     <details><summary>跟人力銀行有什麼不同？</summary><p>人力銀行提供刊登，履歷要等求職者投遞、再由你自己篩選。我們啟動人才庫主動獵才、顧問一對一面談後再推薦，而且人選報到才收費。</p></details>
+    <div class="guides">
+      <h3>還有疑問？看看招募指南</h3>
+      <div class="guide-cards">
+        <a href="/hire/guide/recruitment-fee.html" data-ga="hire_faq_guide"><b>正職代招費用怎麼算？</b><span>獵頭年薪抽成 vs 只收第一個月，附試算</span></a>
+        <a href="/hire/guide/what-is-recruitment-outsourcing.html" data-ga="hire_faq_guide"><b>正職代招是什麼？</b><span>和派遣、人力銀行、獵頭一次比較</span></a>
+        <a href="/hire/guide/operator-hiring.html" data-ga="hire_faq_guide"><b>作業員招不到人怎麼辦？</b><span>中小企業馬上能做的 6 個方法</span></a>
+      </div>
+      <a class="more" href="/hire/guide/" data-ga="hire_faq_guide">看全部招募指南 →</a>
+    </div>
   </div>
 </section>
 
