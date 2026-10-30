@@ -1,0 +1,63 @@
+:root{--bg:#fbfaf8;--surface:#fff;--ink:#15171c;--muted:#5d6472;--line:#e8e6e1;--brand:#f06a2a;--brand-soft:#fff1e9;--line-green:#06c755}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.85 -apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;max-width:1040px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;letter-spacing:.04em;line-height:1.2}
+.logo img{width:32px;height:32px;border-radius:8px}
+.logo small{display:block;font-weight:500;font-size:.7rem;color:var(--muted)}
+.nav-r{display:flex;align-items:center;gap:14px}
+.nav-job{color:var(--muted);text-decoration:none;font-size:.88rem}
+.nav-cta{background:var(--ink);color:#fff;text-decoration:none;padding:8px 16px;border-radius:999px;font-size:.88rem;font-weight:700}
+.crumbs{font-size:.82rem;color:var(--muted);margin:24px 0 0}
+.crumbs a{text-decoration:none}
+.tag{display:inline-block;background:var(--brand-soft);color:var(--brand);font-weight:800;font-size:.8rem;border-radius:999px;padding:2px 12px;margin:18px 0 0}
+h1{font-size:clamp(1.7rem,5.4vw,2.5rem);line-height:1.3;margin:12px 0 8px;font-weight:900;letter-spacing:-.01em}
+.meta{color:var(--muted);font-size:.85rem;margin:0 0 28px}
+h2{font-size:clamp(1.3rem,3.8vw,1.6rem);line-height:1.4;margin:44px 0 12px;font-weight:900}
+p,li{color:#2b2f37}
+.tldr{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:14px;padding:16px 20px}
+.tldr ul{margin:6px 0 0;padding-left:20px}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:.92rem}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#f5f3ef;font-weight:800}
+tr:last-child td{border-bottom:0}
+td:first-child,th:first-child{white-space:nowrap}
+.checks{list-style:none;padding:0}
+.checks li{position:relative;padding-left:28px;margin:10px 0}
+.checks li::before{content:"✓";position:absolute;left:0;top:0;color:var(--brand);font-weight:900}
+.calc{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.calc .row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 18px;border-bottom:1px solid var(--line)}
+.calc .row:last-child{border-bottom:0}
+.calc .hl{background:var(--brand-soft)}
+.calc .hl b{color:var(--brand)}
+.note,.src{font-size:.85rem;color:var(--muted)}
+.src{margin:40px 0 56px}
+.cta{background:#15171c;color:#f3f4f6;border-radius:22px;padding:28px 24px;margin:48px 0 0}
+.cta h2{margin:0 0 6px;color:#fff}
+.cta p{color:#a8afbb;margin:0 0 18px}
+.ctas{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 22px;border-radius:14px;font-weight:800;text-decoration:none}
+.btn-brand{background:var(--brand);color:#fff}
+.btn-line{background:var(--line-green);color:#fff}
+.list{list-style:none;padding:0;margin:8px 0 56px;display:grid;gap:12px}
+.list a{display:block;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px;text-decoration:none;transition:transform .15s,border-color .15s}
+.list a:hover{transform:translateY(-2px);border-color:var(--brand)}
+.list h2{font-size:1.15rem;margin:8px 0 4px}
+.list p{margin:0;color:var(--muted);font-size:.92rem}
+footer{border-top:1px solid var(--line);padding:24px 0 40px;font-size:.85rem;color:var(--muted)}
+footer .wrap{max-width:1040px}
+footer a{color:var(--ink)}
+.related{padding-left:20px}
+.related li{margin:6px 0}
+.related a{color:var(--brand);font-weight:700}
+.answer{background:var(--brand-soft);border-radius:14px;padding:14px 18px;margin:0 0 16px;font-size:1.02rem}
+.answer b{color:var(--brand)}
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin:8px 0}
+.faq summary{font-weight:800;cursor:pointer}
+.faq p{margin:8px 0 0}
+.about{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 20px;margin:28px 0 0;font-size:.92rem}
+.about p{margin:4px 0 0;color:var(--muted)}
