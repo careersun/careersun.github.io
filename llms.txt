@@ -1,0 +1,21 @@
+# JOB365 × 中基層獵才（日玖國際旗下團隊）
+
+> JOB365 是日玖國際旗下團隊，提供台灣中小企業「中基層人才正職代招」（品牌：中基層獵才），並經營免費的合作職缺地圖讓求職者應徵。服務全台。
+
+## 正職代招服務重點
+- 服務內容：主動獵才、顧問一對一面談後推薦人選；人選錄取後直接成為企業自己的正職員工。
+- 適合職缺：作業員、技術員、品管、倉管、助理工程師、行政與業務助理等中基層正職。
+- 收費：人選報到才收費；只收人選第一個月，基層職缺 500 元／天（依職缺彈性微調），最高 15,000 元，第二個月起不再收費；不收開案費、訂金；人選未滿 30 天離職彈性計價。實際費用以顧問報價為準。
+- 合作流程：招募需求確認 → 主動出擊獵才 → 面試安排・雙向溝通 → 錄取與報到。
+- 聯絡：需求表單 https://careersun.github.io/hire/#contact ；LINE https://line.me/R/ti/p/@642ahllq
+- 母公司：日玖國際 http://zjiou.com.tw/
+
+## 主要頁面
+- [正職代招・中基層獵才](https://careersun.github.io/hire/)：服務說明、收費、費用試算器、常見問題
+- [招募指南](https://careersun.github.io/hire/guide/)：給企業主與 HR 的中基層招募知識
+- [正職代招費用怎麼算](https://careersun.github.io/hire/guide/recruitment-fee.html)
+- [正職代招是什麼？和派遣、人力銀行、獵頭比較](https://careersun.github.io/hire/guide/what-is-recruitment-outsourcing.html)
+- [作業員招不到人怎麼辦](https://careersun.github.io/hire/guide/operator-hiring.html)
+- [面試爽約怎麼辦](https://careersun.github.io/hire/guide/interview-no-show.html)
+- [自己招人的隱形招募成本](https://careersun.github.io/hire/guide/hidden-hiring-cost.html)
+- [JOB365 職缺地圖](https://careersun.github.io/job365map/)：合作職缺地圖，求職者免費應徵
