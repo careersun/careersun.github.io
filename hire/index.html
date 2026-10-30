@@ -171,6 +171,19 @@
   .calc-out .cap.on{opacity:1;transform:none}
   .calc-out .bd{font-size:.82rem;color:var(--muted);margin-top:8px}
   .calc-note{font-size:.78rem;color:var(--muted);margin-top:10px}
+  .fresh{margin-top:14px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px 18px}
+  .fresh-head{margin:0;font-weight:700;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .fresh-head b{color:var(--brand);font-size:1.15rem}
+  .pulse{width:9px;height:9px;border-radius:50%;background:#16a34a;box-shadow:0 0 0 0 rgba(22,163,74,.5);animation:pulse 1.8s infinite}
+  @keyframes pulse{70%{box-shadow:0 0 0 8px rgba(22,163,74,0)}100%{box-shadow:0 0 0 0 rgba(22,163,74,0)}}
+  .fresh-bars{display:flex;align-items:flex-end;gap:8px;height:96px;margin:14px 0 4px}
+  .fresh-bars div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;font-size:.72rem;color:var(--muted)}
+  .fresh-bars i{display:block;width:100%;max-width:42px;background:var(--brand-soft);border-top:3px solid var(--brand);border-radius:6px 6px 0 0;margin-bottom:4px;flex-shrink:0}
+  .fresh-sub{font-size:.78rem;color:var(--muted);margin:0 0 10px}
+  .fresh-list{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+  .fresh-list a{display:flex;justify-content:space-between;gap:10px;text-decoration:none;font-size:.88rem;padding:8px 10px;border-radius:10px;background:var(--bg)}
+  .fresh-list a span{color:var(--muted);white-space:nowrap}
+  @media (prefers-reduced-motion:reduce){.pulse{animation:none}}
   .guides{margin-top:28px}
   .guides h3{font-size:1.1rem;margin:0 0 12px}
   .guide-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
@@ -221,6 +234,12 @@
       <div class="stat"><div class="num">全台</div><div class="lbl">服務範圍</div></div>
     </div>
     <p class="stats-note" id="s-note">資料來自 JOB365 職缺地圖，每日自動更新</p>
+    <div class="fresh" id="s-fresh" hidden>
+      <p class="fresh-head"><span class="pulse" aria-hidden="true"></span>合作職缺持續增加・近 30 天新增 <b id="s-new30">—</b> 筆</p>
+      <div class="fresh-bars" id="s-bars" aria-label="累計合作職缺數"></div>
+      <p class="fresh-sub">累計合作職缺數（每月）</p>
+      <ul class="fresh-list" id="s-latest"></ul>
+    </div>
   </div>
 </header>
 
@@ -520,6 +539,23 @@ var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxbaaqzVKwTEWvMwTuU
     document.getElementById("s-open").innerHTML = s.open + "<small>筆</small>";
     document.getElementById("s-ind").innerHTML = s.industries.length + "<small>類</small>";
     document.getElementById("s-note").textContent = "資料來自 JOB365 職缺地圖，更新於 " + s.updated;
+    if (s.new30 != null && s.monthly && s.monthly.length) {
+      document.getElementById("s-new30").textContent = s.new30;
+      var max = Math.max.apply(null, s.monthly.map(function(m){ return m.n; })), bars = document.getElementById("s-bars");
+      s.monthly.forEach(function(m){
+        var d = document.createElement("div"), i = document.createElement("i");
+        i.style.height = Math.max(6, Math.round(m.n / max * 56)) + "px"; d.title = m.month + " 累計 " + m.n + " 筆";
+        d.appendChild(document.createTextNode(m.n)); d.appendChild(i); d.appendChild(document.createTextNode(+m.month.slice(5) + "月"));
+        bars.appendChild(d);
+      });
+      (s.latest || []).slice(0, 3).forEach(function(j){
+        var li = document.createElement("li"), a = document.createElement("a"), sp = document.createElement("span");
+        a.href = j.url; a.textContent = "最新｜" + j.title; sp.textContent = j.area || j.region || "";
+        a.appendChild(sp); a.addEventListener("click", function(){ ev("hire_latest_job_click"); });
+        li.appendChild(a); document.getElementById("s-latest").appendChild(li);
+      });
+      document.getElementById("s-fresh").hidden = false;
+    }
     var chips = document.getElementById("s-chips");
     chips.innerHTML = "";
     s.industries.slice(0, 10).forEach(function(i){
