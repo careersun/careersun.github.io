@@ -2,7 +2,8 @@
 <html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#12151b">
 <title>JOB365 中基層人才所(求職來就補)｜職缺地圖・免費應徵</title>
 <meta name="description" content="JOB365 中基層人才所(求職來就補)，用地圖找正職、派遣工作，依地區、薪資、班別篩選，免費應徵。">
 <link rel="canonical" href="https://careersun.github.io/">
@@ -15,63 +16,231 @@
 <meta property="og:image" content="https://careersun.github.io/job365map/og-image.png">
 <meta property="og:url" content="https://careersun.github.io/">
 <script type="application/ld+json">
-[{"@context":"https://schema.org","@type":"WebSite","name":"JOB365","alternateName":"JOB365 中基層人才所(求職來就補)","url":"https://careersun.github.io/"},
+[{"@context":"https://schema.org","@type":"WebSite","name":"JOB365","alternateName":"JOB365 中基層人才所(求職來就補)","url":"https://careersun.github.io/",
+  "potentialAction":{"@type":"SearchAction","target":"https://careersun.github.io/job365map/?q={search_term_string}","query-input":"required name=search_term_string"}},
  {"@context":"https://schema.org","@type":"Organization","name":"JOB365","url":"https://careersun.github.io/","logo":"https://careersun.github.io/job365map/favicon-192.png","parentOrganization":{"@type":"Organization","name":"日玖國際","url":"http://zjiou.com.tw/"}}]
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-21781Q6CNX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-21781Q6CNX");</script>
 <style>
-  :root{--bg:#12151b;--card:#1b1f27;--ink:#eef1f5;--muted:#a3abb9;--brand:#f07a3a;--line:#2c313b}
+  :root{--bg:#12151b;--card:#1b1f27;--card2:#222731;--ink:#eef1f5;--muted:#a3abb9;--brand:#f07a3a;--line:#2c313b;--green:#06c755}
   *{box-sizing:border-box}
-  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 20%,#2a2620 0%,var(--bg) 60%);color:var(--ink);font:16px/1.7 -apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif}
-  main{width:100%;max-width:520px;padding:48px 16px;text-align:center}
-  .logo{display:inline-flex;align-items:center;gap:14px;margin-bottom:28px}
-  .logo img{width:64px;height:64px;border-radius:14px}
-  .logo b{display:block;text-align:left;font-size:1.35rem;letter-spacing:.12em;line-height:1.2}
-  .logo small{display:block;text-align:left;font-size:.85rem;letter-spacing:.2em;color:var(--muted)}
-  h1{font-size:1.7rem;line-height:1.4;margin:0 0 8px}
-  p{color:var(--muted);margin:0 0 32px}
-  .btns{display:grid;gap:12px}
-  .btns a{display:block;padding:14px;border-radius:12px;text-decoration:none;font-weight:600}
+  html{scroll-behavior:smooth}
+  body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 0%,#2a2620 0%,var(--bg) 55%) fixed,var(--bg);color:var(--ink);font:16px/1.7 -apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  main{width:100%;max-width:640px;margin:0 auto;padding:44px 16px 40px}
+  .head{text-align:center}
+  .logo{display:inline-flex;align-items:center;gap:14px;margin-bottom:22px;text-decoration:none}
+  .logo img{width:56px;height:56px;border-radius:13px}
+  .logo b{display:block;text-align:left;font-size:1.25rem;letter-spacing:.12em;line-height:1.2}
+  .logo small{display:block;text-align:left;font-size:.8rem;letter-spacing:.2em;color:var(--muted)}
+  h1{font-size:clamp(1.5rem,5.5vw,1.9rem);line-height:1.4;margin:0 0 6px}
+  .sub{color:var(--muted);margin:0 0 26px}
+
+  /* 切換：我要找工作／我要找人才 */
+  .switch{position:relative;display:grid;grid-template-columns:1fr 1fr;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px;margin:0 auto 26px;max-width:380px}
+  .switch button{position:relative;z-index:1;border:0;background:none;color:var(--muted);font:inherit;font-weight:700;padding:10px 0;border-radius:999px;cursor:pointer;transition:color .25s}
+  .switch button[aria-selected="true"]{color:#fff}
+  .switch .pill{position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);border-radius:999px;background:var(--brand);transition:transform .35s cubic-bezier(.3,.7,.2,1)}
+  .switch[data-tab="biz"] .pill{transform:translateX(100%)}
+  .panel{animation:fade .4s ease}
+  .panel[hidden]{display:none}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  /* 求職者 */
+  .search{display:flex;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:6px;transition:border-color .2s,box-shadow .2s}
+  .search:focus-within{border-color:var(--brand);box-shadow:0 0 0 4px rgba(240,122,58,.15)}
+  .search input{flex:1;min-width:0;border:0;background:none;color:var(--ink);font:inherit;padding:10px 12px;outline:none}
+  .search input::placeholder{color:#6f7787}
+  .search button{border:0;background:var(--brand);color:#fff;font:inherit;font-weight:700;padding:0 20px;border-radius:12px;cursor:pointer}
+  .hints{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 26px;font-size:.82rem;color:var(--muted)}
+  .hints button{border:1px solid var(--line);background:none;color:var(--muted);font:inherit;border-radius:999px;padding:2px 10px;cursor:pointer;transition:color .2s,border-color .2s}
+  .hints button:hover{color:var(--ink);border-color:var(--muted)}
+  .count{display:flex;align-items:baseline;justify-content:center;gap:8px;margin:0 0 18px;color:var(--muted)}
+  .count b{font-size:2.6rem;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+  .live{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(6,199,85,.6);animation:ping 2s infinite;margin-right:2px;transform:translateY(-2px)}
+  @keyframes ping{0%{box-shadow:0 0 0 0 rgba(6,199,85,.6)}80%,100%{box-shadow:0 0 0 10px rgba(6,199,85,0)}}
+  .label{font-size:.85rem;font-weight:700;color:var(--muted);margin:24px 0 10px;display:flex;justify-content:space-between;align-items:center}
+  .label a{font-weight:400;text-decoration:none;color:var(--brand)}
+  .regions{display:flex;flex-wrap:wrap;gap:8px}
+  .regions a{display:inline-flex;align-items:center;gap:6px;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.92rem;transition:transform .15s,border-color .2s,background .2s}
+  .regions a:hover{transform:translateY(-2px);border-color:var(--brand);background:var(--card2)}
+  .regions a b{color:var(--brand);font-size:.85rem}
+  .rail{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 10px;margin:0 -16px;padding-left:16px;padding-right:16px;scrollbar-width:none}
+  .rail::-webkit-scrollbar{display:none}
+  .job{flex:0 0 72%;max-width:240px;scroll-snap-align:start;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;transition:transform .15s,border-color .2s}
+  .job:hover{transform:translateY(-3px);border-color:var(--brand)}
+  .job .t{font-weight:700;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.9em}
+  .job .m{font-size:.8rem;color:var(--muted);margin-top:6px}
+  .job .s{font-size:.88rem;color:var(--brand);font-weight:700;margin-top:4px}
+  .cta{display:grid;gap:10px;margin-top:22px}
+  .btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px;border-radius:14px;text-decoration:none;font-weight:700;transition:transform .15s,filter .2s}
+  .btn:hover{transform:translateY(-1px);filter:brightness(1.08)}
   .primary{background:var(--brand);color:#fff}
   .secondary{border:1px solid var(--line);background:var(--card);color:var(--ink)}
-  .biz{margin-top:44px;padding:24px 20px;border:1px solid var(--line);border-radius:16px;background:rgba(27,31,39,.7);text-align:left}
-  .biz h2{font-size:1.1rem;margin:0 0 6px}
-  .biz p{margin:0 0 14px;font-size:.92rem}
-  .biz ul{margin:0 0 18px;padding-left:1.2em;color:var(--muted);font-size:.92rem}
-  .biz .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .biz .row a{display:block;text-align:center;padding:11px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.92rem}
-  .line{background:#06c755;color:#fff}
-  footer{margin-top:32px;font-size:.8rem;color:var(--muted)}
+  .line{background:var(--green);color:#fff}
+
+  /* 企業主 */
+  .feats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .feat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 12px;text-align:center}
+  .feat b{display:block;font-size:clamp(.95rem,4.2vw,1.35rem);color:var(--brand);line-height:1.2;white-space:nowrap}
+  .feat span{display:block;font-size:.82rem;color:var(--muted);margin-top:6px}
+  .steps{list-style:none;margin:0;padding:0;counter-reset:s}
+  .steps li{position:relative;padding:0 0 18px 44px;opacity:.35;transition:opacity .4s}
+  .steps li.on{opacity:1}
+  .steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--card2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;transition:background .4s,border-color .4s}
+  .steps li.on::before{background:var(--brand);border-color:var(--brand)}
+  .steps li::after{content:"";position:absolute;left:15px;top:32px;bottom:2px;width:1px;background:var(--line)}
+  .steps li:last-child::after{display:none}
+  .steps b{display:block}
+  .steps span{font-size:.85rem;color:var(--muted)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+  footer{margin-top:40px;text-align:center;font-size:.8rem;color:var(--muted)}
   footer a{color:var(--muted)}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 <main>
-  <div class="logo">
-    <img src="/job365map/favicon-192.png" alt="JOB365 Logo" width="64" height="64">
-    <span><b>JOB365</b><small>CONSULTANT</small></span>
+  <div class="head">
+    <a class="logo" href="/">
+      <img src="/job365map/favicon-192.png" alt="JOB365 Logo" width="56" height="56">
+      <span><b>JOB365</b><small>CONSULTANT</small></span>
+    </a>
+    <h1>中基層人才所(求職來就補)</h1>
+    <p class="sub">求職者免費找工作，企業主輕鬆找人才。</p>
+
+    <div class="switch" role="tablist" id="switch" data-tab="seek">
+      <span class="pill" aria-hidden="true"></span>
+      <button role="tab" id="t-seek" aria-controls="p-seek" aria-selected="true">我要找工作</button>
+      <button role="tab" id="t-biz" aria-controls="p-biz" aria-selected="false">我要找人才</button>
+    </div>
   </div>
-  <h1>中基層人才所(求職來就補)</h1>
-  <p>用地圖找工作，依地區、薪資、班別快速篩選，免費應徵。</p>
-  <div class="btns">
-    <a class="primary" href="/job365map/">打開職缺地圖</a>
-    <a class="secondary" href="/job365map/jobs/">查看全部職缺</a>
-  </div>
-  <section class="biz">
-    <h2>企業主／HR：需要找人？</h2>
-    <p>JOB365 為日玖國際旗下團隊，提供中基層人才正職代招服務。</p>
-    <ul>
-      <li>人選報到才收費，單月上限 15,000 元</li>
-      <li>啟動人才庫主動獵才，顧問一對一面談後推薦</li>
-    </ul>
-    <div class="row">
-      <a class="secondary" href="/hire/" data-ga="employer_click">了解正職代招</a>
-      <a class="line" href="https://line.me/R/ti/p/@642ahllq" target="_blank" rel="noopener" data-ga="employer_line_click">LINE 諮詢</a>
+
+  <!-- 求職者 -->
+  <section class="panel" id="p-seek" role="tabpanel" aria-labelledby="t-seek">
+    <form class="search" id="search" action="/job365map/" method="get">
+      <input name="q" id="q" type="search" placeholder="職稱或地點，如：技術員 新竹" autocomplete="off" aria-label="搜尋職缺">
+      <button type="submit">搜尋</button>
+    </form>
+    <div class="hints">熱門：<button type="button">技術員</button><button type="button">作業員</button><button type="button">品管</button><button type="button">倉管</button><button type="button">助理工程師</button></div>
+
+    <div class="count"><span><span class="live"></span>目前招募中</span><b id="n-open">—</b><span>筆職缺</span></div>
+
+    <div class="label">依地區找工作<a href="/job365map/jobs/">全部職缺 →</a></div>
+    <div class="regions" id="regions">
+      <a href="/job365map/jobs/">查看全部職缺</a>
+    </div>
+
+    <div class="label" id="latest-label" hidden>最新職缺<a href="/job365map/">在地圖上看 →</a></div>
+    <div class="rail" id="latest"></div>
+
+    <div class="cta">
+      <a class="btn primary" href="/job365map/" data-ga="home_to_map">打開職缺地圖</a>
     </div>
   </section>
-  <footer>JOB365 為 <a href="http://zjiou.com.tw/" target="_blank" rel="noopener" data-ga="parent_site_click">日玖國際</a> 旗下團隊</footer>
+
+  <!-- 企業主 -->
+  <section class="panel" id="p-biz" role="tabpanel" aria-labelledby="t-biz" hidden>
+    <div class="feats">
+      <div class="feat"><b>報到才收費</b><span>沒有人報到不收費</span></div>
+      <div class="feat"><b>$15,000</b><span>單月費用上限</span></div>
+      <div class="feat"><b>一對一</b><span>顧問面談後推薦</span></div>
+    </div>
+
+    <div class="label">正職代招 4 大階段</div>
+    <ol class="steps" id="steps">
+      <li><b>招募需求確認</b><span>提供招募細節</span></li>
+      <li><b>主動出擊獵才</b><span>啟動人才庫＆職缺大量曝光、顧問一對一面談、精選人才推薦</span></li>
+      <li><b>面試安排・雙向溝通</b><span>安排面試、面試後人選關懷、企業端面試評價</span></li>
+      <li><b>錄取與報到</b><span>Offer 溝通與確認、入職後持續關心</span></li>
+    </ol>
+
+    <p class="sub" style="text-align:center;margin:8px 0 14px">基層職缺 500 元／天（依職缺彈性微調）・JOB365 為日玖國際旗下團隊</p>
+    <div class="row">
+      <a class="btn secondary" href="/hire/" data-ga="employer_click">了解正職代招</a>
+      <a class="btn line" href="https://line.me/R/ti/p/@642ahllq" target="_blank" rel="noopener" data-ga="employer_line_click">LINE 諮詢</a>
+    </div>
+  </section>
+
+  <footer>JOB365 為 <a href="http://zjiou.com.tw/" target="_blank" rel="noopener" data-ga="parent_site_click">日玖國際</a> 旗下團隊・<a href="/hire/" data-ga="employer_click">企業徵才</a></footer>
 </main>
-<script>document.querySelectorAll("a[data-ga]").forEach(function(a){a.addEventListener("click",function(){gtag("event",a.dataset.ga,{source:"home"});});});</script>
+
+<script>
+(function(){
+  function ev(name, p){ if (typeof gtag === "function") gtag("event", name, Object.assign({source:"home"}, p||{})); }
+  document.querySelectorAll("a[data-ga]").forEach(function(a){ a.addEventListener("click", function(){ ev(a.dataset.ga); }); });
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // 切換頁籤（網址加 #hire 會直接開企業頁籤）
+  var sw = document.getElementById("switch"), tabs = {seek: document.getElementById("t-seek"), biz: document.getElementById("t-biz")};
+  var panels = {seek: document.getElementById("p-seek"), biz: document.getElementById("p-biz")}, stepsPlayed = false;
+  function show(k, push){
+    sw.dataset.tab = k;
+    for (var t in tabs){ tabs[t].setAttribute("aria-selected", t === k); panels[t].hidden = t !== k; }
+    if (push) history.replaceState(null, "", k === "biz" ? "#hire" : location.pathname);
+    if (k === "biz" && !stepsPlayed){ stepsPlayed = true; playSteps(); }
+    ev("home_tab", {tab: k});
+  }
+  tabs.seek.onclick = function(){ show("seek", true); };
+  tabs.biz.onclick = function(){ show("biz", true); };
+  if (location.hash === "#hire") show("biz", false);
+
+  // 企業頁籤：4 步驟依序亮起
+  function playSteps(){
+    var li = document.querySelectorAll("#steps li");
+    li.forEach(function(el, i){ setTimeout(function(){ el.classList.add("on"); }, reduce ? 0 : 250 + i * 380); });
+  }
+
+  // 搜尋
+  var form = document.getElementById("search"), q = document.getElementById("q");
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var v = q.value.trim();
+    ev("search", {search_term: v});
+    location.href = "/job365map/" + (v ? "?q=" + encodeURIComponent(v) : "");
+  });
+  document.querySelectorAll(".hints button").forEach(function(b){
+    b.addEventListener("click", function(){ q.value = b.textContent; form.requestSubmit ? form.requestSubmit() : form.dispatchEvent(new Event("submit")); });
+  });
+
+  // 數字跑動
+  function countUp(el, to){
+    if (reduce){ el.textContent = to; return; }
+    var start = performance.now(), dur = 1200;
+    (function step(t){ var p = Math.min(1, (t - start) / dur); el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(step); })(start);
+  }
+
+  // 讀取每日更新的職缺統計
+  fetch("/job365map/jobs/stats.json", {cache: "no-store"}).then(function(r){ return r.ok ? r.json() : null; }).then(function(s){
+    if (!s) return;
+    countUp(document.getElementById("n-open"), s.open);
+    var box = document.getElementById("regions"), areas = (s.regions || []).filter(function(r){ return r.url; });
+    if (areas.length){
+      box.innerHTML = "";
+      areas.forEach(function(r){
+        var a = document.createElement("a"); a.href = r.url; a.textContent = r.name;
+        var b = document.createElement("b"); b.textContent = r.n; a.appendChild(b);
+        a.addEventListener("click", function(){ ev("home_region_click", {region: r.name}); });
+        box.appendChild(a);
+      });
+    }
+    var rail = document.getElementById("latest"), list = s.latest || [];
+    if (list.length){
+      document.getElementById("latest-label").hidden = false;
+      list.forEach(function(j){
+        var a = document.createElement("a"); a.className = "job"; a.href = j.url;
+        var t = document.createElement("div"); t.className = "t"; t.textContent = j.title;
+        var m = document.createElement("div"); m.className = "m"; m.textContent = [j.region + (j.area || ""), j.shift].filter(Boolean).join("・");
+        var sal = document.createElement("div"); sal.className = "s"; sal.textContent = j.salary || "薪資面議";
+        a.appendChild(t); a.appendChild(m); a.appendChild(sal);
+        a.addEventListener("click", function(){ ev("home_latest_click", {job_id: j.id}); });
+        rail.appendChild(a);
+      });
+    }
+  }).catch(function(){});
+})();
+</script>
 </body>
 </html>
