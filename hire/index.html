@@ -239,7 +239,7 @@
       </div>
       <div class="row2">
         <div class="field"><label for="f-phone">電話 <i>*</i></label><input id="f-phone" name="phone" type="tel" required autocomplete="tel"></div>
-        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email"></div>
+        <div class="field"><label for="f-email">Email <i>*</i></label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
       </div>
       <div class="row2">
         <div class="field"><label for="f-job">需求職缺 <i>*</i></label><input id="f-job" name="job" required placeholder="例如：作業員、倉管"></div>
@@ -310,8 +310,9 @@ var FORM_ENDPOINT = "";
   form.addEventListener("submit", function(e){
     e.preventDefault();
     if (form.website.value) return; // 機器人
-    var miss = ["company","name","phone","job"].filter(function(k){ return !form[k].value.trim(); });
+    var miss = ["company","name","phone","email","job"].filter(function(k){ return !form[k].value.trim(); });
     if (miss.length) { msg.style.color = "#c2410c"; msg.textContent = "請填寫標示 * 的欄位。"; form[miss[0]].focus(); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.value.trim())) { msg.style.color = "#c2410c"; msg.textContent = "Email 格式不正確，請再確認一次。"; form.email.focus(); return; }
     if (!FORM_ENDPOINT) { msg.style.color = "#c2410c"; msg.innerHTML = '表單尚未開通，請先透過 <a href="https://line.me/R/ti/p/@642ahllq" target="_blank" rel="noopener">LINE 諮詢</a>。'; return; }
     var btn = form.querySelector("button[type=submit]"); btn.disabled = true; btn.textContent = "送出中…";
     var data = new URLSearchParams(new FormData(form)); data.append("page", location.href);
