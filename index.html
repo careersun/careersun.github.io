@@ -15,7 +15,8 @@
 <meta property="og:image" content="https://careersun.github.io/job365map/og-image.png">
 <meta property="og:url" content="https://careersun.github.io/">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"JOB365","alternateName":"JOB365 中基層求職職缺","url":"https://careersun.github.io/"}
+[{"@context":"https://schema.org","@type":"WebSite","name":"JOB365","alternateName":"JOB365 中基層求職職缺","url":"https://careersun.github.io/"},
+ {"@context":"https://schema.org","@type":"Organization","name":"JOB365","url":"https://careersun.github.io/","logo":"https://careersun.github.io/job365map/favicon-192.png","parentOrganization":{"@type":"Organization","name":"日玖國際","url":"http://zjiou.com.tw/"}}]
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-21781Q6CNX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-21781Q6CNX");</script>
@@ -34,7 +35,15 @@
   .btns a{display:block;padding:14px;border-radius:12px;text-decoration:none;font-weight:600}
   .primary{background:var(--brand);color:#fff}
   .secondary{border:1px solid var(--line);background:var(--card);color:var(--ink)}
-  footer{margin-top:40px;font-size:.8rem;color:var(--muted)}
+  .biz{margin-top:44px;padding:24px 20px;border:1px solid var(--line);border-radius:16px;background:rgba(27,31,39,.7);text-align:left}
+  .biz h2{font-size:1.1rem;margin:0 0 6px}
+  .biz p{margin:0 0 14px;font-size:.92rem}
+  .biz ul{margin:0 0 18px;padding-left:1.2em;color:var(--muted);font-size:.92rem}
+  .biz .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .biz .row a{display:block;text-align:center;padding:11px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.92rem}
+  .line{background:#06c755;color:#fff}
+  footer{margin-top:32px;font-size:.8rem;color:var(--muted)}
+  footer a{color:var(--muted)}
 </style>
 </head>
 <body>
@@ -49,7 +58,20 @@
     <a class="primary" href="/job365map/">打開職缺地圖</a>
     <a class="secondary" href="/job365map/jobs/">查看全部職缺</a>
   </div>
-  <footer>© JOB365</footer>
+  <section class="biz">
+    <h2>企業主／HR：需要找人？</h2>
+    <p>JOB365 由日玖國際經營，提供中基層人才正職代招服務。</p>
+    <ul>
+      <li>人才到職才收費，平價計費</li>
+      <li>專業獵才系統，精準篩選合適人選</li>
+    </ul>
+    <div class="row">
+      <a class="secondary" href="http://zjiou.com.tw/_send/recruit.php" target="_blank" rel="noopener" data-ga="employer_click">了解正職代招</a>
+      <a class="line" href="https://lin.ee/ojpiQai" target="_blank" rel="noopener" data-ga="employer_line_click">LINE 諮詢</a>
+    </div>
+  </section>
+  <footer>JOB365 是 <a href="http://zjiou.com.tw/" target="_blank" rel="noopener" data-ga="parent_site_click">日玖國際</a> 旗下求職品牌</footer>
 </main>
+<script>document.querySelectorAll("a[data-ga]").forEach(function(a){a.addEventListener("click",function(){gtag("event",a.dataset.ga,{source:"home"});});});</script>
 </body>
 </html>
