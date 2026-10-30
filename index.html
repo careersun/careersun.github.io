@@ -4,15 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#12151b">
-<title>JOB365 中基層人才所(求職來就補)｜職缺地圖・免費應徵</title>
-<meta name="description" content="JOB365 中基層人才所(求職來就補)，用地圖找正職、派遣工作，依地區、薪資、班別篩選，免費應徵。">
+<title>JOB365 中基層人才所(求職來就補)｜正職代招・中基層獵才</title>
+<meta name="description" content="JOB365 中基層人才所(求職來就補)，日玖國際旗下團隊。中小企業找中基層人才：主動獵才、顧問一對一面談推薦，人選報到才收費、單月上限 15,000 元。也提供合作職缺地圖，求職者免費應徵。">
 <link rel="canonical" href="https://careersun.github.io/">
 <!-- 網站圖示（Google 搜尋結果網址前的小圖示就是讀這裡） -->
 <link rel="icon" type="image/png" sizes="512x512" href="/job365map/favicon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/job365map/favicon-192.png">
 <link rel="apple-touch-icon" href="/job365map/apple-touch-icon.png">
-<meta property="og:title" content="JOB365 中基層人才所(求職來就補)">
-<meta property="og:description" content="用地圖找工作，依地區、薪資、班別篩選，免費應徵。">
+<meta property="og:title" content="JOB365 中基層人才所(求職來就補)｜正職代招・中基層獵才">
+<meta property="og:description" content="中小企業找中基層人才：主動獵才、人選報到才收費、單月上限 15,000 元。日玖國際旗下團隊。">
 <meta property="og:image" content="https://careersun.github.io/job365map/og-image.png">
 <meta property="og:url" content="https://careersun.github.io/">
 <script type="application/ld+json">
@@ -23,85 +23,105 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-21781Q6CNX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-21781Q6CNX");</script>
 <style>
-  :root{--bg:#12151b;--card:#1b1f27;--card2:#222731;--ink:#eef1f5;--muted:#a3abb9;--brand:#f07a3a;--line:#2c313b;--green:#06c755}
+  :root{--bg:#12151b;--card:#1b1f27;--card2:#222731;--ink:#eef1f5;--muted:#a3abb9;--brand:#f07a3a;--teal:#3fc1c9;--line:#2c313b;--green:#06c755}
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 0%,#2a2620 0%,var(--bg) 55%) fixed,var(--bg);color:var(--ink);font:16px/1.7 -apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;-webkit-font-smoothing:antialiased}
+  body{margin:0;min-height:100vh;background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   a{color:inherit}
-  main{width:100%;max-width:640px;margin:0 auto;padding:44px 16px 40px}
+
+  /* 背景：光暈＋泡泡 */
+  .glow{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse at 50% -10%,#3a2c20 0%,rgba(18,21,27,0) 60%)}
+  #bubbles{position:fixed;inset:0;z-index:0;pointer-events:none;width:100%;height:100%}
+  main{position:relative;z-index:1;width:100%;max-width:640px;margin:0 auto;padding:44px 16px 40px}
+
   .head{text-align:center}
   .logo{display:inline-flex;align-items:center;gap:14px;margin-bottom:22px;text-decoration:none}
-  .logo img{width:56px;height:56px;border-radius:13px}
+  .logo img{width:56px;height:56px;border-radius:13px;box-shadow:0 8px 30px -8px rgba(240,122,58,.5)}
   .logo b{display:block;text-align:left;font-size:1.25rem;letter-spacing:.12em;line-height:1.2}
   .logo small{display:block;text-align:left;font-size:.8rem;letter-spacing:.2em;color:var(--muted)}
   h1{font-size:clamp(1.5rem,5.5vw,1.9rem);line-height:1.4;margin:0 0 6px}
   .sub{color:var(--muted);margin:0 0 26px}
 
-  /* 切換：我要找工作／我要找人才 */
-  .switch{position:relative;display:grid;grid-template-columns:1fr 1fr;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px;margin:0 auto 26px;max-width:380px}
+  /* 切換 */
+  .switch{position:relative;display:grid;grid-template-columns:1fr 1fr;background:rgba(27,31,39,.85);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:999px;padding:4px;margin:0 auto 26px;max-width:380px}
   .switch button{position:relative;z-index:1;border:0;background:none;color:var(--muted);font:inherit;font-weight:700;padding:10px 0;border-radius:999px;cursor:pointer;transition:color .25s}
   .switch button[aria-selected="true"]{color:#fff}
-  .switch .pill{position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);border-radius:999px;background:var(--brand);transition:transform .35s cubic-bezier(.3,.7,.2,1)}
-  .switch[data-tab="biz"] .pill{transform:translateX(100%)}
-  .panel{animation:fade .4s ease}
+  .switch .pill{position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);border-radius:999px;background:var(--brand);box-shadow:0 6px 20px -6px rgba(240,122,58,.8);transition:transform .45s cubic-bezier(.34,1.56,.64,1)}
+  .switch[data-tab="jobs"] .pill{transform:translateX(100%)}
   .panel[hidden]{display:none}
-  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
-  /* 求職者 */
+  /* 進場動畫：捲動到才出現 */
+  .rv{opacity:0;transform:translateY(22px) scale(.98);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+  .rv.in{opacity:1;transform:none}
+
+  /* 共用 */
+  .label{font-size:.85rem;font-weight:700;color:var(--muted);margin:28px 0 12px;display:flex;justify-content:space-between;align-items:center}
+  .label a{font-weight:400;text-decoration:none;color:var(--brand)}
+  .btn{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:8px;padding:14px;border-radius:14px;text-decoration:none;font-weight:700;transition:transform .15s,filter .2s}
+  .btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+  .btn .ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.35);transform:scale(0);animation:ripple .6s ease-out forwards;pointer-events:none}
+  @keyframes ripple{to{transform:scale(4);opacity:0}}
+  .primary{background:var(--brand);color:#fff}
+  .secondary{border:1px solid var(--line);background:var(--card);color:var(--ink)}
+  .line{background:var(--green);color:#fff}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+  /* 找人才 */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .stat{background:rgba(27,31,39,.85);border:1px solid var(--line);border-radius:16px;padding:14px 10px;text-align:center}
+  .stat b{display:block;font-size:clamp(1.4rem,6vw,2rem);line-height:1.1;font-variant-numeric:tabular-nums}
+  .stat b small{font-size:.5em;margin-left:2px;color:var(--muted)}
+  .stat span{display:block;font-size:.78rem;color:var(--muted);margin-top:4px}
+  .feats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;perspective:800px}
+  .feat{position:relative;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 12px;text-align:center;transition:transform .2s,border-color .2s,box-shadow .2s;transform-style:preserve-3d}
+  .feat:hover{border-color:rgba(240,122,58,.6);box-shadow:0 12px 30px -12px rgba(240,122,58,.45)}
+  .feat b{display:block;font-size:clamp(.95rem,4.2vw,1.35rem);color:var(--brand);line-height:1.2;white-space:nowrap}
+  .feat span{display:block;font-size:.82rem;color:var(--muted);margin-top:6px}
+  .steps{list-style:none;margin:0;padding:0;counter-reset:s}
+  .steps li{position:relative;padding:0 0 18px 44px}
+  .steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--card2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;transition:background .5s,border-color .5s,box-shadow .5s}
+  .steps li.in::before{background:var(--brand);border-color:var(--brand);box-shadow:0 0 0 6px rgba(240,122,58,.15)}
+  .steps li::after{content:"";position:absolute;left:15px;top:32px;bottom:2px;width:1px;background:linear-gradient(var(--brand),var(--line))}
+  .steps li:last-child::after{display:none}
+  .steps b{display:block}
+  .steps span{font-size:.85rem;color:var(--muted)}
+  .inds{display:flex;flex-wrap:wrap;gap:8px}
+  .inds span{background:rgba(27,31,39,.85);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:.88rem}
+  .inds b{color:var(--brand);margin-left:5px;font-size:.82rem}
+  .note{font-size:.82rem;color:var(--muted);text-align:center;margin:14px 0}
+
+  /* 合作職缺 */
+  .intro{background:rgba(27,31,39,.85);border:1px solid var(--line);border-radius:16px;padding:14px 16px;font-size:.92rem;color:var(--muted);margin-bottom:16px}
+  .intro b{color:var(--ink)}
+  .count{display:flex;align-items:baseline;justify-content:center;gap:8px;margin:6px 0 18px;color:var(--muted)}
+  .count b{font-size:2.6rem;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+  .live{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);animation:ping 2s infinite;margin-right:4px;transform:translateY(-2px)}
+  @keyframes ping{0%{box-shadow:0 0 0 0 rgba(6,199,85,.6)}80%,100%{box-shadow:0 0 0 10px rgba(6,199,85,0)}}
   .search{display:flex;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:6px;transition:border-color .2s,box-shadow .2s}
   .search:focus-within{border-color:var(--brand);box-shadow:0 0 0 4px rgba(240,122,58,.15)}
   .search input{flex:1;min-width:0;border:0;background:none;color:var(--ink);font:inherit;padding:10px 12px;outline:none}
   .search input::placeholder{color:#6f7787}
   .search button{border:0;background:var(--brand);color:#fff;font:inherit;font-weight:700;padding:0 20px;border-radius:12px;cursor:pointer}
-  .hints{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 26px;font-size:.82rem;color:var(--muted)}
-  .hints button{border:1px solid var(--line);background:none;color:var(--muted);font:inherit;border-radius:999px;padding:2px 10px;cursor:pointer;transition:color .2s,border-color .2s}
-  .hints button:hover{color:var(--ink);border-color:var(--muted)}
-  .count{display:flex;align-items:baseline;justify-content:center;gap:8px;margin:0 0 18px;color:var(--muted)}
-  .count b{font-size:2.6rem;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
-  .live{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(6,199,85,.6);animation:ping 2s infinite;margin-right:2px;transform:translateY(-2px)}
-  @keyframes ping{0%{box-shadow:0 0 0 0 rgba(6,199,85,.6)}80%,100%{box-shadow:0 0 0 10px rgba(6,199,85,0)}}
-  .label{font-size:.85rem;font-weight:700;color:var(--muted);margin:24px 0 10px;display:flex;justify-content:space-between;align-items:center}
-  .label a{font-weight:400;text-decoration:none;color:var(--brand)}
   .regions{display:flex;flex-wrap:wrap;gap:8px}
-  .regions a{display:inline-flex;align-items:center;gap:6px;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.92rem;transition:transform .15s,border-color .2s,background .2s}
-  .regions a:hover{transform:translateY(-2px);border-color:var(--brand);background:var(--card2)}
+  .regions a{display:inline-flex;align-items:center;gap:6px;text-decoration:none;background:rgba(27,31,39,.85);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.92rem;transition:transform .2s cubic-bezier(.34,1.56,.64,1),border-color .2s,background .2s}
+  .regions a:hover{transform:translateY(-3px) scale(1.04);border-color:var(--brand);background:var(--card2)}
   .regions a b{color:var(--brand);font-size:.85rem}
-  .rail{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 10px;margin:0 -16px;padding-left:16px;padding-right:16px;scrollbar-width:none}
+  .rail{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 16px 12px;margin:0 -16px;scrollbar-width:none}
   .rail::-webkit-scrollbar{display:none}
-  .job{flex:0 0 72%;max-width:240px;scroll-snap-align:start;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;transition:transform .15s,border-color .2s}
-  .job:hover{transform:translateY(-3px);border-color:var(--brand)}
+  .job{flex:0 0 72%;max-width:240px;scroll-snap-align:start;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;transition:transform .2s,border-color .2s}
+  .job:hover{transform:translateY(-4px);border-color:var(--brand)}
   .job .t{font-weight:700;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.9em}
   .job .m{font-size:.8rem;color:var(--muted);margin-top:6px}
   .job .s{font-size:.88rem;color:var(--brand);font-weight:700;margin-top:4px}
-  .cta{display:grid;gap:10px;margin-top:22px}
-  .btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px;border-radius:14px;text-decoration:none;font-weight:700;transition:transform .15s,filter .2s}
-  .btn:hover{transform:translateY(-1px);filter:brightness(1.08)}
-  .primary{background:var(--brand);color:#fff}
-  .secondary{border:1px solid var(--line);background:var(--card);color:var(--ink)}
-  .line{background:var(--green);color:#fff}
 
-  /* 企業主 */
-  .feats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-  .feat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 12px;text-align:center}
-  .feat b{display:block;font-size:clamp(.95rem,4.2vw,1.35rem);color:var(--brand);line-height:1.2;white-space:nowrap}
-  .feat span{display:block;font-size:.82rem;color:var(--muted);margin-top:6px}
-  .steps{list-style:none;margin:0;padding:0;counter-reset:s}
-  .steps li{position:relative;padding:0 0 18px 44px;opacity:.35;transition:opacity .4s}
-  .steps li.on{opacity:1}
-  .steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--card2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;transition:background .4s,border-color .4s}
-  .steps li.on::before{background:var(--brand);border-color:var(--brand)}
-  .steps li::after{content:"";position:absolute;left:15px;top:32px;bottom:2px;width:1px;background:var(--line)}
-  .steps li:last-child::after{display:none}
-  .steps b{display:block}
-  .steps span{font-size:.85rem;color:var(--muted)}
-  .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-
-  footer{margin-top:40px;text-align:center;font-size:.8rem;color:var(--muted)}
+  footer{position:relative;z-index:1;margin-top:40px;text-align:center;font-size:.8rem;color:var(--muted)}
   footer a{color:var(--muted)}
-  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}#bubbles{display:none}}
 </style>
 </head>
 <body>
+<div class="glow" aria-hidden="true"></div>
+<canvas id="bubbles" aria-hidden="true"></canvas>
 <main>
   <div class="head">
     <a class="logo" href="/">
@@ -109,62 +129,72 @@
       <span><b>JOB365</b><small>CONSULTANT</small></span>
     </a>
     <h1>中基層人才所(求職來就補)</h1>
-    <p class="sub">求職者免費找工作，企業主輕鬆找人才。</p>
+    <p class="sub">幫中小企業找到對的中基層人才</p>
 
-    <div class="switch" role="tablist" id="switch" data-tab="seek">
+    <div class="switch" role="tablist" id="switch" data-tab="talent">
       <span class="pill" aria-hidden="true"></span>
-      <button role="tab" id="t-seek" aria-controls="p-seek" aria-selected="true">我要找工作</button>
-      <button role="tab" id="t-biz" aria-controls="p-biz" aria-selected="false">我要找人才</button>
+      <button role="tab" id="t-talent" aria-controls="p-talent" aria-selected="true">我要找人才</button>
+      <button role="tab" id="t-jobs" aria-controls="p-jobs" aria-selected="false">合作職缺</button>
     </div>
   </div>
 
-  <!-- 求職者 -->
-  <section class="panel" id="p-seek" role="tabpanel" aria-labelledby="t-seek">
-    <form class="search" id="search" action="/job365map/" method="get">
-      <input name="q" id="q" type="search" placeholder="職稱或地點，如：技術員 新竹" autocomplete="off" aria-label="搜尋職缺">
-      <button type="submit">搜尋</button>
-    </form>
-    <div class="hints">熱門：<button type="button">技術員</button><button type="button">作業員</button><button type="button">品管</button><button type="button">倉管</button><button type="button">助理工程師</button></div>
-
-    <div class="count"><span><span class="live"></span>目前招募中</span><b id="n-open">—</b><span>筆職缺</span></div>
-
-    <div class="label">依地區找工作<a href="/job365map/jobs/">全部職缺 →</a></div>
-    <div class="regions" id="regions">
-      <a href="/job365map/jobs/">查看全部職缺</a>
+  <!-- 我要找人才（預設） -->
+  <section class="panel" id="p-talent" role="tabpanel" aria-labelledby="t-talent">
+    <div class="stats rv">
+      <div class="stat"><b data-count="open">—</b><span>協助招募中職缺</span></div>
+      <div class="stat"><b data-count="ind">—</b><span>合作產業類別</span></div>
+      <div class="stat"><b>全台</b><span>服務範圍</span></div>
     </div>
 
-    <div class="label" id="latest-label" hidden>最新職缺<a href="/job365map/">在地圖上看 →</a></div>
-    <div class="rail" id="latest"></div>
-
-    <div class="cta">
-      <a class="btn primary" href="/job365map/" data-ga="home_to_map">打開職缺地圖</a>
-    </div>
-  </section>
-
-  <!-- 企業主 -->
-  <section class="panel" id="p-biz" role="tabpanel" aria-labelledby="t-biz" hidden>
+    <div class="label rv">為什麼選擇我們</div>
     <div class="feats">
-      <div class="feat"><b>報到才收費</b><span>沒有人報到不收費</span></div>
-      <div class="feat"><b>$15,000</b><span>單月費用上限</span></div>
-      <div class="feat"><b>一對一</b><span>顧問面談後推薦</span></div>
+      <div class="feat rv tilt"><b>報到才收費</b><span>沒有人報到不收費</span></div>
+      <div class="feat rv tilt"><b>$15,000</b><span>單月費用上限</span></div>
+      <div class="feat rv tilt"><b>一對一</b><span>顧問面談後推薦</span></div>
     </div>
 
-    <div class="label">正職代招 4 大階段</div>
-    <ol class="steps" id="steps">
-      <li><b>招募需求確認</b><span>提供招募細節</span></li>
-      <li><b>主動出擊獵才</b><span>啟動人才庫＆職缺大量曝光、顧問一對一面談、精選人才推薦</span></li>
-      <li><b>面試安排・雙向溝通</b><span>安排面試、面試後人選關懷、企業端面試評價</span></li>
-      <li><b>錄取與報到</b><span>Offer 溝通與確認、入職後持續關心</span></li>
+    <div class="label rv">正職代招 4 大階段</div>
+    <ol class="steps">
+      <li class="rv"><b>招募需求確認</b><span>提供招募細節</span></li>
+      <li class="rv"><b>主動出擊獵才</b><span>啟動人才庫＆職缺大量曝光、顧問一對一面談、精選人才推薦</span></li>
+      <li class="rv"><b>面試安排・雙向溝通</b><span>安排面試、面試後人選關懷、企業端面試評價</span></li>
+      <li class="rv"><b>錄取與報到</b><span>Offer 溝通與確認、入職後持續關心</span></li>
     </ol>
 
-    <p class="sub" style="text-align:center;margin:8px 0 14px">基層職缺 500 元／天（依職缺彈性微調）・JOB365 為日玖國際旗下團隊</p>
-    <div class="row">
+    <div class="label rv" id="ind-label" hidden>正在合作招募的產業</div>
+    <div class="inds rv" id="inds"></div>
+
+    <p class="note rv">基層職缺 500 元／天（依職缺彈性微調）・日玖國際旗下團隊</p>
+    <div class="row rv">
       <a class="btn secondary" href="/hire/" data-ga="employer_click">了解正職代招</a>
       <a class="btn line" href="https://line.me/R/ti/p/@642ahllq" target="_blank" rel="noopener" data-ga="employer_line_click">LINE 諮詢</a>
     </div>
+    <p class="note rv"><a href="#" id="go-jobs" style="color:var(--brand);text-decoration:none">看看我們正在招募的合作職缺 →</a></p>
   </section>
 
-  <footer>JOB365 為 <a href="http://zjiou.com.tw/" target="_blank" rel="noopener" data-ga="parent_site_click">日玖國際</a> 旗下團隊・<a href="/hire/" data-ga="employer_click">企業徵才</a></footer>
+  <!-- 合作職缺 -->
+  <section class="panel" id="p-jobs" role="tabpanel" aria-labelledby="t-jobs" hidden>
+    <div class="intro rv">這些是我們<b>正在為合作企業招募</b>的職缺，每日更新。求職者也可以直接搜尋、免費應徵。</div>
+    <div class="count rv"><span><span class="live"></span>目前招募中</span><b data-count="open">—</b><span>筆職缺</span></div>
+
+    <form class="search rv" id="search" action="/job365map/" method="get">
+      <input name="q" id="q" type="search" placeholder="職稱或地點，如：技術員 新竹" autocomplete="off" aria-label="搜尋職缺">
+      <button type="submit">搜尋</button>
+    </form>
+
+    <div class="label rv">各地區合作職缺<a href="/job365map/jobs/">全部職缺 →</a></div>
+    <div class="regions rv" id="regions"><a href="/job365map/jobs/">查看全部職缺</a></div>
+
+    <div class="label rv" id="latest-label" hidden>最新合作職缺<a href="/job365map/">在地圖上看 →</a></div>
+    <div class="rail" id="latest"></div>
+
+    <div class="row rv" style="margin-top:22px">
+      <a class="btn primary" href="/job365map/" data-ga="home_to_map">打開職缺地圖</a>
+      <a class="btn secondary" href="/hire/" data-ga="employer_click">我也要找人才</a>
+    </div>
+  </section>
+
+  <footer>JOB365 為 <a href="http://zjiou.com.tw/" target="_blank" rel="noopener" data-ga="parent_site_click">日玖國際</a> 旗下團隊・<a href="/hire/" data-ga="employer_click">企業徵才</a>・<a href="/job365map/">職缺地圖</a></footer>
 </main>
 
 <script>
@@ -172,50 +202,128 @@
   function ev(name, p){ if (typeof gtag === "function") gtag("event", name, Object.assign({source:"home"}, p||{})); }
   document.querySelectorAll("a[data-ga]").forEach(function(a){ a.addEventListener("click", function(){ ev(a.dataset.ga); }); });
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var stats = null;
 
-  // 切換頁籤（網址加 #hire 會直接開企業頁籤）
-  var sw = document.getElementById("switch"), tabs = {seek: document.getElementById("t-seek"), biz: document.getElementById("t-biz")};
-  var panels = {seek: document.getElementById("p-seek"), biz: document.getElementById("p-biz")}, stepsPlayed = false;
+  /* ---------- 捲動進場 ---------- */
+  var io = ("IntersectionObserver" in window && !reduce) ? new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting) return;
+      var el = e.target, sibs = el.parentNode.querySelectorAll(":scope > .rv"), i = Array.prototype.indexOf.call(sibs, el);
+      setTimeout(function(){ el.classList.add("in"); }, Math.max(0, i) * 90 % 450);
+      io.unobserve(el);
+    });
+  }, {threshold: .15, rootMargin: "0px 0px -6% 0px"}) : null;
+  function watch(root){ (root || document).querySelectorAll(".rv:not(.in)").forEach(function(el){ io ? io.observe(el) : el.classList.add("in"); }); }
+
+  /* ---------- 頁籤 ---------- */
+  var sw = document.getElementById("switch");
+  var tabs = {talent: document.getElementById("t-talent"), jobs: document.getElementById("t-jobs")};
+  var panels = {talent: document.getElementById("p-talent"), jobs: document.getElementById("p-jobs")};
   function show(k, push){
     sw.dataset.tab = k;
     for (var t in tabs){ tabs[t].setAttribute("aria-selected", t === k); panels[t].hidden = t !== k; }
-    if (push) history.replaceState(null, "", k === "biz" ? "#hire" : location.pathname);
-    if (k === "biz" && !stepsPlayed){ stepsPlayed = true; playSteps(); }
+    if (push) history.replaceState(null, "", k === "jobs" ? "#jobs" : location.pathname);
+    watch(panels[k]); runCounts(panels[k]);
+    burst(innerWidth / 2, sw.getBoundingClientRect().top + 20, 10);
     ev("home_tab", {tab: k});
   }
-  tabs.seek.onclick = function(){ show("seek", true); };
-  tabs.biz.onclick = function(){ show("biz", true); };
-  if (location.hash === "#hire") show("biz", false);
+  tabs.talent.onclick = function(){ show("talent", true); };
+  tabs.jobs.onclick = function(){ show("jobs", true); };
+  document.getElementById("go-jobs").onclick = function(e){ e.preventDefault(); show("jobs", true); scrollTo({top: 0, behavior: "smooth"}); };
 
-  // 企業頁籤：4 步驟依序亮起
-  function playSteps(){
-    var li = document.querySelectorAll("#steps li");
-    li.forEach(function(el, i){ setTimeout(function(){ el.classList.add("on"); }, reduce ? 0 : 250 + i * 380); });
+  /* ---------- 數字跑動 ---------- */
+  function countUp(el, to, suffix){
+    if (el.dataset.done) return; el.dataset.done = 1;
+    var sfx = suffix ? "<small>" + suffix + "</small>" : "";
+    if (reduce){ el.innerHTML = to + sfx; return; }
+    var start = performance.now(), dur = 1300;
+    (function step(t){ var p = Math.min(1, (t - start) / dur); el.innerHTML = Math.round(to * (1 - Math.pow(1 - p, 3))) + sfx; if (p < 1) requestAnimationFrame(step); })(start);
+  }
+  function runCounts(root){
+    if (!stats) return;
+    root.querySelectorAll("[data-count]").forEach(function(el){
+      var k = el.dataset.count;
+      if (k === "open") countUp(el, stats.open, root.id === "p-talent" ? "筆" : "");
+      if (k === "ind") countUp(el, stats.industries.length, "類");
+    });
   }
 
-  // 搜尋
+  /* ---------- 卡片傾斜 ---------- */
+  if (!reduce) document.querySelectorAll(".tilt").forEach(function(c){
+    c.addEventListener("pointermove", function(e){
+      var r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      c.style.transform = "rotateY(" + (x * 12) + "deg) rotateX(" + (-y * 12) + "deg) translateY(-3px)";
+    });
+    c.addEventListener("pointerleave", function(){ c.style.transform = ""; });
+  });
+
+  /* ---------- 按鈕漣漪 ---------- */
+  document.querySelectorAll(".btn").forEach(function(b){
+    b.addEventListener("pointerdown", function(e){
+      var r = b.getBoundingClientRect(), s = document.createElement("span"), d = Math.max(r.width, r.height);
+      s.className = "ripple"; s.style.width = s.style.height = d + "px";
+      s.style.left = (e.clientX - r.left - d / 2) + "px"; s.style.top = (e.clientY - r.top - d / 2) + "px";
+      b.appendChild(s); setTimeout(function(){ s.remove(); }, 650);
+    });
+  });
+
+  /* ---------- 背景泡泡 ---------- */
+  var cv = document.getElementById("bubbles"), ctx = cv.getContext && cv.getContext("2d"), W, H, dpr, bubbles = [], pops = [], px = 0, py = 0, tx = 0, ty = 0;
+  var COLORS = ["240,122,58", "63,193,201", "242,169,61"];
+  function size(){ dpr = Math.min(2, devicePixelRatio || 1); W = innerWidth; H = innerHeight; cv.width = W * dpr; cv.height = H * dpr; ctx && ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
+  function mk(y){ var r = 6 + Math.random() * 26; return {x: Math.random() * W, y: y == null ? Math.random() * H : y, r: r, vy: .15 + Math.random() * .45, sway: Math.random() * 6.28, depth: .3 + Math.random() * .9, c: COLORS[Math.floor(Math.random() * 3)], a: .06 + Math.random() * .12}; }
+  function burst(x, y, n){
+    if (reduce || !ctx) return;
+    for (var i = 0; i < n; i++){ var ang = Math.random() * 6.28, sp = .6 + Math.random() * 2.2; pops.push({x: x, y: y, vx: Math.cos(ang) * sp, vy: Math.sin(ang) * sp - 1, r: 2 + Math.random() * 5, life: 1, c: COLORS[i % 3]}); }
+  }
+  if (ctx && !reduce){
+    size(); addEventListener("resize", size);
+    var count = Math.round(Math.min(26, Math.max(12, W / 40)));
+    for (var i = 0; i < count; i++) bubbles.push(mk());
+    var last = 0;
+    function trail(x, y){ var now = performance.now(); if (now - last < 45) return; last = now; pops.push({x: x, y: y, vx: (Math.random() - .5) * .8, vy: -.6 - Math.random() * .8, r: 2 + Math.random() * 4, life: 1, c: COLORS[Math.floor(Math.random() * 3)]}); }
+    addEventListener("pointermove", function(e){ tx = (e.clientX / W - .5); ty = (e.clientY / H - .5); trail(e.clientX, e.clientY); }, {passive: true});
+    addEventListener("touchmove", function(e){ var t = e.touches[0]; if (t) trail(t.clientX, t.clientY); }, {passive: true});
+    var lastY = scrollY;
+    addEventListener("scroll", function(){ var d = scrollY - lastY; lastY = scrollY; bubbles.forEach(function(b){ b.y -= d * .15 * b.depth; }); }, {passive: true});
+    (function loop(){
+      ctx.clearRect(0, 0, W, H);
+      px += (tx - px) * .05; py += (ty - py) * .05;
+      for (var i = 0; i < bubbles.length; i++){
+        var b = bubbles[i]; b.y -= b.vy * b.depth; b.sway += .01;
+        if (b.y < -60) { bubbles[i] = mk(H + 40); continue; }
+        if (b.y > H + 80) b.y = -40;
+        var x = b.x + Math.sin(b.sway) * 14 - px * 40 * b.depth, y = b.y - py * 30 * b.depth;
+        var g = ctx.createRadialGradient(x - b.r * .35, y - b.r * .35, b.r * .1, x, y, b.r);
+        g.addColorStop(0, "rgba(255,255,255," + (b.a * 1.4) + ")"); g.addColorStop(.35, "rgba(" + b.c + "," + b.a + ")"); g.addColorStop(1, "rgba(" + b.c + ",0)");
+        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, b.r, 0, 6.283); ctx.fill();
+        ctx.strokeStyle = "rgba(" + b.c + "," + (b.a * .9) + ")"; ctx.lineWidth = 1; ctx.stroke();
+      }
+      for (var j = pops.length - 1; j >= 0; j--){
+        var p = pops[j]; p.x += p.vx; p.y += p.vy; p.vy -= .01; p.life -= .018;
+        if (p.life <= 0){ pops.splice(j, 1); continue; }
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r * (1.3 - p.life * .3), 0, 6.283);
+        ctx.strokeStyle = "rgba(" + p.c + "," + (p.life * .7) + ")"; ctx.lineWidth = 1.2; ctx.stroke();
+      }
+      requestAnimationFrame(loop);
+    })();
+  }
+
+  /* ---------- 搜尋 ---------- */
   var form = document.getElementById("search"), q = document.getElementById("q");
   form.addEventListener("submit", function(e){
-    e.preventDefault();
-    var v = q.value.trim();
-    ev("search", {search_term: v});
+    e.preventDefault(); var v = q.value.trim(); ev("search", {search_term: v});
     location.href = "/job365map/" + (v ? "?q=" + encodeURIComponent(v) : "");
   });
-  document.querySelectorAll(".hints button").forEach(function(b){
-    b.addEventListener("click", function(){ q.value = b.textContent; form.requestSubmit ? form.requestSubmit() : form.dispatchEvent(new Event("submit")); });
-  });
 
-  // 數字跑動
-  function countUp(el, to){
-    if (reduce){ el.textContent = to; return; }
-    var start = performance.now(), dur = 1200;
-    (function step(t){ var p = Math.min(1, (t - start) / dur); el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(step); })(start);
-  }
-
-  // 讀取每日更新的職缺統計
+  /* ---------- 讀取每日更新的職缺統計 ---------- */
   fetch("/job365map/jobs/stats.json", {cache: "no-store"}).then(function(r){ return r.ok ? r.json() : null; }).then(function(s){
-    if (!s) return;
-    countUp(document.getElementById("n-open"), s.open);
+    if (!s) return; stats = s;
+    var inds = document.getElementById("inds");
+    if (s.industries && s.industries.length){
+      document.getElementById("ind-label").hidden = false;
+      s.industries.slice(0, 10).forEach(function(i){ var sp = document.createElement("span"); sp.textContent = i.name; var b = document.createElement("b"); b.textContent = i.n; sp.appendChild(b); inds.appendChild(sp); });
+    }
     var box = document.getElementById("regions"), areas = (s.regions || []).filter(function(r){ return r.url; });
     if (areas.length){
       box.innerHTML = "";
@@ -239,7 +347,10 @@
         rail.appendChild(a);
       });
     }
+    runCounts(panels[sw.dataset.tab]);
   }).catch(function(){});
+
+  if (location.hash === "#jobs") show("jobs", false); else { watch(panels.talent); }
 })();
 </script>
 </body>
