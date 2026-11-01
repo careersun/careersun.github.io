@@ -565,6 +565,23 @@ var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxbaaqzVKwTEWvMwTuU
     });
   }).catch(function(){});
 
+  // 名單來源：網址 UTM 優先；其次記住第一次從外部進站的來源；再來是上一頁
+  function src(){
+    var q = new URLSearchParams(location.search), u = ["utm_source","utm_medium","utm_campaign"].map(function(k){ return q.get(k); }).filter(Boolean);
+    if (u.length) return "UTM：" + u.join(" / ");
+    var saved = null; try { saved = localStorage.getItem("j365_src"); } catch(e){}
+    if (saved) return saved;
+    var r = document.referrer;
+    if (!r) return "直接進站";
+    try { var h = new URL(r); return h.host === location.host ? "站內：" + h.pathname : "外部：" + h.host; } catch(e){ return "外部：" + r.slice(0, 80); }
+  }
+  try {
+    var q0 = new URLSearchParams(location.search), r0 = document.referrer, s0 = null;
+    if (q0.get("utm_source")) s0 = "UTM：" + ["utm_source","utm_medium","utm_campaign"].map(function(k){ return q0.get(k); }).filter(Boolean).join(" / ");
+    else if (r0 && new URL(r0).host !== location.host) s0 = "外部：" + new URL(r0).host;
+    if (s0 && !localStorage.getItem("j365_src")) localStorage.setItem("j365_src", s0);
+  } catch(e){}
+
   // 需求表單
   var form = document.getElementById("hireForm"), msg = document.getElementById("formMsg");
   form.addEventListener("submit", function(e){
@@ -575,7 +592,7 @@ var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxbaaqzVKwTEWvMwTuU
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.value.trim())) { msg.style.color = "#c2410c"; msg.textContent = "Email 格式不正確，請再確認一次。"; form.email.focus(); return; }
     if (!FORM_ENDPOINT) { msg.style.color = "#c2410c"; msg.innerHTML = '表單尚未開通，請先透過 <a href="https://line.me/R/ti/p/@642ahllq" target="_blank" rel="noopener">LINE 諮詢</a>。'; return; }
     var btn = form.querySelector("button[type=submit]"); btn.disabled = true; btn.textContent = "送出中…";
-    var data = new URLSearchParams(new FormData(form)); data.append("page", location.href);
+    var data = new URLSearchParams(new FormData(form)); data.append("page", location.href); data.append("source", src());
     fetch(FORM_ENDPOINT, {method:"POST", mode:"no-cors", body:data}).then(function(){
       msg.style.color = "#15803d"; msg.textContent = "已收到你的徵才需求，顧問會盡快與你聯繫！";
       form.reset(); ev("generate_lead", {method:"hire_form"});
