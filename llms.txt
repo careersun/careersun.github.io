@@ -13,6 +13,7 @@
 
 ## 主要頁面
 - [正職代招・中基層獵才](https://careersun.github.io/hire/)：服務說明、收費、費用試算器、常見問題
+- 地區正職代招：[新竹](https://careersun.github.io/hire/hsinchu.html)、[桃園](https://careersun.github.io/hire/taoyuan.html)、[台北](https://careersun.github.io/hire/taipei.html)、[台中](https://careersun.github.io/hire/taichung.html)
 - [招募指南](https://careersun.github.io/hire/guide/)：給企業主與 HR 的中基層招募知識
 - [正職代招費用怎麼算](https://careersun.github.io/hire/guide/recruitment-fee.html)
 - [正職代招是什麼？和派遣、人力銀行、獵頭比較](https://careersun.github.io/hire/guide/what-is-recruitment-outsourcing.html)
