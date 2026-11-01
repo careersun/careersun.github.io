@@ -26,6 +26,8 @@
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-21781Q6CNX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-21781Q6CNX");</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','860382346796939');fbq('track','PageView');document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(a&&/^(tel:|https:\/\/(line\.me|lin\.ee)\/)/.test(a.getAttribute('href')))fbq('track','Contact');});</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=860382346796939&ev=PageView&noscript=1" alt=""></noscript>
 <style>
   :root{
     --bg:#fbfaf8; --surface:#ffffff; --ink:#15171c; --muted:#5d6472; --line:#e8e6e1;
@@ -390,7 +392,7 @@
       <button class="btn btn-brand" type="submit" style="width:100%">送出徵才需求</button>
       <div class="form-msg" id="formMsg" role="status"></div>
       <p class="privacy">你填寫的資料僅用於聯繫徵才需求，不會提供給第三方。送出即表示你已閱讀並同意下方個人資料蒐集告知。</p>
-      <details style="font-size:.82rem;padding:10px 14px;margin-top:8px"><summary>個人資料蒐集告知</summary><p>依《個人資料保護法》第 8 條，日玖國際（JOB365 中基層獵才團隊）告知如下：<br>1. 蒐集目的：人力仲介與招募服務之聯繫、報價及客戶服務。<br>2. 蒐集類別：公司名稱、聯絡人姓名、電話、Email 及你填寫的徵才需求。<br>3. 利用期間、地區、對象及方式：於上述目的存續期間或法令規定之保存期間內，在台灣地區由日玖國際及所屬團隊以電話、Email、LINE 等方式與你聯繫；除法令另有規定外，不會提供給第三方。<br>4. 你的權利：可隨時透過官方 LINE @642ahllq 或專線 03-5643252，請求查詢、閱覽、製給複本、補充或更正、停止蒐集處理利用或刪除你的個人資料。<br>5. 你可自由選擇是否提供資料；未提供必填欄位時，我們將無法與你聯繫。</p></details>
+      <details style="font-size:.82rem;padding:10px 14px;margin-top:8px"><summary>個人資料蒐集告知</summary><p>依《個人資料保護法》第 8 條，日玖國際（JOB365 中基層獵才團隊）告知如下：<br>1. 蒐集目的：人力仲介與招募服務之聯繫、報價及客戶服務。<br>2. 蒐集類別：公司名稱、聯絡人姓名、電話、Email 及你填寫的徵才需求。<br>網站使用 Google Analytics 與 Meta 像素等 Cookie 工具統計瀏覽與廣告成效，不會因此取得你填寫的表單內容。<br>3. 利用期間、地區、對象及方式：於上述目的存續期間或法令規定之保存期間內，在台灣地區由日玖國際及所屬團隊以電話、Email、LINE 等方式與你聯繫；除法令另有規定外，不會提供給第三方。<br>4. 你的權利：可隨時透過官方 LINE @642ahllq 或專線 03-5643252，請求查詢、閱覽、製給複本、補充或更正、停止蒐集處理利用或刪除你的個人資料。<br>5. 你可自由選擇是否提供資料；未提供必填欄位時，我們將無法與你聯繫。</p></details>
     </form>
   </div>
 </section>
@@ -596,7 +598,7 @@ var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxbaaqzVKwTEWvMwTuU
     var data = new URLSearchParams(new FormData(form)); data.append("page", location.href); data.append("source", src());
     fetch(FORM_ENDPOINT, {method:"POST", mode:"no-cors", body:data}).then(function(){
       msg.style.color = "#15803d"; msg.textContent = "已收到你的徵才需求，顧問會盡快與你聯繫！";
-      form.reset(); ev("generate_lead", {method:"hire_form"});
+      form.reset(); ev("generate_lead", {method:"hire_form"}); if (window.fbq) fbq("track","Lead");
     }).catch(function(){
       msg.style.color = "#c2410c"; msg.innerHTML = '送出失敗，請改用 <a href="https://line.me/R/ti/p/@642ahllq" target="_blank" rel="noopener">LINE 諮詢</a>。';
     }).finally(function(){ btn.disabled = false; btn.textContent = "送出徵才需求"; });
