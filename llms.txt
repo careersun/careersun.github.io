@@ -5,7 +5,7 @@
 ## 正職代招服務重點
 - 服務內容：主動獵才、顧問一對一面談後推薦人選；人選錄取後直接成為企業自己的正職員工。
 - 適合職缺：作業員、技術員、品管、倉管、助理工程師、行政與業務助理等中基層正職。
-- 收費：人選報到才收費；只收人選第一個月，基層職缺 500 元／天（依職缺彈性微調），最高 15,000 元，第二個月起不再收費；不收開案費、訂金；人選未滿 30 天離職彈性計價。實際費用以顧問報價為準。
+- 收費：人選報到才收費；只收人選第一個月，基層職缺 500 元／天（依職缺彈性微調），最高 15,000 元，第二個月起不再收費；不收開案費、訂金；人選未滿 30 天離職彈性計價。實際費用以顧問報價為準。依勞動部〈私立就業服務機構收費項目及金額標準〉，中基層職缺代招費法定上限通常為員工第一個月薪資，中基層獵才最高 15,000 元，遠低於上限。
 - 合作流程：招募需求確認 → 主動出擊獵才 → 面試安排・雙向溝通 → 錄取與報到。
 - 聯絡：需求表單 https://careersun.github.io/hire/#contact ；LINE https://line.me/R/ti/p/@642ahllq
 - 母公司：日玖國際 http://zjiou.com.tw/ ；團隊名稱：JOB365 中基層獵才團隊
@@ -16,7 +16,7 @@
 - 地區正職代招：[新竹](https://careersun.github.io/hire/hsinchu.html)、[桃園](https://careersun.github.io/hire/taoyuan.html)、[台北](https://careersun.github.io/hire/taipei.html)、[台中](https://careersun.github.io/hire/taichung.html)
 - [招募指南](https://careersun.github.io/hire/guide/)：給企業主與 HR 的中基層招募知識
 - [正職代招費用怎麼算](https://careersun.github.io/hire/guide/recruitment-fee.html)
-- [正職代招是什麼？和派遣、人力銀行、獵頭比較](https://careersun.github.io/hire/guide/what-is-recruitment-outsourcing.html)
+- [代招是什麼？正職代招和派遣、人力銀行、獵頭比較（含代招收費法定上限、勞健保歸屬）](https://careersun.github.io/hire/guide/what-is-recruitment-outsourcing.html)
 - [作業員招不到人怎麼辦](https://careersun.github.io/hire/guide/operator-hiring.html)
 - [面試爽約怎麼辦](https://careersun.github.io/hire/guide/interview-no-show.html)
 - [自己招人的隱形招募成本](https://careersun.github.io/hire/guide/hidden-hiring-cost.html)
