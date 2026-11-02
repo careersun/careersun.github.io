@@ -49,7 +49,7 @@
     <p style="margin:0">目前在桃園招募中的合作職缺：<span class="big" id="lv-n">—</span> 筆</p>
     <div class="chips" id="lv-ind"></div>
     <ul id="lv-latest"></ul>
-    <p class="note" style="margin:10px 0 0">資料來自 JOB365 職缺地圖，每日自動更新。查看全部：<a href="https://careersun.github.io/job365map/jobs/area/taoyuan.html">桃園市職缺</a></p>
+    <p class="note" style="margin:10px 0 0">資料來自 JOB365 職缺地圖，每日自動更新。</p>
   </div>
 
   <h2>桃園正職代招怎麼收費？</h2>
@@ -94,7 +94,7 @@
   <p class="src"></p>
 </main>
 
-<footer><div class="wrap">JOB365 為<a href="http://zjiou.com.tw/" target="_blank" rel="noopener">日玖國際</a>旗下團隊・<a href="/hire/">正職代招</a>・<a href="/hire/guide/">招募指南</a>・<a href="/job365map/">職缺地圖</a></div></footer>
+<footer><div class="wrap">JOB365 為<a href="http://zjiou.com.tw/" target="_blank" rel="noopener">日玖國際</a>旗下團隊・<a href="/hire/">正職代招</a>・<a href="/hire/guide/">招募指南</a></div></footer>
 <script>
 document.addEventListener("click",function(e){var a=e.target.closest("[data-ev]");if(a&&window.gtag)gtag("event",a.dataset.ev,{page_path:location.pathname});});
 fetch("/job365map/jobs/stats.json",{cache:"no-store"}).then(function(r){return r.ok?r.json():null;}).then(function(s){
@@ -102,7 +102,7 @@ fetch("/job365map/jobs/stats.json",{cache:"no-store"}).then(function(r){return r
   var n=rs.reduce(function(t,x){return t+x.n;},0); document.getElementById("lv-n").textContent=n;
   var ind={}; rs.forEach(function(x){(x.industries||[]).forEach(function(i){ind[i.name]=(ind[i.name]||0)+i.n;});});
   Object.keys(ind).sort(function(a,b){return ind[b]-ind[a];}).slice(0,6).forEach(function(k){var c=document.createElement("span");c.textContent=k+" "+ind[k];document.getElementById("lv-ind").appendChild(c);});
-  var lt=[]; rs.forEach(function(x){lt=lt.concat(x.latest||[]);}); lt.slice(0,4).forEach(function(j){var li=document.createElement("li"),a=document.createElement("a"),sp=document.createElement("span");a.href=j.url;a.textContent=j.title;sp.textContent=j.area||"";a.appendChild(sp);li.appendChild(a);document.getElementById("lv-latest").appendChild(li);});
+  var lt=[]; rs.forEach(function(x){lt=lt.concat(x.latest||[]);}); lt.slice(0,4).forEach(function(j){var li=document.createElement("li"),a=document.createElement("a"),sp=document.createElement("span");a.textContent=j.title;sp.textContent=j.area||"";a.appendChild(sp);li.appendChild(a);document.getElementById("lv-latest").appendChild(li);});
 });
 </script>
 </body>
