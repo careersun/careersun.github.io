@@ -17,7 +17,7 @@
 <meta property="og:image" content="https://careersun.github.io/job365map/og-image.png">
 <meta property="og:url" content="https://careersun.github.io/">
 <script type="application/ld+json">
-[{"@context": "https://schema.org", "@type": "WebSite", "name": "JOB365 中基層獵才", "alternateName": ["中基層獵才", "JOB365", "JOB365 中基層人才所(工作・人才來就補)"], "url": "https://careersun.github.io/", "potentialAction": {"@type": "SearchAction", "target": "https://careersun.github.io/job365map/?q={search_term_string}", "query-input": "required name=search_term_string"}, "@id": "https://careersun.github.io/#website", "publisher": {"@id": "https://careersun.github.io/#org"}}]
+[{"@context": "https://schema.org", "@type": "WebSite", "name": "JOB365 中基層獵才", "alternateName": ["中基層獵才", "JOB365", "JOB365 中基層人才所(工作・人才來就補)"], "url": "https://careersun.github.io/", "@id": "https://careersun.github.io/#website", "publisher": {"@id": "https://careersun.github.io/#org"}}]
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-21781Q6CNX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-21781Q6CNX");</script>
@@ -174,27 +174,16 @@
 
   <!-- 合作職缺 -->
   <section class="panel" id="p-jobs" role="tabpanel" aria-labelledby="t-jobs" hidden>
-    <div class="intro rv">這些是我們<b>正在為合作企業招募</b>的職缺，每日更新。正在找工作？請直接前往職缺地圖應徵。</div>
+    <div class="intro rv">我們<b>正在為合作企業招募</b>的職缺數，每日自動更新。</div>
     <div class="count rv"><span><span class="live"></span>目前招募中</span><b data-count="open">—</b><span>筆職缺</span></div>
 
-    <form class="search rv" id="search" action="/job365map/" method="get">
-      <input name="q" id="q" type="search" placeholder="職稱或地點，如：技術員 新竹" autocomplete="off" aria-label="搜尋職缺">
-      <button type="submit">搜尋</button>
-    </form>
-
-    <div class="label rv">各地區合作職缺<a href="/job365map/jobs/">全部職缺 →</a></div>
-    <div class="regions rv" id="regions"><a href="/job365map/jobs/">查看全部職缺</a></div>
-
-    <div class="label rv" id="latest-label" hidden>最新合作職缺<a href="/job365map/">在地圖上看 →</a></div>
-    <div class="rail" id="latest"></div>
 
     <div class="row rv" style="margin-top:22px">
-      <a class="btn primary" href="/job365map/" data-ga="home_to_map">打開職缺地圖</a>
-      <a class="btn secondary" href="/hire/" data-ga="employer_click">我也要找人才</a>
+      <a class="btn primary" href="/hire/" data-ga="employer_click">我也要找人才</a>
     </div>
   </section>
 
-  <footer>JOB365 為 <a href="http://zjiou.com.tw/" target="_blank" rel="noopener" data-ga="parent_site_click">日玖國際</a> 旗下團隊・<a href="/hire/" data-ga="employer_click">企業徵才</a>・<a href="/job365map/">職缺地圖</a></footer>
+  <footer>JOB365 為 <a href="http://zjiou.com.tw/" target="_blank" rel="noopener" data-ga="parent_site_click">日玖國際</a> 旗下團隊・<a href="/hire/" data-ga="employer_click">企業徵才</a></footer>
 </main>
 
 <script>
@@ -309,13 +298,6 @@
     })();
   }
 
-  /* ---------- 搜尋 ---------- */
-  var form = document.getElementById("search"), q = document.getElementById("q");
-  form.addEventListener("submit", function(e){
-    e.preventDefault(); var v = q.value.trim(); ev("search", {search_term: v});
-    location.href = "/job365map/" + (v ? "?q=" + encodeURIComponent(v) : "");
-  });
-
   /* ---------- 讀取每日更新的職缺統計 ---------- */
   fetch("/job365map/jobs/stats.json", {cache: "no-store"}).then(function(r){ return r.ok ? r.json() : null; }).then(function(s){
     if (!s) return; stats = s;
@@ -323,29 +305,6 @@
     if (s.industries && s.industries.length){
       document.getElementById("ind-label").hidden = false;
       s.industries.slice(0, 10).forEach(function(i){ var sp = document.createElement("span"); sp.textContent = i.name; var b = document.createElement("b"); b.textContent = i.n; sp.appendChild(b); inds.appendChild(sp); });
-    }
-    var box = document.getElementById("regions"), areas = (s.regions || []).filter(function(r){ return r.url; });
-    if (areas.length){
-      box.innerHTML = "";
-      areas.forEach(function(r){
-        var a = document.createElement("a"); a.href = r.url; a.textContent = r.name;
-        var b = document.createElement("b"); b.textContent = r.n; a.appendChild(b);
-        a.addEventListener("click", function(){ ev("home_region_click", {region: r.name}); });
-        box.appendChild(a);
-      });
-    }
-    var rail = document.getElementById("latest"), list = s.latest || [];
-    if (list.length){
-      document.getElementById("latest-label").hidden = false;
-      list.forEach(function(j){
-        var a = document.createElement("a"); a.className = "job"; a.href = j.url;
-        var t = document.createElement("div"); t.className = "t"; t.textContent = j.title;
-        var m = document.createElement("div"); m.className = "m"; m.textContent = [j.region + (j.area || ""), j.shift].filter(Boolean).join("・");
-        var sal = document.createElement("div"); sal.className = "s"; sal.textContent = j.salary || "薪資面議";
-        a.appendChild(t); a.appendChild(m); a.appendChild(sal);
-        a.addEventListener("click", function(){ ev("home_latest_click", {job_id: j.id}); });
-        rail.appendChild(a);
-      });
     }
     runCounts(panels[sw.dataset.tab]);
   }).catch(function(){});
