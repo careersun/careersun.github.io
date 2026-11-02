@@ -20,4 +20,3 @@
 - [作業員招不到人怎麼辦](https://careersun.github.io/hire/guide/operator-hiring.html)
 - [面試爽約怎麼辦](https://careersun.github.io/hire/guide/interview-no-show.html)
 - [自己招人的隱形招募成本](https://careersun.github.io/hire/guide/hidden-hiring-cost.html)
-- [JOB365 職缺地圖](https://careersun.github.io/job365map/)：合作職缺地圖，求職者免費應徵
