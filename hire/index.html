@@ -128,6 +128,17 @@
   footer a{color:var(--muted)}
   .sticky{position:fixed;left:0;right:0;bottom:0;display:none;gap:10px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:var(--bg);border-top:1px solid var(--line);z-index:20}
   .sticky .btn{flex:1;padding:12px}
+  /* 頂部快速導覽按鈕 */
+  .jump{transition:transform .15s,box-shadow .2s,filter .2s}
+  .jump:hover{transform:translateY(-2px);filter:brightness(1.04)}
+  .j1{background:var(--brand);color:#fff;box-shadow:0 8px 22px -12px rgba(240,106,42,.8)}
+  .j2{background:var(--ink);color:#fff;box-shadow:0 8px 22px -12px rgba(21,23,28,.7)}
+  .j3{background:var(--brand-soft);color:var(--brand);border:1px solid #ffd9c4}
+  .j4{background:#fff7ed;color:#9a3412;border:1px solid #fed7aa}
+  /* 回到頂端 */
+  .to-top{position:fixed;right:18px;bottom:24px;z-index:21;width:48px;height:48px;border:0;border-radius:50%;background:var(--ink);color:#fff;font:inherit;font-size:1.3rem;line-height:1;cursor:pointer;box-shadow:0 10px 24px -10px rgba(0,0,0,.45);opacity:0;transform:translateY(12px) scale(.9);pointer-events:none;transition:opacity .25s,transform .25s,background .2s}
+  .to-top.on{opacity:1;transform:none;pointer-events:auto}
+  .to-top:hover{background:var(--brand)}
   /* 泡泡背景 */
   #bubbles{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
   header,section,footer{position:relative;z-index:1}
@@ -200,6 +211,7 @@
   @media (max-width:760px){.guide-cards{grid-template-columns:1fr}}
   @media (prefers-reduced-motion:reduce){#bubbles{display:none}.step{opacity:1;transform:none}.step::after{transform:none}}
   @media (max-width:760px){
+    .to-top{bottom:calc(76px + env(safe-area-inset-bottom))}
     .calc{grid-template-columns:1fr;padding:20px}
     .vs-row{grid-template-columns:92px 1fr;padding:12px 14px}
     .stats{grid-template-columns:1fr 1fr 1fr;gap:8px}.stat{padding:14px 12px}
@@ -227,10 +239,10 @@
     <h1>正職代招，<br><em>交給中基層獵才。</em></h1>
     <p class="lead">作業員、技術員、助理工程師、行政業務……職缺開了沒人來？我們主動找人、顧問面談後再推薦，<strong>人選報到才收費、只收第一個月</strong>，之後不再收任何費用。</p>
     <div class="ctas">
-      <a class="btn btn-ghost" href="#process" data-ga="hire_hero_process">服務流程</a>
-      <a class="btn btn-ghost" href="#pricing" data-ga="hire_hero_pricing">服務費用說明</a>
-      <a class="btn btn-ghost" href="#calc" data-ga="hire_hero_calc">服務費用試算</a>
-      <a class="btn btn-ghost" href="#compare" data-ga="hire_hero_compare">人力銀行 vs 正職代招</a>
+      <a class="btn jump j1" href="#process" data-ga="hire_hero_process">服務流程</a>
+      <a class="btn jump j2" href="#pricing" data-ga="hire_hero_pricing">服務費用說明</a>
+      <a class="btn jump j3" href="#calc" data-ga="hire_hero_calc">服務費用試算</a>
+      <a class="btn jump j4" href="#compare" data-ga="hire_hero_compare">人力銀行 vs 正職代招</a>
     </div>
     <p class="hero-note">人選報到才收費・只收第一個月・最高 15,000 元，第二個月起 0 元</p>
     <p class="hero-note">✓ 日玖國際：勞動部私立就業服務機構評鑑連年 A 級・績優免評（<a href="https://emp.wda.gov.tw/MapQuery.aspx" target="_blank" rel="noopener" data-ga="mol_eval_click">勞動部查詢</a>）</p>
@@ -433,6 +445,9 @@
   <p style="font-size:.8em;opacity:.75">日玖國際股份有限公司・勞動部私立就業服務機構許可證字號 2024</p>
   <p>招募指南：<a href="/hire/guide/recruitment-fee.html" data-ga="hire_to_guide">代招費用怎麼算</a>・<a href="/hire/guide/what-is-recruitment-outsourcing.html" data-ga="hire_to_guide">正職代招是什麼</a>・<a href="/hire/guide/operator-hiring.html" data-ga="hire_to_guide">作業員招不到人</a>・<a href="/hire/guide/" data-ga="hire_to_guide">全部文章</a></p>
 </footer>
+
+<button class="to-top" id="to-top" type="button" aria-label="回到頂端" data-ga="hire_to_top">↑</button>
+<script>(function(){var b=document.getElementById("to-top");function t(){b.classList.toggle("on",window.scrollY>600);}window.addEventListener("scroll",t,{passive:true});t();b.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});});})();</script>
 
 <div class="sticky">
   <a class="btn btn-brand" href="#contact" data-ga="hire_sticky_form">填寫需求</a>
