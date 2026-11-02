@@ -200,8 +200,6 @@
   .fresh-bars div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;font-size:.72rem;color:var(--muted)}
   .fresh-bars i{display:block;width:100%;max-width:42px;background:var(--brand-soft);border-top:3px solid var(--brand);border-radius:6px 6px 0 0;margin-bottom:4px;flex-shrink:0}
   .fresh-sub{font-size:.78rem;color:var(--muted);margin:0 0 10px}
-  .fresh-new{margin:0;padding:10px 12px;border-radius:12px;background:var(--brand-soft);font-weight:700;font-size:.95rem}
-  .fresh-new b{color:var(--brand);font-size:1.25rem;margin:0 2px;font-variant-numeric:tabular-nums}
   @media (prefers-reduced-motion:reduce){.pulse{animation:none}}
   .guides{margin-top:28px}
   .guides h3{font-size:1.1rem;margin:0 0 12px}
@@ -261,7 +259,6 @@
       <p class="fresh-head"><span class="pulse" aria-hidden="true"></span>合作職缺持續累積中</p>
       <div class="fresh-bars" id="s-bars" aria-label="累計合作職缺數"></div>
       <p class="fresh-sub">累計合作職缺數（每月）</p>
-      <p class="fresh-new" id="s-new" hidden>近 30 天新增 <b id="s-new-n">—</b> 筆合作職缺</p>
     </div>
   </div>
 </header>
@@ -572,10 +569,6 @@ var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxbaaqzVKwTEWvMwTuU
         d.appendChild(document.createTextNode(m.n)); d.appendChild(i); d.appendChild(document.createTextNode(+m.month.slice(5) + "月"));
         bars.appendChild(d);
       });
-      if (typeof s.new30 === "number" && s.new30 > 0) {
-        document.getElementById("s-new-n").textContent = s.new30;
-        document.getElementById("s-new").hidden = false;
-      }
       document.getElementById("s-fresh").hidden = false;
     }
     var chips = document.getElementById("s-chips");
