@@ -1,0 +1,55 @@
+name: Update sitemap
+
+on:
+  push:
+    branches: [main]
+    paths: ['**.html']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate sitemap.xml
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, subprocess
+          BASE = "https://careersun.github.io/"
+          urls = []
+          for p in pathlib.Path(".").rglob("*.html"):
+              s = p.as_posix()
+              if s.startswith(".") or re.match(r"google[0-9a-f]+\.html$", p.name):
+                  continue
+              html = p.read_text(encoding="utf-8", errors="ignore")
+              if re.search(r"<meta[^>]+name=[\"']robots[\"'][^>]+noindex", html, re.I):
+                  continue
+              date = subprocess.run(["git", "log", "-1", "--format=%cs", "--", s],
+                                    capture_output=True, text=True).stdout.strip()
+              if not date:
+                  continue
+              loc = BASE + (s[:-len("index.html")] if p.name == "index.html" else s)
+              urls.append((loc, date))
+          urls.sort()
+          lines = ['<?xml version="1.0" encoding="UTF-8"?>',
+                   '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+          lines += [f"  <url><loc>{u}</loc><lastmod>{d}</lastmod></url>" for u, d in urls]
+          lines.append("</urlset>")
+          pathlib.Path("sitemap.xml").write_text("\n".join(lines) + "\n", encoding="utf-8")
+          print(f"{len(urls)} URLs")
+          PY
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- sitemap.xml; then echo "sitemap unchanged"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898341+github-actions[bot]@users.noreply.github.com"
+          git add sitemap.xml
+          git commit -m "chore: auto-update sitemap lastmod"
+          git push
