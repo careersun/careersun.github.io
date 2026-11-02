@@ -236,7 +236,7 @@
     </div>
     <p class="stats-note" id="s-note">資料來自 JOB365 職缺地圖，每日自動更新</p>
     <div class="fresh" id="s-fresh" hidden>
-      <p class="fresh-head"><span class="pulse" aria-hidden="true"></span>合作職缺持續增加・近 30 天新增 <b id="s-new30">—</b> 筆</p>
+      <p class="fresh-head"><span class="pulse" aria-hidden="true"></span>合作職缺持續累積中</p>
       <div class="fresh-bars" id="s-bars" aria-label="累計合作職缺數"></div>
       <p class="fresh-sub">累計合作職缺數（每月）</p>
       <ul class="fresh-list" id="s-latest"></ul>
@@ -541,8 +541,7 @@ var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxbaaqzVKwTEWvMwTuU
     document.getElementById("s-open").innerHTML = s.open + "<small>筆</small>";
     document.getElementById("s-ind").innerHTML = s.industries.length + "<small>類</small>";
     document.getElementById("s-note").textContent = "資料來自 JOB365 職缺地圖，更新於 " + s.updated;
-    if (s.new30 != null && s.monthly && s.monthly.length) {
-      document.getElementById("s-new30").textContent = s.new30;
+    if (s.monthly && s.monthly.length) {
       var max = Math.max.apply(null, s.monthly.map(function(m){ return m.n; })), bars = document.getElementById("s-bars");
       s.monthly.forEach(function(m){
         var d = document.createElement("div"), i = document.createElement("i");
