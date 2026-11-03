@@ -286,27 +286,66 @@
     .hero .ctas{display:none}
   }
 
-  /* ===== v3：手機版主題收合（手風琴） ===== */
-  .acc-sum,.acc-ic{display:none}
+  /* ===== v4：少字、大字、留白（參考 Indeed／Cake／Deel 企業端） ===== */
+  .lead{font-size:clamp(1.05rem,2.6vw,1.25rem)}
+  .price-pill{display:flex;flex-wrap:wrap;gap:0;margin:0 0 22px;font-weight:800;font-size:.95rem}
+  .price-pill span{padding:6px 12px;background:var(--brand-soft);color:var(--ink)}
+  .price-pill span:first-child{border-radius:999px 0 0 999px;padding-left:16px}
+  .price-pill span:last-child{border-radius:0 999px 999px 0;padding-right:16px;background:var(--brand);color:#fff}
+  .price-pill span + span{border-left:1px solid rgba(240,106,42,.25)}
+  .price-pill b{font-size:1.1em}
+  .pick{margin:0 0 22px}
+  .pick-q{margin:0 0 10px;font-weight:900;font-size:1.05rem}
+  .pick-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;max-width:560px}
+  .pick-grid a{display:flex;align-items:center;justify-content:center;min-height:48px;padding:8px;border-radius:14px;background:var(--surface);border:1.5px solid var(--line);color:var(--ink);text-decoration:none;font-weight:800;font-size:.95rem;text-align:center;transition:border-color .15s,background .15s}
+  .pick-grid a:hover,.pick-grid a:active{border-color:var(--brand);background:var(--brand-soft)}
+  .big3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .b3{display:flex;flex-direction:column;gap:14px}
+  .b3 .ic{flex:none;width:52px;height:52px;border-radius:16px;background:var(--brand);display:flex;align-items:center;justify-content:center}
+  .b3 .ic svg{width:28px;height:28px;fill:none;stroke:#fff;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+  .b3 h3{margin:0;font-size:clamp(1.25rem,3vw,1.5rem);line-height:1.35;font-weight:900}
+  .b3 p{margin:6px 0 0;color:#a8afbb;font-size:.95rem}
+  .tl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);position:relative}
+  .tl::before{content:"";position:absolute;left:12.5%;right:12.5%;top:22px;height:3px;background:linear-gradient(90deg,var(--brand),#ffb38c)}
+  .tl li{position:relative;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+  .tl b{width:46px;height:46px;border-radius:50%;background:#fff;border:3px solid var(--brand);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:1.15rem;font-weight:900;position:relative}
+  .tl .end b{background:var(--brand);color:#fff}
+  .tl span{font-weight:800;font-size:.98rem}
+  details.tl-more{margin-top:26px;background:none;border:0;padding:0;text-align:center}
+  details.tl-more > summary{display:inline-block;color:var(--brand);font-size:.95rem}
+  details.tl-more[open] > summary{margin-bottom:18px}
+  details.tl-more .steps,details.tl-more .steps-bar{text-align:left}
+  .price-hero{margin:-14px 0 24px;font-size:clamp(1.3rem,3.6vw,1.7rem);font-weight:900}
+  .price-hero b{color:var(--brand);font-size:1.5em;letter-spacing:-.02em}
+  .final-cta{background:var(--dark);color:#fff;text-align:center;padding:72px 0}
+  .final-cta h2{margin:0 0 12px}
+  .final-cta p{margin:0 0 26px;color:#c7ccd5;font-size:1.05rem}
+  .final-cta .ctas{justify-content:center}
+  .final-cta + .wrap{margin-top:40px}
   @media (max-width:760px){
-    section.acc{padding:0 !important}
-    section.acc + section.acc,#faq.acc{border-top:1px solid var(--line)}
-    .dark.acc + section.acc{border-top:0}
-    .acc-head{position:relative;cursor:pointer;padding:20px 48px 20px 0;-webkit-tap-highlight-color:transparent;outline-offset:4px}
-    .acc-head .eyebrow{font-size:.72rem;margin-bottom:2px}
-    .acc-head h2{font-size:1.25rem;line-height:1.35;margin:0}
-    .acc-head h2 br{display:none}
-    .acc-sum{display:block;margin:6px 0 0;font-size:.88rem;line-height:1.5;color:var(--muted)}
-    .dark .acc-sum{color:#a8afbb}
-    .acc-ic{display:block;position:absolute;right:0;top:50%;width:32px;height:32px;margin-top:-16px;border-radius:50%;background:var(--brand-soft);transition:transform .25s}
-    .acc-ic::before{content:"";position:absolute;left:11px;top:9px;width:8px;height:8px;border-right:2.5px solid var(--brand);border-bottom:2.5px solid var(--brand);transform:rotate(45deg)}
-    .dark .acc-ic{background:#2b313c}
-    .dark .acc-ic::before{border-color:#ffb38c}
-    .acc.open .acc-ic{transform:rotate(180deg)}
-    .acc.open .acc-sum{display:none}
-    .acc-body{display:none;padding-bottom:28px}
-    .acc.open .acc-body{display:block;animation:accIn .25s ease}
-    @keyframes accIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+    .secnav{display:none}
+    section[id],.panel[id]{scroll-margin-top:70px}
+    section{padding:56px 0}
+    .hero{padding:24px 0 36px}
+    h1{margin:16px 0 12px}
+    .lead{margin-bottom:14px}
+    .price-pill{font-size:.84rem;flex-wrap:nowrap;white-space:nowrap}
+    .price-pill span{padding:6px 10px}
+    .price-pill span:first-child{padding-left:13px}
+    .price-pill span:last-child{padding-right:13px}
+    .trustline{font-size:.8rem}
+    .fresh,.stats-note,.hero-ind{display:none !important}
+    .stats{margin-top:20px}
+    .stat{padding:14px 12px}
+    .pains-mini{margin:-6px 0 28px}
+    .big3{grid-template-columns:1fr;gap:26px}
+    .b3{flex-direction:row;align-items:flex-start;gap:16px}
+    .b3 .ic{width:46px;height:46px;border-radius:14px}
+    .tl span{font-size:.85rem}
+    .tl b{width:40px;height:40px;font-size:1rem}
+    .tl::before{top:19px}
+    .final-cta{padding:56px 0}
+    .final-cta .ctas .btn{flex:1}
   }
 </style>
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "@id": "https://careersun.github.io/#org", "name": "JOB365 中基層獵才", "alternateName": ["JOB365", "中基層獵才", "JOB365 × 中基層獵才", "JOB365 中基層獵才團隊"], "url": "https://careersun.github.io/", "logo": "https://careersun.github.io/job365map/favicon-192.png", "description": "日玖國際旗下的中基層正職代招團隊，為台灣中小企業招募作業員、技術員、品管、倉管、助理工程師、行政助理等正職人才；人選報到才收費，只收第一個月，最高 15,000 元。", "areaServed": {"@type": "Country", "name": "台灣"}, "contactPoint": {"@type": "ContactPoint", "telephone": "+886-3-564-3252", "contactType": "sales", "areaServed": "TW", "availableLanguage": "zh-Hant"}, "sameAs": ["https://line.me/R/ti/p/@642ahllq", "https://www.threads.com/@job_for_you365"], "parentOrganization": {"@id": "https://careersun.github.io/#zjiou"}}, {"@context": "https://schema.org", "@type": "Organization", "@id": "https://careersun.github.io/#zjiou", "name": "日玖國際", "legalName": "日玖國際股份有限公司", "url": "http://zjiou.com.tw/", "taxID": "86424581", "identifier": {"@type": "PropertyValue", "propertyID": "勞動部私立就業服務機構許可證字號", "value": "2024"}, "telephone": "+886-3-564-3252", "address": {"@type": "PostalAddress", "streetAddress": "關新路27號15樓之1", "addressLocality": "東區", "addressRegion": "新竹市", "postalCode": "300", "addressCountry": "TW"}, "sameAs": ["https://maps.google.com/?cid=6082274333580411568", "https://www.facebook.com/zjioumanpower"], "subOrganization": {"@id": "https://careersun.github.io/#org"}, "image": "https://careersun.github.io/hire/og-hire.jpg"}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "JOB365", "item": "https://careersun.github.io/"}, {"@type": "ListItem", "position": 2, "name": "正職代招", "item": "https://careersun.github.io/hire/"}]}]</script>
@@ -328,12 +367,18 @@
   <div class="wrap">
     <a class="badge" href="http://zjiou.com.tw/" target="_blank" rel="noopener" data-ga="parent_site_click"><b>日玖國際</b>旗下團隊・JOB365 正職代招</a>
     <h1>正職代招，<br><em>交給中基層獵才。</em></h1>
-    <p class="lead">作業員、技術員、助理工程師、行政業務……職缺開了沒人來？我們主動找人、顧問面談後再推薦，<strong>人選報到才收費、只收第一個月</strong>，之後不再收任何費用。</p>
+    <p class="lead">職缺開了沒人來？我們主動找人，顧問面談後才推薦給你。</p>
+    <p class="price-pill"><span>報到才收費</span><span>只收第一個月</span><span>最高 <b>15,000</b> 元</span></p>
+    <div class="pick">
+      <p class="pick-q">你要招哪一種人？</p>
+      <div class="pick-grid">
+        <a href="#contact" data-pick="作業員" data-ga="hire_pick">作業員</a><a href="#contact" data-pick="技術員" data-ga="hire_pick">技術員</a><a href="#contact" data-pick="品管・倉管" data-ga="hire_pick">品管・倉管</a><a href="#contact" data-pick="助理工程師" data-ga="hire_pick">助理工程師</a><a href="#contact" data-pick="行政助理" data-ga="hire_pick">行政助理</a><a href="#contact" data-pick="" data-ga="hire_pick">其他職缺</a>
+      </div>
+    </div>
     <div class="ctas">
       <a class="btn btn-brand" href="#contact" data-ga="hire_hero_form">填寫徵才需求</a>
       <a class="btn btn-line" href="https://line.me/R/ti/p/@642ahllq" target="_blank" rel="noopener" data-ga="employer_line_click">LINE 免費諮詢</a>
     </div>
-    <p class="hero-note">人選報到才收費・只收第一個月・最高 15,000 元，第二個月起 0 元</p>
     <div class="trustline"><span>✓ 勞動部評鑑連年 A 級・績優免評（<a href="https://emp.wda.gov.tw/MapQuery.aspx" target="_blank" rel="noopener" data-ga="mol_eval_click">查詢</a>）</span><span>★ Google 評論 4.4・170+ 則（<a href="https://maps.google.com/?cid=6082274333580411568" target="_blank" rel="noopener" data-ga="gbp_click">查看</a>）</span></div>
 
     <div class="stats" aria-live="polite">
@@ -353,33 +398,27 @@
   </div>
 </header>
 
-<section class="dark acc" id="why">
+<section class="dark" id="why">
   <div class="wrap">
-    <div class="acc-head" role="button" tabindex="0" aria-expanded="false" aria-controls="why-body">
     <div class="eyebrow">WHY US</div>
     <h2>不只刊登，<br>我們直接幫你找到人</h2>
-      <p class="acc-sum">刊登沒人投、HR 沒空找人？我們主動幫你找</p><span class="acc-ic" aria-hidden="true"></span>
-    </div>
-    <div class="acc-body" id="why-body">
     <div class="pains-mini"><span>📭 刊登了，沒人投</span><span>🔍 有人投，不適合</span><span>⏳ HR 一人多工，沒空找人</span></div>
-    <div class="why">
-      <div class="card tilt"><span class="k">報到才收費</span><h3>沒找到人，不用付錢</h3><p class="muted">人選正式報到才產生費用，招募成本看得到成效。</p></div>
-      <div class="card tilt"><span class="k">平價制</span><h3>只收第一個月，最高 15,000</h3><p class="muted">基層職缺 500 元／天，只算人選第一個月，最多 15,000 元，之後人選做多久都不再收費。</p></div>
-      <div class="card tilt"><span class="k">主動獵才</span><h3>獨家專業獵才系統</h3><p class="muted">不只等履歷上門，主動搜尋、接觸合適的中基層人才。</p></div>
-      <div class="card tilt"><span class="k">一對一</span><h3>顧問面談，精選推薦</h3><p class="muted">顧問與人選一對一面談把關，只推薦符合需求的人選，省下 HR 篩選時間。</p></div>
-    </div>
+    <div class="big3">
+      <div class="b3"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><h3>沒找到人，不用付錢</h3><p>人選正式報到才收費，沒有開案費、訂金</p></div></div>
+      <div class="b3"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M16.5 7.5c-.8-1.3-2.4-2-4.5-2-2.6 0-4 1.3-4 3s1.3 2.6 4 3.2 4.3 1.6 4.3 3.4-1.7 3.2-4.3 3.2c-2.2 0-3.9-.8-4.6-2.2"/></svg></span><div><h3>只收第一個月，最高 15,000</h3><p>第二個月起 0 元，沒有年薪抽成</p></div></div>
+      <div class="b3"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5.5 5.5"/></svg></span><div><h3>主動獵才，面談後才推薦</h3><p>獨家專業獵才系統＋顧問一對一把關</p></div></div>
     </div>
   </div>
 </section>
 
-<section id="process" class="acc">
+<section id="process">
   <div class="wrap">
-    <div class="acc-head" role="button" tabindex="0" aria-expanded="false" aria-controls="process-body">
     <div class="eyebrow">HOW IT WORKS</div>
     <h2>正職代招 4 大階段，<br>找人更輕鬆</h2>
-      <p class="acc-sum">需求確認 → 主動獵才 → 面試安排 → 報到</p><span class="acc-ic" aria-hidden="true"></span>
-    </div>
-    <div class="acc-body" id="process-body">
+    <ol class="tl">
+      <li><b>1</b><span>需求確認</span></li><li><b>2</b><span>主動獵才</span></li><li><b>3</b><span>面試安排</span></li><li class="end"><b>4</b><span>錄取報到</span></li>
+    </ol>
+    <details class="tl-more"><summary>看每個階段做什麼</summary>
     <div class="steps-bar" aria-hidden="true"><i id="stepsBar"></i></div>
     <div class="steps">
       <div class="step"><h3>招募需求確認</h3><ul><li>提供招募細節</li></ul></div>
@@ -387,7 +426,7 @@
       <div class="step"><h3>面試安排・雙向溝通</h3><ul><li>安排面試</li><li>面試後人選關懷</li><li>企業端面試評價</li></ul></div>
       <div class="step last"><h3>錄取與報到</h3><ul><li>Offer 溝通與確認</li><li>入職後持續關心</li></ul></div>
     </div>
-    </div>
+    </details>
   </div>
 </section>
 
@@ -395,14 +434,11 @@
 
 
 
-<section id="pricing" class="acc">
+<section id="pricing">
   <div class="wrap">
-    <div class="acc-head" role="button" tabindex="0" aria-expanded="false" aria-controls="pricing-body">
     <div class="eyebrow">PRICING</div>
     <h2>收費方式・費用試算</h2>
-      <p class="acc-sum">報到才收費・只收第一個月・最高 15,000 元</p><span class="acc-ic" aria-hidden="true"></span>
-    </div>
-    <div class="acc-body" id="pricing-body">
+    <p class="price-hero">只收第一個月，最高 <b>15,000</b> 元</p>
     <div class="tabs" role="tablist" aria-label="收費資訊">
       <button type="button" role="tab" aria-selected="true" aria-controls="p-price" id="t-price" data-tab="p-price">收費說明</button>
       <button type="button" role="tab" aria-selected="false" aria-controls="calc" id="t-calc" data-tab="calc">費用試算</button>
@@ -457,7 +493,6 @@
       <div class="vs-row"><dt>錄取之後</dt><dd data-bank="自己處理 Offer 與報到" data-us="Offer 溝通確認，入職後持續關心">自己處理 Offer 與報到</dd></div>
     </dl>
     </div>
-    </div>
   </div>
 </section>
 
@@ -495,14 +530,10 @@
   </div>
 </section>
 
-<section id="faq" class="acc" style="padding-top:24px">
+<section id="faq" style="padding-top:24px">
   <div class="wrap">
-    <div class="acc-head" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-body">
     <div class="eyebrow">FAQ</div>
     <h2>常見問題</h2>
-      <p class="acc-sum">費用、適合職缺、服務地區、和人力銀行差在哪</p><span class="acc-ic" aria-hidden="true"></span>
-    </div>
-    <div class="acc-body" id="faq-body">
     <details><summary>費用怎麼計算？</summary><p>人選報到才收費。只收人選第一個月：基層職缺 500 元／天（依職缺彈性微調），最高 15,000 元，第二個月起不再收任何費用；人選未滿 30 天離職則彈性計價。不收開案費、訂金。詳細內容歡迎填表或 LINE 詢問。</p></details>
     <details><summary>適合哪些職缺？</summary><p>以中基層職缺為主，例如作業員、技術員、品管、倉管、助理工程師、行政與業務助理等。</p></details>
     <details><summary>服務哪些地區？</summary><p>全台都可以服務，歡迎直接告訴我們工作地點。</p></details>
@@ -523,6 +554,16 @@
       <div class="regions"><div class="chips" id="s-area-links"><a class="chip" href="/hire/hsinchu.html" style="text-decoration:none" data-ga="hire_region_click">新竹正職代招</a><a class="chip" href="/hire/taoyuan.html" style="text-decoration:none" data-ga="hire_region_click">桃園正職代招</a><a class="chip" href="/hire/taipei.html" style="text-decoration:none" data-ga="hire_region_click">台北正職代招</a><a class="chip" href="/hire/taichung.html" style="text-decoration:none" data-ga="hire_region_click">台中正職代招</a><a class="chip" href="/hire/tainan.html" style="text-decoration:none" data-ga="hire_region_click">台南正職代招</a><a class="chip" href="/hire/kaohsiung.html" style="text-decoration:none" data-ga="hire_region_click">高雄正職代招</a></div></div>
       </details>
     </div>
+  </div>
+</section>
+
+<section class="final-cta" id="start">
+  <div class="wrap">
+    <h2>職缺空著，每天都是成本</h2>
+    <p>告訴我們要找什麼人，專人與你聯繫。<br>沒找到人，不用付錢。</p>
+    <div class="ctas">
+      <a class="btn btn-brand" href="#contact" data-ga="hire_final_form">填寫徵才需求</a>
+      <a class="btn btn-line" href="https://line.me/R/ti/p/@642ahllq" target="_blank" rel="noopener" data-ga="employer_line_click">LINE 免費諮詢</a>
     </div>
   </div>
 </section>
@@ -746,33 +787,27 @@ var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxbaaqzVKwTEWvMwTuU
 
 <script>
 (function(){
-  var mq = window.matchMedia("(max-width:760px)");
-  var accs = [].slice.call(document.querySelectorAll("section.acc"));
-  function set(sec, open){ sec.classList.toggle("open", open); sec.querySelector(".acc-head").setAttribute("aria-expanded", open); }
-  function open(sec, scroll){
-    accs.forEach(function(s){ set(s, s === sec); });
-    if (scroll) requestAnimationFrame(function(){ sec.scrollIntoView({behavior:"smooth", block:"start"}); });
-  }
-  accs.forEach(function(sec){
-    var h = sec.querySelector(".acc-head");
-    function toggle(){
-      if (!mq.matches) return;
-      var willOpen = !sec.classList.contains("open");
-      if (willOpen) open(sec, true); else set(sec, false);
-      if (typeof gtag === "function" && willOpen) gtag("event", "hire_acc_open", {source:"hire", section: sec.id});
-    }
-    h.addEventListener("click", toggle);
-    h.addEventListener("keydown", function(e){ if (e.key === "Enter" || e.key === " "){ e.preventDefault(); toggle(); } });
+  // 「你要招哪一種人？」→ 帶入需求職缺、跳到表單
+  document.querySelectorAll("[data-pick]").forEach(function(a){
+    a.addEventListener("click", function(){
+      var v = a.getAttribute("data-pick"), f = document.getElementById("f-job");
+      if (f && v && !f.value) f.value = v;
+      if (typeof gtag === "function") gtag("event", "hire_pick", {source:"hire", role: v || "其他"});
+      setTimeout(function(){ var c = document.getElementById(v ? "f-count" : "f-job") || f; if (c) c.focus({preventScroll:true}); }, 600);
+    });
   });
-  function secOf(id){ var el = id && document.getElementById(id); return el && el.closest && el.closest("section.acc"); }
-  // 導覽列、#calc 等站內連結：先打開對應主題
-  document.addEventListener("click", function(e){
-    if (!mq.matches) return;
-    var a = e.target.closest && e.target.closest('a[href^="#"]'); if (!a) return;
-    var sec = secOf(a.getAttribute("href").slice(1));
-    if (sec && !sec.classList.contains("open")) open(sec, false);
-  }, true);
-  if (mq.matches){ var s0 = secOf(location.hash.slice(1)); if (s0) open(s0, true); }
+  // 表單或結尾區塊在畫面上時，收起底部固定按鈕
+  var bar = document.querySelector(".sticky");
+  if (bar && "IntersectionObserver" in window){
+    var vis = {};
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ vis[e.target.id] = e.isIntersecting; });
+      var hide = Object.keys(vis).some(function(k){ return vis[k]; });
+      bar.style.transform = hide ? "translateY(120%)" : "";
+    }, {threshold: .15});
+    ["contact", "start"].forEach(function(id){ var el = document.getElementById(id); if (el) io.observe(el); });
+    bar.style.transition = "transform .25s";
+  }
 })();
 </script>
 </body>
