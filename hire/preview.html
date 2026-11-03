@@ -523,8 +523,12 @@ visibleID = setInterval(() => {
   .h6-visual{position:relative;padding:24px 18px}
   .mock{background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 30px 60px -30px rgba(21,23,28,.35)}
   .mock-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
-  .mock-top b{font-size:1rem}
-  .mock-top span{font-size:.75rem;color:var(--muted)}
+  .mock-top b{font-size:1rem;display:flex;align-items:center;gap:8px}
+  .mock-top span{font-size:.75rem;color:var(--muted);display:flex;align-items:center;gap:6px}
+  .mock-top .dot{display:inline-block;flex:none;width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.5);animation:dotp 2s infinite}
+  @keyframes dotp{70%{box-shadow:0 0 0 7px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+  .mock-row b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .mock-row small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .mock-row{display:flex;align-items:center;gap:12px;padding:12px 4px;border-top:1px solid #f0eee9}
   .mock-row div{flex:1;min-width:0;line-height:1.35}
   .mock-row b{display:block;font-size:.95rem}
@@ -610,13 +614,13 @@ visibleID = setInterval(() => {
         <a class="btn6 line" href="https://line.me/R/ti/p/@642ahllq" target="_blank" rel="noopener" data-ga="employer_line_click"><span>LINE 免費諮詢</span><i aria-hidden="true">→</i></a>
       </div>
     </div>
-    <div class="h6-visual" aria-hidden="true">
-      <div class="mock">
-        <div class="mock-top"><b>本週推薦人選</b></div>
-        <div class="mock-row"><span class="av">陳</span><div><b>會計</b><small>3 年經驗・可立即上班</small></div><span class="ok">已面談 ✓</span></div>
-        <div class="mock-row"><span class="av b">林</span><div><b>客服</b><small>雙語・可輪班</small></div><span class="ok">已面談 ✓</span></div>
-        <div class="mock-row"><span class="av c">王</span><div><b>設備工程師</b><small>半導體產線經驗</small></div><span class="ok">已面談 ✓</span></div>
-        <p class="mock-note">畫面示意</p>
+    <div class="h6-visual">
+      <div class="mock" id="liveJobs">
+        <div class="mock-top"><b><i class="dot"></i>最新合作職缺</b></div>
+        <div class="mock-row"><span class="av">台</span><div><b>Chiller 設備工程師</b><small>台南市善化區・月薪45,000~70,000起</small></div><span class="ok">招募中</span></div>
+        <div class="mock-row"><span class="av b">台</span><div><b>Scubber 設備工程師</b><small>台中市后里區・月薪45,000~70,000起</small></div><span class="ok">招募中</span></div>
+        <div class="mock-row"><span class="av c">新</span><div><b>港式餐廳 店長</b><small>新竹縣竹北市・月薪46,000~52,000</small></div><span class="ok">招募中</span></div>
+        <p class="mock-note">每日更新・資料來自 JOB365 職缺地圖</p>
       </div>
       <div class="float f1"><small>人選報到才收費</small><b>0 元開案</b></div>
       <div class="float f2"><small>只收第一個月</small><b>最高 15,000</b></div>
@@ -987,6 +991,26 @@ var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxbaaqzVKwTEWvMwTuU
   b.addEventListener("click", function(){ f.value = ""; delete f.dataset.auto; sync(); f.focus(); if (typeof gtag === "function") gtag("event", "hire_pick_clear", {source:"hire"}); });
   var form = document.getElementById("hireForm"); if (form) form.addEventListener("reset", function(){ setTimeout(function(){ delete f.dataset.auto; sync(); }, 0); });
   sync();
+})();
+</script>
+<script>
+(function(){
+  // 最新合作職缺：讀職缺地圖每天產生的資料，依日期每天換一組真實職缺
+  var box = document.getElementById("liveJobs"); if (!box) return;
+  fetch("/job365map/jobs/stats.json", {cache:"no-store"}).then(function(r){ return r.ok ? r.json() : null; }).then(function(s){
+    if (!s || !s.latest || s.latest.length < 3) return;
+    var L = s.latest.slice(0, 12), d = new Date(), seed = d.getFullYear() * 400 + d.getMonth() * 31 + d.getDate();
+    var start = seed % L.length, pick = [];
+    for (var i = 0; i < 3; i++) pick.push(L[(start + i) % L.length]);
+    var cls = ["", " b", " c"], rows = box.querySelectorAll(".mock-row");
+    pick.forEach(function(j, i){
+      var r = rows[i]; if (!r) return;
+      r.querySelector(".av").className = "av" + cls[i];
+      r.querySelector(".av").textContent = (j.region || "台").charAt(0);
+      r.querySelector("b").textContent = j.title;
+      r.querySelector("small").textContent = (j.region || "") + (j.area || "") + (j.salary ? "・" + j.salary : "");
+    });
+  }).catch(function(){});
 })();
 </script>
 </body>
