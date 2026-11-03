@@ -807,7 +807,7 @@ var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxbaaqzVKwTEWvMwTuU
   document.querySelectorAll("[data-pick]").forEach(function(a){
     a.addEventListener("click", function(){
       var v = a.getAttribute("data-pick"), f = document.getElementById("f-job");
-      if (f && v && !f.value) f.value = v;
+      if (f && v && (!f.value || f.value === f.dataset.auto)){ f.value = v; f.dataset.auto = v; f.dispatchEvent(new Event("input", {bubbles:true})); }
       if (typeof gtag === "function") gtag("event", "hire_pick", {source:"hire", role: v || "其他"});
       setTimeout(function(){ var c = document.getElementById(v ? "f-count" : "f-job") || f; if (c) c.focus({preventScroll:true}); }, 600);
     });
@@ -854,5 +854,23 @@ var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxbaaqzVKwTEWvMwTuU
 })();
 </script>
 
+<script>
+(function(){
+  // 需求職缺：一鍵清除（不小心點到職缺按鈕時可以刪掉）
+  var f = document.getElementById("f-job"); if (!f) return;
+  var st = document.createElement("style");
+  st.textContent = ".job-wrap{position:relative;display:block}.job-wrap input{padding-right:42px}.job-clr{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:32px;height:32px;border:0;border-radius:50%;background:#eceae6;color:#5d6472;font-size:18px;line-height:32px;text-align:center;cursor:pointer;display:none;padding:0}.job-clr.on{display:block}.job-clr:hover{background:#ffe2d1;color:#f06a2a}";
+  document.head.appendChild(st);
+  var w = document.createElement("span"); w.className = "job-wrap";
+  f.parentNode.insertBefore(w, f); w.appendChild(f);
+  var b = document.createElement("button"); b.type = "button"; b.className = "job-clr"; b.setAttribute("aria-label", "清除需求職缺"); b.textContent = "×";
+  w.appendChild(b);
+  function sync(){ b.classList.toggle("on", !!f.value); }
+  f.addEventListener("input", function(e){ if (e.isTrusted) delete f.dataset.auto; sync(); });
+  b.addEventListener("click", function(){ f.value = ""; delete f.dataset.auto; sync(); f.focus(); if (typeof gtag === "function") gtag("event", "hire_pick_clear", {source:"hire"}); });
+  var form = document.getElementById("hireForm"); if (form) form.addEventListener("reset", function(){ setTimeout(function(){ delete f.dataset.auto; sync(); }, 0); });
+  sync();
+})();
+</script>
 </body>
 </html>
