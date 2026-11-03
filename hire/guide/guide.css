@@ -61,3 +61,4 @@ footer a{color:var(--ink)}
 .faq p{margin:8px 0 0}
 .about{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 20px;margin:28px 0 0;font-size:.92rem}
 .about p{margin:4px 0 0;color:var(--muted)}
+.cover{display:block;width:100%;height:auto;border-radius:16px;border:1px solid var(--line);margin:6px 0 22px}
