@@ -86,15 +86,15 @@ visibleID = setInterval(() => {
 <style id="page-anim">
   /* 換頁動畫：支援的瀏覽器用 View Transitions，其他瀏覽器淡入 */
   @view-transition{navigation:auto}
-  ::view-transition-old(root){animation:vtOut .2s ease-in both}
-  ::view-transition-new(root){animation:vtIn .34s cubic-bezier(.2,.7,.2,1) both}
-  @keyframes vtOut{to{opacity:0;transform:translateY(-10px)}}
-  @keyframes vtIn{from{opacity:0;transform:translateY(16px)}}
+  ::view-transition-old(root){animation:vtOut .12s linear both}
+  ::view-transition-new(root){animation:vtIn .2s ease-out both}
+  @keyframes vtOut{to{opacity:0}}
+  @keyframes vtIn{from{opacity:0}}
   .topnav{view-transition-name:topnav}
   .sticky{view-transition-name:stickybar}
   ::view-transition-group(topnav),::view-transition-group(stickybar){animation:none}
   @supports not (view-transition-name:none){
-    .page-head,.hero,main,article,section,footer{animation:pgIn .4s ease both}
+    .page-head,.hero,main,article,section,footer{animation:pgIn .2s ease-out both}
     @keyframes pgIn{from{opacity:0}}
   }
   @media (prefers-reduced-motion:reduce){
