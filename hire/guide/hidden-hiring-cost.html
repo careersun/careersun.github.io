@@ -2,6 +2,69 @@
 <html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TY2JWB4JN2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TY2JWB4JN2');
+</script>
+
+<script>
+
+  window.addEventListener('load', function (e) {
+    document.querySelectorAll('a[href*="/line.me"]').forEach(function (e) { 
+      e.addEventListener('click', function () {
+        gtag('event', 'conversion', { 'send_to': 'AW-18319232545/K9EmCP_87YAdEKGcpZ9E' });
+      });
+    })
+  })
+
+
+var savedEmail = '';
+
+document.addEventListener('input', function (event) {
+    if (event.target && event.target.id === 'f-email') {
+        savedEmail = event.target.value.trim().toLowerCase();
+    }
+});
+
+var visibleID;
+var hasSent = false;
+
+visibleID = setInterval(() => {
+    if (hasSent) return;
+
+    try {
+        var emailInput = document.querySelector('#f-email');
+        if (emailInput && emailInput.value && !savedEmail) {
+            savedEmail = emailInput.value.trim().toLowerCase();
+        }
+
+        var msgElement = document.querySelector('[class*="form-msg"]');
+        if (msgElement && msgElement.innerText.includes('已收到你的徵才需求，顧問會盡快與你聯繫！')) {
+            hasSent = true;
+            clearInterval(visibleID);
+            
+            if (savedEmail.length > 0) {
+                gtag('set', 'user_data', {
+                    "email": savedEmail
+                });
+            }
+            
+            gtag('event', 'conversion', { 
+                'send_to': 'AW-18319232545/S7u0COqs0NEcEKGcpZ9E'
+            });
+        }
+    } catch (e) {
+        
+    }
+}, 1000);
+
+  </script>
+<!-- End Google tag -->
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#fbfaf8">
 <meta property="og:site_name" content="JOB365 中基層獵才">
@@ -19,8 +82,7 @@
 [{"@context": "https://schema.org", "@type": "Article", "headline": "自己招人真的比較省？算算看中小企業的隱形招募成本", "datePublished": "2026-10-30", "dateModified": "2026-10-30", "about": "正職代招", "keywords": "招募成本,招募成本計算,隱形招募成本,自己招人,正職代招", "inLanguage": "zh-Hant-TW", "image": "https://careersun.github.io/hire/guide/cover-hidden-hiring-cost.jpg", "author": {"@id": "https://careersun.github.io/#org"}, "publisher": {"@id": "https://careersun.github.io/#org"}, "mainEntityOfPage": "https://careersun.github.io/hire/guide/hidden-hiring-cost.html"}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "JOB365", "item": "https://careersun.github.io/"}, {"@type": "ListItem", "position": 2, "name": "正職代招", "item": "https://careersun.github.io/hire/"}, {"@type": "ListItem", "position": 3, "name": "招募指南", "item": "https://careersun.github.io/hire/guide/"}, {"@type": "ListItem", "position": 4, "name": "自己招人的隱形成本"}]}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "招募成本包含哪些？", "acceptedAnswer": {"@type": "Answer", "text": "刊登費、HR 或主管的工時、職缺空窗造成的產能損失與同事加班，以及招錯人需要重來的成本。"}}, {"@type": "Question", "name": "HR 時薪怎麼換算？", "acceptedAnswer": {"@type": "Answer", "text": "月薪 ÷ 30 天 ÷ 8 小時，例如月薪 40,000 元約為時薪 167 元。"}}, {"@type": "Question", "name": "企業招募一個人平均要多久？", "acceptedAnswer": {"@type": "Answer", "text": "勞動部職缺調查顯示，企業對外招募平均約需 3.1 個月。"}}, {"@type": "Question", "name": "找正職代招會比較省嗎？", "acceptedAnswer": {"@type": "Answer", "text": "正職代招由顧問負責找人與篩人，中基層獵才只收人選第一個月、最高 15,000 元，報到才收費。"}}]}]
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-21781Q6CNX"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-21781Q6CNX");gtag("config","G-TY2JWB4JN2");gtag("config","AW-18319232545");</script>
-<script>document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest('a[href*="line.me"],a[href*="lin.ee"]');if(a&&typeof gtag==="function")gtag("event","conversion",{send_to:"AW-18319232545/K9EmCP_87YAdEKGcpZ9E"});},true);</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-21781Q6CNX");</script>
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1635805244779203');fbq('track','PageView');document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(a&&/^(tel:|https:\/\/(line\.me|lin\.ee)\/)/.test(a.getAttribute('href')))fbq('track','Contact');});</script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1635805244779203&ev=PageView&noscript=1" alt=""></noscript>
 <link rel="stylesheet" href="/hire/guide/guide.css">
