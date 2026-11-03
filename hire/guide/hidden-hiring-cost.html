@@ -87,6 +87,25 @@ visibleID = setInterval(() => {
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1635805244779203&ev=PageView&noscript=1" alt=""></noscript>
 <link rel="stylesheet" href="/hire/guide/guide.css">
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "@id": "https://careersun.github.io/#org", "name": "JOB365 中基層獵才", "alternateName": ["JOB365", "中基層獵才", "JOB365 × 中基層獵才", "JOB365 中基層獵才團隊"], "url": "https://careersun.github.io/", "logo": "https://careersun.github.io/job365map/favicon-192.png", "description": "日玖國際旗下的中基層正職代招團隊，為台灣中小企業招募會計、客服、設備工程師、倉管、助理工程師、行政助理等正職人才；人選報到才收費，只收第一個月，最高 15,000 元。", "areaServed": {"@type": "Country", "name": "台灣"}, "contactPoint": {"@type": "ContactPoint", "telephone": "+886-3-564-3252", "contactType": "sales", "areaServed": "TW", "availableLanguage": "zh-Hant"}, "sameAs": ["https://line.me/R/ti/p/@642ahllq", "https://www.threads.com/@job_for_you365"], "parentOrganization": {"@id": "https://careersun.github.io/#zjiou"}}, {"@context": "https://schema.org", "@type": "Organization", "@id": "https://careersun.github.io/#zjiou", "name": "日玖國際", "legalName": "日玖國際股份有限公司", "url": "http://zjiou.com.tw/", "taxID": "86424581", "identifier": {"@type": "PropertyValue", "propertyID": "勞動部私立就業服務機構許可證字號", "value": "2024"}, "telephone": "+886-3-564-3252", "address": {"@type": "PostalAddress", "streetAddress": "關新路27號15樓之1", "addressLocality": "東區", "addressRegion": "新竹市", "postalCode": "300", "addressCountry": "TW"}, "sameAs": ["https://maps.google.com/?cid=6082274333580411568", "https://www.facebook.com/zjioumanpower"], "subOrganization": {"@id": "https://careersun.github.io/#org"}, "image": "https://careersun.github.io/hire/og-hire.jpg"}]</script>
+<style id="page-anim">
+  /* 換頁動畫：支援的瀏覽器用 View Transitions，其他瀏覽器淡入 */
+  @view-transition{navigation:auto}
+  ::view-transition-old(root){animation:vtOut .2s ease-in both}
+  ::view-transition-new(root){animation:vtIn .34s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes vtOut{to{opacity:0;transform:translateY(-10px)}}
+  @keyframes vtIn{from{opacity:0;transform:translateY(16px)}}
+  .topnav{view-transition-name:topnav}
+  .sticky{view-transition-name:stickybar}
+  ::view-transition-group(topnav),::view-transition-group(stickybar){animation:none}
+  @supports not (view-transition-name:none){
+    .page-head,.hero,main,article,section,footer{animation:pgIn .4s ease both}
+    @keyframes pgIn{from{opacity:0}}
+  }
+  @media (prefers-reduced-motion:reduce){
+    @view-transition{navigation:none}
+    .page-head,.hero,main,article,section,footer{animation:none !important}
+  }
+</style>
 </head>
 <body>
 <nav><div class="wrap">
