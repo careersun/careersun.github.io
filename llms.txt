@@ -12,7 +12,10 @@
 - 信任資訊：日玖國際是在地深耕 30 年的人力資源公司，總公司在新竹
 
 ## 主要頁面
-- [正職代招・中基層獵才](https://careersun.github.io/hire/)：服務說明、收費、費用試算器、常見問題
+- [正職代招・中基層獵才](https://careersun.github.io/hire/)：服務介紹與需求表單
+- [收費方式・費用試算](https://careersun.github.io/hire/pricing.html)：人選報到才收費，只收第一個月、最高 15,000 元；線上試算與人力銀行比較
+- [合作流程](https://careersun.github.io/hire/process.html)：需求確認、主動獵才、面試安排、錄取報到 4 步驟
+- [常見問題](https://careersun.github.io/hire/faq.html)：費用、適合職缺、服務地區、與人力銀行差異
 - 地區正職代招：[新竹](https://careersun.github.io/hire/hsinchu.html)、[桃園](https://careersun.github.io/hire/taoyuan.html)、[台北](https://careersun.github.io/hire/taipei.html)、[台中](https://careersun.github.io/hire/taichung.html)、[台南](https://careersun.github.io/hire/tainan.html)、[高雄](https://careersun.github.io/hire/kaohsiung.html)
 - [招募指南](https://careersun.github.io/hire/guide/)：給企業主與 HR 的中基層招募知識
 - [正職代招費用怎麼算](https://careersun.github.io/hire/guide/recruitment-fee.html)
