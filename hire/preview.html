@@ -268,6 +268,27 @@
     .guide-cards span{display:none}
     .guide-cards a{padding:12px 16px}
   }
+
+  /* ===== v2b：底色分區、摘要＋展開 ===== */
+  #process{background:#ffffff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  #pricing{background:#fff4ec}
+  #pricing .tabs{background:#fff}
+  #contact{background:var(--bg)}
+  #faq{background:#ffffff;border-top:1px solid var(--line)}
+  .more-btn{display:none;margin:14px auto 0;background:none;border:1px solid currentColor;border-radius:999px;padding:8px 18px;font:inherit;font-weight:700;font-size:.88rem;cursor:pointer;color:var(--brand)}
+  .dark .more-btn{color:#ffb38c}
+  .extra-wrap{margin-top:28px}
+  .extra-wrap > details{margin-bottom:10px}
+  .extra-wrap > details > summary{font-size:1rem}
+  .extra-wrap .guides{margin-top:12px}
+  .extra-wrap .regions{margin-top:12px}
+  @media (max-width:760px){
+    .hero .ctas{display:none}
+    .more-btn{display:block}
+    .fold .card p,.fold .step ul{display:none}
+    .fold .step{padding:16px}
+    #process.fold .steps{grid-auto-columns:46%}
+  }
 </style>
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "@id": "https://careersun.github.io/#org", "name": "JOB365 中基層獵才", "alternateName": ["JOB365", "中基層獵才", "JOB365 × 中基層獵才", "JOB365 中基層獵才團隊"], "url": "https://careersun.github.io/", "logo": "https://careersun.github.io/job365map/favicon-192.png", "description": "日玖國際旗下的中基層正職代招團隊，為台灣中小企業招募作業員、技術員、品管、倉管、助理工程師、行政助理等正職人才；人選報到才收費，只收第一個月，最高 15,000 元。", "areaServed": {"@type": "Country", "name": "台灣"}, "contactPoint": {"@type": "ContactPoint", "telephone": "+886-3-564-3252", "contactType": "sales", "areaServed": "TW", "availableLanguage": "zh-Hant"}, "sameAs": ["https://line.me/R/ti/p/@642ahllq", "https://www.threads.com/@job_for_you365"], "parentOrganization": {"@id": "https://careersun.github.io/#zjiou"}}, {"@context": "https://schema.org", "@type": "Organization", "@id": "https://careersun.github.io/#zjiou", "name": "日玖國際", "legalName": "日玖國際股份有限公司", "url": "http://zjiou.com.tw/", "taxID": "86424581", "identifier": {"@type": "PropertyValue", "propertyID": "勞動部私立就業服務機構許可證字號", "value": "2024"}, "telephone": "+886-3-564-3252", "address": {"@type": "PostalAddress", "streetAddress": "關新路27號15樓之1", "addressLocality": "東區", "addressRegion": "新竹市", "postalCode": "300", "addressCountry": "TW"}, "sameAs": ["https://maps.google.com/?cid=6082274333580411568", "https://www.facebook.com/zjioumanpower"], "subOrganization": {"@id": "https://careersun.github.io/#org"}, "image": "https://careersun.github.io/hire/og-hire.jpg"}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "JOB365", "item": "https://careersun.github.io/"}, {"@type": "ListItem", "position": 2, "name": "正職代招", "item": "https://careersun.github.io/hire/"}]}]</script>
 </head>
@@ -313,7 +334,7 @@
   </div>
 </header>
 
-<section class="dark" id="why">
+<section class="dark fold" id="why">
   <div class="wrap">
     <div class="eyebrow">WHY US</div>
     <h2>不只刊登，<br>我們直接幫你找到人</h2>
@@ -324,10 +345,11 @@
       <div class="card tilt"><span class="k">主動獵才</span><h3>獨家專業獵才系統</h3><p class="muted">不只等履歷上門，主動搜尋、接觸合適的中基層人才。</p></div>
       <div class="card tilt"><span class="k">一對一</span><h3>顧問面談，精選推薦</h3><p class="muted">顧問與人選一對一面談把關，只推薦符合需求的人選，省下 HR 篩選時間。</p></div>
     </div>
+    <button class="more-btn" type="button" data-more aria-expanded="false">看完整說明 ▾</button>
   </div>
 </section>
 
-<section id="process">
+<section id="process" class="fold">
   <div class="wrap">
     <div class="eyebrow">HOW IT WORKS</div>
     <h2>正職代招 4 大階段，<br>找人更輕鬆</h2>
@@ -338,6 +360,7 @@
       <div class="step"><h3>面試安排・雙向溝通</h3><ul><li>安排面試</li><li>面試後人選關懷</li><li>企業端面試評價</li></ul></div>
       <div class="step last"><h3>錄取與報到</h3><ul><li>Offer 溝通與確認</li><li>入職後持續關心</li></ul></div>
     </div>
+    <button class="more-btn" type="button" data-more aria-expanded="false">看每個階段做什麼 ▾</button>
   </div>
 </section>
 
@@ -448,8 +471,10 @@
     <details><summary>適合哪些職缺？</summary><p>以中基層職缺為主，例如作業員、技術員、品管、倉管、助理工程師、行政與業務助理等。</p></details>
     <details><summary>服務哪些地區？</summary><p>全台都可以服務，歡迎直接告訴我們工作地點。</p></details>
     <details><summary>跟人力銀行有什麼不同？</summary><p>人力銀行提供刊登，履歷要等求職者投遞、再由你自己篩選。我們啟動人才庫主動獵才、顧問一對一面談後再推薦，而且人選報到才收費。</p></details>
+    <div class="extra-wrap">
+      <details><summary>還有疑問？看看招募指南</summary>
     <div class="guides">
-      <h3>還有疑問？看看招募指南</h3>
+      
       <div class="guide-cards">
         <a href="/hire/guide/recruitment-fee.html" data-ga="hire_faq_guide"><b>正職代招費用怎麼算？</b><span>獵頭年薪抽成 vs 只收第一個月，附試算</span></a>
         <a href="/hire/guide/what-is-recruitment-outsourcing.html" data-ga="hire_faq_guide"><b>正職代招是什麼？</b><span>和派遣、人力銀行、獵頭一次比較</span></a>
@@ -457,7 +482,11 @@
       </div>
       <a class="more" href="/hire/guide/" data-ga="hire_faq_guide">看全部招募指南 →</a>
     </div>
-    <div class="regions"><h3>各地區正職代招</h3><div class="chips" id="s-area-links"><a class="chip" href="/hire/hsinchu.html" style="text-decoration:none" data-ga="hire_region_click">新竹正職代招</a><a class="chip" href="/hire/taoyuan.html" style="text-decoration:none" data-ga="hire_region_click">桃園正職代招</a><a class="chip" href="/hire/taipei.html" style="text-decoration:none" data-ga="hire_region_click">台北正職代招</a><a class="chip" href="/hire/taichung.html" style="text-decoration:none" data-ga="hire_region_click">台中正職代招</a><a class="chip" href="/hire/tainan.html" style="text-decoration:none" data-ga="hire_region_click">台南正職代招</a><a class="chip" href="/hire/kaohsiung.html" style="text-decoration:none" data-ga="hire_region_click">高雄正職代招</a></div></div>
+      </details>
+      <details><summary>各地區正職代招</summary>
+      <div class="regions"><div class="chips" id="s-area-links"><a class="chip" href="/hire/hsinchu.html" style="text-decoration:none" data-ga="hire_region_click">新竹正職代招</a><a class="chip" href="/hire/taoyuan.html" style="text-decoration:none" data-ga="hire_region_click">桃園正職代招</a><a class="chip" href="/hire/taipei.html" style="text-decoration:none" data-ga="hire_region_click">台北正職代招</a><a class="chip" href="/hire/taichung.html" style="text-decoration:none" data-ga="hire_region_click">台中正職代招</a><a class="chip" href="/hire/tainan.html" style="text-decoration:none" data-ga="hire_region_click">台南正職代招</a><a class="chip" href="/hire/kaohsiung.html" style="text-decoration:none" data-ga="hire_region_click">高雄正職代招</a></div></div>
+      </details>
+    </div>
   </div>
 </section>
 
@@ -675,6 +704,18 @@ var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxbaaqzVKwTEWvMwTuU
     Object.keys(map).forEach(function(id){ var el = document.getElementById(id); if (el) io.observe(el); });
   }
 })();
+</script>
+
+<script>
+document.querySelectorAll("[data-more]").forEach(function(b){
+  var sec = b.closest("section"), label = b.textContent;
+  b.addEventListener("click", function(){
+    var open = sec.classList.toggle("fold") === false;
+    b.setAttribute("aria-expanded", open);
+    b.textContent = open ? "收起 ▴" : label;
+    if (typeof gtag === "function" && open) gtag("event", "hire_more", {source:"hire", section: sec.id});
+  });
+});
 </script>
 </body>
 </html>
