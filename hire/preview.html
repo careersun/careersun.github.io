@@ -591,6 +591,12 @@ visibleID = setInterval(() => {
   .h6-copy{max-width:720px}
   .cta6{margin:0 auto;width:100%}
   .hero6{padding-bottom:72px}
+  /* 置中對齊微調：標點不佔位、上方標籤左右對稱 */
+  .hero6 h1 .pz{display:inline-block;width:.5em;overflow:visible;margin-right:-.5em}
+  .hero6 h1{letter-spacing:.02em}
+  .kicker{padding:5px 18px 5px 5px;gap:10px}
+  .kicker span{padding-right:4px}
+  .h6-copy{display:flex;flex-direction:column;align-items:center}
 </style>
 </head>
 <body data-page="home">
@@ -607,8 +613,8 @@ visibleID = setInterval(() => {
 <header class="hero6" id="top6">
   <div class="wrap h6-grid">
     <div class="h6-copy">
-      <a class="kicker" href="http://zjiou.com.tw/" target="_blank" rel="noopener" data-ga="parent_site_click"><b>日玖國際</b>旗下・正職代招服務</a>
-      <h1>職缺開了沒人來？<br><em>交給中基層獵才。</em></h1>
+      <a class="kicker" href="http://zjiou.com.tw/" target="_blank" rel="noopener" data-ga="parent_site_click"><b>日玖國際</b><span>旗下・正職代招服務</span></a>
+      <h1>職缺開了沒人來<span class="pz">？</span><br><em>交給中基層獵才<span class="pz">。</span></em></h1>
       <p class="h6-lead">顧問主動找人、一對一面談後才推薦。<br><mark>人選報到才收費</mark>，<span style="white-space:nowrap">只收第一個月、最高 15,000 元。</span></p>
       <div class="cta6">
         <a class="btn6 primary" href="#hireForm" data-ga="hire_hero_form"><small>免費諮詢</small><span>填寫徵才需求</span><i aria-hidden="true">→</i></a>
