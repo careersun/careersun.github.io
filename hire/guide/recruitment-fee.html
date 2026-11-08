@@ -15,13 +15,14 @@
 
 <script>
 
-  window.addEventListener('load', function (e) {
-    document.querySelectorAll('a[href*="/line.me"]').forEach(function (e) { 
-      e.addEventListener('click', function () {
-        gtag('event', 'conversion', { 'send_to': 'AW-18319232545/K9EmCP_87YAdEKGcpZ9E' });
-      });
-    })
-  })
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href*="line.me"], a[href*="lin.ee"]');
+    if (!a || typeof gtag !== 'function') return;
+    gtag('event', 'conversion', {
+      'send_to': 'AW-18319232545/K9EmCP_87YAdEKGcpZ9E',
+      'transport_type': 'beacon'
+    });
+  });
 
 
 var savedEmail = '';
