@@ -16,7 +16,7 @@
 <script>
 
   document.addEventListener('click', function (e) {
-    var a = e.target.closest && e.target.closest('a[href*="line.me"], a[href*="lin.ee"]');
+    var a = e.target.closest && e.target.closest('a[href*="line.me"]:not([data-noconv]), a[href*="lin.ee"]:not([data-noconv])');
     if (!a || typeof gtag !== 'function') return;
     gtag('event', 'conversion', {
       'send_to': 'AW-18319232545/K9EmCP_87YAdEKGcpZ9E',
@@ -68,7 +68,7 @@ visibleID = setInterval(() => {
   </script>
 <!-- End Google tag -->
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#fbfaf8">
+<meta name="theme-color" content="#f7f6f2">
 <meta property="og:site_name" content="JOB365 中基層獵才">
 <title>正職代招・中基層獵才｜日玖國際旗下 JOB365｜人選報到才收費</title>
 <meta name="description" content="找人才不用先付刊登費：主動獵才、顧問一對一面談推薦，人選報到才收費，只收第一個月、最高 15,000 元。日玖國際旗下 JOB365 中基層獵才，服務全台中小企業。">
@@ -95,729 +95,582 @@ visibleID = setInterval(() => {
 
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1635805244779203');fbq('track','PageView');document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(a&&/^(tel:|https:\/\/(line\.me|lin\.ee)\/)/.test(a.getAttribute('href')))fbq('track','Contact');});</script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1635805244779203&ev=PageView&noscript=1" alt=""></noscript>
-<style>
-  :root{
-    --bg:#fbfaf8; --surface:#ffffff; --ink:#15171c; --muted:#5d6472; --line:#e8e6e1;
-    --brand:#f06a2a; --brand-ink:#ffffff; --brand-soft:#fff1e9; --dark:#15171c; --line-green:#06c755;
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  section[id]{scroll-margin-top:72px}
-  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;-webkit-font-smoothing:antialiased}
-  a{color:inherit}
-  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-  /* nav */
-  nav{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
-  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
-  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;letter-spacing:.04em}
-  .logo img{width:32px;height:32px;border-radius:8px}
-  .logo span small{display:block;font-weight:500;font-size:.7rem;color:var(--muted);letter-spacing:.02em;line-height:1.1}
-  .nav-job{color:var(--muted);text-decoration:none;font-size:.88rem}
-  .nav-cta{background:var(--ink);color:#fff;text-decoration:none;padding:8px 16px;border-radius:999px;font-size:.88rem;font-weight:700}
-  /* hero */
-  .hero{padding:64px 0 56px}
-  .badge{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:5px 14px 5px 6px;font-size:.85rem;color:var(--muted);text-decoration:none}
-  .badge b{background:var(--brand-soft);color:var(--brand);border-radius:999px;padding:2px 10px;font-size:.78rem}
-  h1{font-size:clamp(2.1rem,6.4vw,3.6rem);line-height:1.18;letter-spacing:-.01em;margin:22px 0 18px;font-weight:900}
-  h1 em{font-style:normal;color:var(--brand)}
-  .lead{font-size:clamp(1rem,2.4vw,1.15rem);color:var(--muted);max-width:620px;margin:0 0 30px}
-  .ctas{display:flex;flex-wrap:wrap;gap:12px}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;border-radius:14px;font-weight:800;text-decoration:none;font-size:1rem;border:0;cursor:pointer;font-family:inherit}
-  .btn-brand{background:var(--brand);color:var(--brand-ink);box-shadow:0 8px 24px -10px rgba(240,106,42,.7)}
-  .btn-line{background:var(--line-green);color:#fff}
-  .btn-ghost{background:var(--surface);border:1px solid var(--line);color:var(--ink)}
-  .hero-note{margin-top:16px;font-size:.85rem;color:var(--muted)}
-  /* stats */
-  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:44px}
-  .stat{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px 18px 16px}
-  .stat .num{font-size:clamp(1.6rem,4.8vw,2.3rem);font-weight:900;line-height:1.1;letter-spacing:-.02em}
-  .stat .num small{font-size:.5em;font-weight:700;margin-left:2px}
-  .stat .lbl{color:var(--muted);font-size:.85rem;margin-top:4px}
-  .stats-note{font-size:.78rem;color:var(--muted);margin-top:10px}
-  /* sections */
-  section{padding:64px 0}
-  .eyebrow{color:var(--brand);font-weight:800;font-size:.85rem;letter-spacing:.12em}
-  h2{font-size:clamp(1.6rem,4.4vw,2.3rem);line-height:1.3;margin:6px 0 28px;font-weight:900;letter-spacing:-.01em}
-  .pains{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-  .pain{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px;font-weight:700}
-  .pain span{display:block;font-size:1.6rem;margin-bottom:6px}
-  .pain p{margin:6px 0 0;font-weight:400;color:var(--muted);font-size:.92rem}
-  .dark{background:var(--dark);color:#f3f4f6}
-  .dark .muted{color:#a8afbb}
-  .why{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-  .card{background:#1f232b;border:1px solid #2c313b;border-radius:20px;padding:24px}
-  .card .k{display:inline-block;background:var(--brand);color:#fff;font-weight:900;border-radius:10px;padding:2px 10px;font-size:.8rem;margin-bottom:10px}
-  .card h3{margin:0 0 6px;font-size:1.2rem}
-  .card p{margin:0;color:#a8afbb;font-size:.95rem}
-  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;counter-reset:s}
-  .step{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px 18px}
-  .step::before{counter-increment:s;content:"0" counter(s);display:block;font-weight:900;color:var(--brand);font-size:1.4rem;line-height:1;margin-bottom:10px}
-  .step h3{margin:0 0 4px;font-size:1.05rem}
-  .step p{margin:0;color:var(--muted);font-size:.9rem}
-  .step.last{background:var(--brand-soft);border-color:#ffd9c4}
-  .step ul{margin:0;padding-left:1.1em;color:var(--muted);font-size:.9rem}
-  .price{display:grid;grid-template-columns:1fr 1.3fr;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:28px}
-  .price-main{background:var(--brand-soft);border-radius:18px;padding:24px;text-align:center;display:flex;flex-direction:column;justify-content:center}
-  .price-label{font-weight:800}
-  .price-num{font-size:clamp(3rem,10vw,4.4rem);font-weight:900;color:var(--brand);line-height:1.05;letter-spacing:-.03em}
-  .price-num small{font-size:.28em;color:var(--ink);margin-left:4px;letter-spacing:0}
-  .price-sub{font-size:.85rem;color:var(--muted)}
-  .price-list{list-style:none;margin:0;padding:0;display:grid;gap:12px;align-content:center}
-  .price-list li{padding-left:34px;position:relative;color:var(--muted);font-size:.92rem}
-  .price-list li::before{content:"✓";position:absolute;left:0;top:2px;width:24px;height:24px;border-radius:50%;background:var(--brand);color:#fff;font-weight:900;font-size:.8rem;display:flex;align-items:center;justify-content:center}
-  .price-list b{display:block;color:var(--ink);font-size:1.02rem}
-  .chips{display:flex;flex-wrap:wrap;gap:8px}
-  .chip{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.92rem}
-  .chip b{color:var(--brand);margin-left:4px}
-  /* form */
-  .form-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:28px;align-items:start}
-  form{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:24px}
-  .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  label{display:block;font-size:.85rem;font-weight:700;margin:0 0 6px}
-  label i{color:var(--brand);font-style:normal}
-  input,textarea,select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;font:inherit;font-size:1rem;background:#fff;color:var(--ink)}
-  input:focus,textarea:focus{outline:2px solid var(--brand);outline-offset:1px;border-color:transparent}
-  .field{margin-bottom:14px}
-  .hp{position:absolute;left:-9999px}
-  .form-msg{margin-top:12px;font-size:.92rem}
-  .privacy{font-size:.78rem;color:var(--muted);margin-top:10px}
-  /* faq */
-  details{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 20px;margin-bottom:10px}
-  summary{font-weight:800;cursor:pointer;list-style:none}
-  summary::after{content:"＋";float:right;color:var(--brand)}
-  details[open] summary::after{content:"－"}
-  details p{margin:10px 0 0;color:var(--muted)}
-  /* trust + footer */
-  .trust{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:24px}
-  .trust p{margin:0}
-  footer{padding:36px 0 110px;color:var(--muted);font-size:.85rem;text-align:center}
-  footer a{color:var(--muted)}
-  .sticky{position:fixed;left:0;right:0;bottom:0;display:none;gap:10px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:var(--bg);border-top:1px solid var(--line);z-index:20}
-  .sticky .btn{flex:1;padding:12px}
-  /* 頂部快速導覽按鈕 */
-  .jump{transition:transform .15s,box-shadow .2s,filter .2s}
-  .jump:hover{transform:translateY(-2px);filter:brightness(1.04)}
-  .jump{background:var(--brand);color:#fff;box-shadow:0 8px 22px -12px rgba(240,106,42,.8)}
-  /* 回到頂端 */
-  .to-top{position:fixed;right:18px;bottom:24px;z-index:21;width:52px;height:52px;border:1px solid rgba(240,106,42,.35);border-radius:50%;background:radial-gradient(circle at 30% 26%,rgba(255,255,255,.95) 0 9%,rgba(255,255,255,.4) 22%,rgba(255,241,233,.25) 55%,rgba(240,106,42,.28) 100%);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:var(--brand);font:inherit;font-size:1.3rem;font-weight:900;line-height:1;cursor:pointer;box-shadow:inset -5px -7px 14px rgba(240,106,42,.2),inset 4px 5px 10px rgba(255,255,255,.7),0 10px 26px -12px rgba(240,106,42,.55);opacity:0;transform:translateY(14px) scale(.85);pointer-events:none;transition:opacity .3s,transform .3s,border-color .2s}
-  .to-top.on{opacity:.92;transform:none;pointer-events:auto;animation:bubble-bob 3.2s ease-in-out infinite}
-  .to-top:hover{opacity:1;border-color:var(--brand);animation-play-state:paused}
-  @keyframes bubble-bob{50%{transform:translateY(-6px)}}
-  @media (prefers-reduced-motion:reduce){.to-top.on{animation:none}}
-  /* 泡泡背景 */
-  #bubbles{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
-  header,section,footer{position:relative;z-index:1}
-  /* 卡片傾斜 */
-  .tilt{transition:transform .2s,box-shadow .2s;will-change:transform}
-  .pain.tilt:hover{box-shadow:0 14px 30px -18px rgba(240,106,42,.5)}
-  /* 步驟動畫 */
-  .step{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.8,.2,1),border-color .4s}
-  .step.in{opacity:1;transform:none}
-  .step::after{content:"";position:absolute;left:18px;right:18px;top:0;height:3px;border-radius:0 0 3px 3px;background:var(--brand);transform:scaleX(0);transform-origin:left;transition:transform .7s cubic-bezier(.2,.8,.2,1) .25s}
-  .step.in::after{transform:scaleX(1)}
-  .step.in{border-color:#ffd9c4}
-  .steps-bar{height:4px;border-radius:4px;background:var(--line);margin:0 0 16px;overflow:hidden}
-  .steps-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--brand),#ffb37f);border-radius:4px;transition:width .4s ease}
-  /* 對照切換 */
-  .vs-switch{display:inline-grid;grid-template-columns:1fr 1fr;position:relative;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px;margin-bottom:16px}
-  .vs-switch button{position:relative;z-index:1;border:0;background:none;font:inherit;font-weight:800;padding:9px 20px;border-radius:999px;color:var(--muted);cursor:pointer;transition:color .25s}
-  .vs-switch button[aria-pressed="true"]{color:#fff}
-  .vs-switch .pill{position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);border-radius:999px;background:var(--ink);transition:transform .45s cubic-bezier(.34,1.56,.64,1),background .3s}
-  .vs-switch[data-v="us"] .pill{transform:translateX(100%);background:var(--brand)}
-  .vs{display:grid;gap:10px}
-  .vs-row{display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 18px}
-  .vs-row dt{font-weight:800;font-size:.92rem}
-  .vs-row dd{margin:0;color:var(--muted);transition:opacity .25s,transform .25s}
-  .vs-row dd.swap{opacity:0;transform:translateY(6px)}
-  .vs[data-v="us"] .vs-row{border-color:#ffd9c4}
-  .vs[data-v="us"] .vs-row dd{color:var(--ink)}
-  .vs[data-v="us"] .vs-row dd::before{content:"✓ ";color:var(--brand);font-weight:900}
-  /* 費用試算 */
-  .calc{display:grid;grid-template-columns:1.2fr 1fr;gap:18px;background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:26px}
-  .calc label{font-size:.92rem;margin:0 0 8px;display:flex;justify-content:space-between}
-  .calc label b{color:var(--brand);font-size:1.05rem}
-  .calc .ctrl{margin-bottom:22px}
-  .calc input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:8px;border-radius:8px;background:linear-gradient(90deg,var(--brand) var(--p,50%),var(--line) var(--p,50%));outline:none;border:0;padding:0}
-  .calc input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:#fff;border:3px solid var(--brand);box-shadow:0 4px 12px rgba(240,106,42,.35);cursor:pointer;transition:transform .15s}
-  .calc input[type=range]::-webkit-slider-thumb:active{transform:scale(1.15)}
-  .calc input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:#fff;border:3px solid var(--brand);cursor:pointer}
-  .stepper{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:12px;overflow:hidden}
-  .stepper button{width:44px;height:42px;border:0;background:var(--bg);font:inherit;font-size:1.2rem;font-weight:800;cursor:pointer;color:var(--ink)}
-  .stepper span{min-width:54px;text-align:center;font-weight:800}
-  .calc-out{background:var(--brand-soft);border-radius:18px;padding:22px;display:flex;flex-direction:column;justify-content:center;text-align:center}
-  .calc-out .lbl{font-weight:700;font-size:.9rem}
-  .calc-out .fee{font-size:clamp(2.2rem,8vw,3rem);font-weight:900;color:var(--brand);line-height:1.15;font-variant-numeric:tabular-nums}
-  .calc-out .fee small{font-size:.4em;color:var(--ink);margin-left:4px}
-  .calc-out .cap{display:inline-block;margin:8px auto 0;font-size:.78rem;font-weight:800;color:#fff;background:var(--ink);border-radius:999px;padding:3px 12px;opacity:0;transform:scale(.8);transition:opacity .3s,transform .3s cubic-bezier(.34,1.56,.64,1)}
-  .calc-out .cap.on{opacity:1;transform:none}
-  .calc-out .bd{font-size:.82rem;color:var(--muted);margin-top:8px}
-  .calc-note{font-size:.78rem;color:var(--muted);margin-top:10px}
-  .fresh{margin-top:14px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px 18px}
-  .fresh-head{margin:0;font-weight:700;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-  .fresh-head b{color:var(--brand);font-size:1.15rem}
-  .pulse{width:9px;height:9px;border-radius:50%;background:#16a34a;box-shadow:0 0 0 0 rgba(22,163,74,.5);animation:pulse 1.8s infinite}
-  @keyframes pulse{70%{box-shadow:0 0 0 8px rgba(22,163,74,0)}100%{box-shadow:0 0 0 0 rgba(22,163,74,0)}}
-  .fresh-bars{display:flex;align-items:flex-end;gap:8px;height:96px;margin:14px 0 4px}
-  .fresh-bars div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;font-size:.72rem;color:var(--muted)}
-  .fresh-bars i{display:block;width:100%;max-width:42px;background:var(--brand-soft);border-top:3px solid var(--brand);border-radius:6px 6px 0 0;margin-bottom:4px;flex-shrink:0}
-  .fresh-sub{font-size:.78rem;color:var(--muted);margin:0 0 10px}
-  @media (prefers-reduced-motion:reduce){.pulse{animation:none}}
-  .guides{margin-top:28px}
-  .guides h3{font-size:1.1rem;margin:0 0 12px}
-  .guide-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-  .guide-cards a{display:block;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 18px;text-decoration:none;transition:border-color .15s,transform .15s}
-  .guide-cards a:hover{border-color:var(--brand);transform:translateY(-2px)}
-  .guide-cards b{display:block;line-height:1.45}
-  .guide-cards span{display:block;color:var(--muted);font-size:.85rem;margin-top:6px}
-  .guides .more{display:inline-block;margin-top:12px;color:var(--brand);font-weight:700;text-decoration:none;font-size:.92rem}
-  @media (max-width:760px){.guide-cards{grid-template-columns:1fr}}
-  @media (prefers-reduced-motion:reduce){#bubbles{display:none}.step{opacity:1;transform:none}.step::after{transform:none}}
-  @media (max-width:760px){
-    .to-top{bottom:calc(76px + env(safe-area-inset-bottom))}
-    .calc{grid-template-columns:1fr;padding:20px}
-    .vs-row{grid-template-columns:92px 1fr;padding:12px 14px}
-    .stats{grid-template-columns:1fr 1fr 1fr;gap:8px}.stat{padding:14px 12px}
-    .pains,.why,.steps,.form-wrap,.row2,.price{grid-template-columns:1fr}
-    .hero{padding:40px 0 40px} section{padding:48px 0}
-    .nav-cta{display:none}
-    .sticky{display:flex}
-  }
-
-  /* ===== v2 版面：區塊導覽、分頁、精簡 ===== */
-  .secnav{position:sticky;top:60px;z-index:9;background:rgba(251,250,248,.94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-  .secnav .wrap{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-top:8px;padding-bottom:8px}
-  .secnav .wrap::-webkit-scrollbar{display:none}
-  .secnav a{flex:none;text-decoration:none;font-size:.9rem;font-weight:700;color:var(--muted);padding:6px 14px;border-radius:999px;transition:background .2s,color .2s}
-  .secnav a.on{color:#fff;background:var(--ink)}
-  section[id],.panel[id]{scroll-margin-top:124px}
-  .trustline{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:12px;font-size:.85rem;color:var(--muted)}
-  .hero-ind{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:14px}
-  .hero-ind .t{font-size:.8rem;color:var(--muted);margin-right:2px}
-  .hero-ind .chip{font-size:.82rem;padding:4px 12px}
-  .pains-mini{display:flex;flex-wrap:wrap;gap:8px;margin:-10px 0 22px}
-  .pains-mini span{background:#262b34;border:1px solid #333a45;border-radius:999px;padding:6px 14px;font-size:.9rem;color:#e5e7eb}
-  .tabs{display:flex;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px;margin-bottom:18px}
-  .tabs button{flex:1;white-space:nowrap;border:0;background:none;font:inherit;font-weight:800;font-size:.92rem;padding:9px 10px;border-radius:999px;color:var(--muted);cursor:pointer;transition:background .2s,color .2s}
-  .tabs button[aria-selected="true"]{background:var(--brand);color:#fff}
-  .panel[hidden]{display:none}
-  .regions{margin-top:22px}
-  .regions h3{font-size:1rem;margin:0 0 10px}
-  form details.opt{background:none;border:0;padding:0;margin:0 0 14px}
-  form details.opt summary{font-size:.88rem;color:var(--muted);font-weight:700}
-  form details.opt summary::after{float:none;margin-left:6px}
-  form details.opt .field{margin:10px 0 0}
-  .contact-trust{margin:16px 0 0;padding:12px 14px;background:var(--brand-soft);border-radius:14px;font-size:.85rem;color:var(--ink)}
-  .contact-trust a{color:var(--brand);font-weight:700}
-  @media (max-width:760px){
-    section{padding:40px 0}
-    .hero{padding:28px 0 32px}
-    h2{margin-bottom:20px}
-    .lead{margin-bottom:22px}
-    .ctas .btn{flex:1}
-    .stats{margin-top:24px}
-    .why{grid-template-columns:1fr 1fr;gap:10px}
-    .card{padding:16px}
-    .card h3{font-size:1rem}
-    .card p{font-size:.84rem}
-    .steps{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:76%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;scrollbar-width:none}
-    .steps::-webkit-scrollbar{display:none}
-    .step{scroll-snap-align:start;opacity:1;transform:none}
-    .tabs button{font-size:.84rem;padding:8px 6px}
-    .price{padding:18px}
-    .row2{grid-template-columns:1fr 1fr;gap:10px}
-    .guide-cards span{display:none}
-    .guide-cards a{padding:12px 16px}
-  }
-
-  /* ===== v2b：底色分區、摘要＋展開 ===== */
-  #process{background:#ffffff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  #pricing{background:#fff4ec}
-  #pricing .tabs{background:#fff}
-  #contact{background:var(--bg)}
-  #faq{background:#ffffff;border-top:1px solid var(--line)}
-  .more-btn{display:none;margin:14px auto 0;background:none;border:1px solid currentColor;border-radius:999px;padding:8px 18px;font:inherit;font-weight:700;font-size:.88rem;cursor:pointer;color:var(--brand)}
-  .dark .more-btn{color:#ffb38c}
-  .extra-wrap{margin-top:28px}
-  .extra-wrap > details{margin-bottom:10px}
-  .extra-wrap > details > summary{font-size:1rem}
-  .extra-wrap .guides{margin-top:12px}
-  .extra-wrap .regions{margin-top:12px}
-  @media (max-width:760px){
-    .hero .ctas{display:none}
-  }
-
-  /* ===== v4：少字、大字、留白（參考 Indeed／Cake／Deel 企業端） ===== */
-  .lead{font-size:clamp(1.05rem,2.6vw,1.25rem)}
-  .price-pill{display:flex;flex-wrap:wrap;gap:0;margin:0 0 22px;font-weight:800;font-size:.95rem}
-  .price-pill span{padding:6px 12px;background:var(--brand-soft);color:var(--ink)}
-  .price-pill span:first-child{border-radius:999px 0 0 999px;padding-left:16px}
-  .price-pill span:last-child{border-radius:0 999px 999px 0;padding-right:16px;background:var(--brand);color:#fff}
-  .price-pill span + span{border-left:1px solid rgba(240,106,42,.25)}
-  .price-pill b{font-size:1.1em}
-  .pick{margin:0 0 22px}
-  .pick-q{margin:0 0 10px;font-weight:900;font-size:1.05rem}
-  .pick-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;max-width:560px}
-  .pick-grid a{display:flex;align-items:center;justify-content:center;min-height:48px;padding:8px;border-radius:14px;background:var(--surface);border:1.5px solid var(--line);color:var(--ink);text-decoration:none;font-weight:800;font-size:.95rem;text-align:center;transition:border-color .15s,background .15s}
-  .pick-grid a:hover,.pick-grid a:active{border-color:var(--brand);background:var(--brand-soft)}
-  .big3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-  .b3{display:flex;flex-direction:column;gap:14px}
-  .b3 .ic{flex:none;width:52px;height:52px;border-radius:16px;background:var(--brand);display:flex;align-items:center;justify-content:center}
-  .b3 .ic svg{width:28px;height:28px;fill:none;stroke:#fff;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
-  .b3 h3{margin:0;font-size:clamp(1.25rem,3vw,1.5rem);line-height:1.35;font-weight:900}
-  .b3 p{margin:6px 0 0;color:#a8afbb;font-size:.95rem}
-  .tl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);position:relative}
-  .tl::before{content:"";position:absolute;left:12.5%;right:12.5%;top:22px;height:3px;background:linear-gradient(90deg,var(--brand),#ffb38c)}
-  .tl li{position:relative;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
-  .tl b{width:46px;height:46px;border-radius:50%;background:#fff;border:3px solid var(--brand);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:1.15rem;font-weight:900;position:relative}
-  .tl .end b{background:var(--brand);color:#fff}
-  .tl span{font-weight:800;font-size:.98rem}
-  details.tl-more{margin-top:26px;background:none;border:0;padding:0;text-align:center}
-  details.tl-more > summary{display:inline-block;color:var(--brand);font-size:.95rem}
-  details.tl-more[open] > summary{margin-bottom:18px}
-  details.tl-more .steps,details.tl-more .steps-bar{text-align:left}
-  .price-hero{margin:-14px 0 24px;font-size:clamp(1.3rem,3.6vw,1.7rem);font-weight:900}
-  .price-hero b{color:var(--brand);font-size:1.5em;letter-spacing:-.02em}
-  .final-cta{background:var(--dark);color:#fff;text-align:center;padding:72px 0}
-  .final-cta h2{margin:0 0 12px}
-  .final-cta p{margin:0 0 26px;color:#c7ccd5;font-size:1.05rem}
-  .final-cta .ctas{justify-content:center}
-  .final-cta + .wrap{margin-top:40px}
-  @media (max-width:760px){
-    .secnav{display:none}
-    section[id],.panel[id]{scroll-margin-top:70px}
-    section{padding:56px 0}
-    .hero{padding:24px 0 36px}
-    h1{margin:16px 0 12px}
-    .lead{margin-bottom:14px}
-    .price-pill{font-size:.84rem;flex-wrap:nowrap;white-space:nowrap}
-    .price-pill span{padding:6px 10px}
-    .price-pill span:first-child{padding-left:13px}
-    .price-pill span:last-child{padding-right:13px}
-    .trustline{font-size:.8rem}
-    .fresh,.stats-note,.hero-ind{display:none !important}
-    .stats{margin-top:20px}
-    .stat{padding:14px 12px}
-    .pains-mini{margin:-6px 0 28px}
-    .big3{grid-template-columns:1fr;gap:26px}
-    .b3{flex-direction:row;align-items:flex-start;gap:16px}
-    .b3 .ic{width:46px;height:46px;border-radius:14px}
-    .tl span{font-size:.85rem}
-    .tl b{width:40px;height:40px;font-size:1rem}
-    .tl::before{top:19px}
-    .final-cta{padding:56px 0}
-    .final-cta .ctas .btn{flex:1}
-  }
-</style>
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "@id": "https://careersun.github.io/#org", "name": "JOB365 中基層獵才", "alternateName": ["JOB365", "中基層獵才", "JOB365 × 中基層獵才", "JOB365 中基層獵才團隊"], "url": "https://careersun.github.io/", "logo": "https://careersun.github.io/job365map/favicon-192.png", "description": "日玖國際旗下的中基層正職代招團隊，為台灣中小企業招募會計、客服、設備工程師、倉管、助理工程師、行政助理等正職人才；人選報到才收費，只收第一個月，最高 15,000 元。", "areaServed": {"@type": "Country", "name": "台灣"}, "contactPoint": {"@type": "ContactPoint", "telephone": "+886-3-564-3252", "contactType": "sales", "areaServed": "TW", "availableLanguage": "zh-Hant"}, "sameAs": ["https://line.me/R/ti/p/@642ahllq", "https://www.threads.com/@job_for_you365"], "parentOrganization": {"@id": "https://careersun.github.io/#zjiou"}}, {"@context": "https://schema.org", "@type": "Organization", "@id": "https://careersun.github.io/#zjiou", "name": "日玖國際", "legalName": "日玖國際股份有限公司", "url": "http://zjiou.com.tw/", "taxID": "86424581", "identifier": {"@type": "PropertyValue", "propertyID": "勞動部私立就業服務機構許可證字號", "value": "2024"}, "telephone": "+886-3-564-3252", "address": {"@type": "PostalAddress", "streetAddress": "關新路27號15樓之1", "addressLocality": "東區", "addressRegion": "新竹市", "postalCode": "300", "addressCountry": "TW"}, "sameAs": ["https://maps.google.com/?cid=6082274333580411568", "https://www.facebook.com/zjioumanpower"], "subOrganization": {"@id": "https://careersun.github.io/#org"}, "image": "https://careersun.github.io/hire/og-hire.jpg"}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "JOB365", "item": "https://careersun.github.io/"}, {"@type": "ListItem", "position": 2, "name": "正職代招", "item": "https://careersun.github.io/hire/"}]}]</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<!-- 明體只載入標題用到的字（改標題文字時，記得把新字加進 text= 參數） -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;900&display=swap&text=%2C0123456789%E2%80%93%E3%80%82%E4%B8%80%E4%B8%89%E4%B8%8A%E4%B8%8D%E4%B8%AD%E4%B8%BB%E4%B9%8B%E4%BA%86%E4%BA%8C%E4%BA%9B%E4%BA%A4%E4%BA%BA%E4%BB%80%E4%BB%98%E4%BB%A5%E4%BB%B6%E4%BD%8D%E4%BD%A0%E4%BE%86%E5%80%8B%E5%85%83%E5%85%88%E5%85%A7%E5%86%8D%E5%88%B0%E5%89%8D%E5%8B%95%E5%8B%99%E5%8B%9F%E5%8D%80%E5%8D%97%E5%8F%A5%E5%8F%AA%E5%8F%AF%E5%90%88%E5%93%AA%E5%95%8F%E5%9C%B0%E5%9F%BA%E5%A0%B1%E5%A4%9A%E5%A4%A9%E5%A7%8B%E5%AE%8C%E5%B1%A4%E5%B7%B2%E5%BE%8C%E5%BE%B5%E5%BF%83%E5%BF%AB%E6%80%8E%E6%83%B3%E6%89%8D%E6%89%BE%E6%8B%9B%E6%8C%87%E6%8E%A8%E6%8F%90%E6%94%B6%E6%98%AF%E6%9B%B4%E6%9C%80%E6%9C%83%E6%9C%88%E6%9C%8D%E6%A2%9D%E6%A5%9A%E6%AC%A1%E6%AF%8F%E6%B1%82%E6%B2%92%E6%B8%85%E7%8D%B5%E7%94%A8%E7%9A%84%E7%9B%A1%E7%AC%A6%E7%AC%AC%E7%AE%97%E7%B5%A6%E7%B9%AB%E7%BC%BA%E8%81%AF%E8%81%B7%E8%83%BD%E8%88%87%E8%96%A6%E8%A1%A8%E8%A2%AB%E8%A6%81%E8%A7%A3%E8%A9%A6%E8%A9%B1%E8%AB%87%E8%AC%9B%E8%B2%BB%E8%B5%B7%E8%BE%A6%E9%80%99%E9%81%A9%E9%81%B8%E9%83%BD%E9%86%92%E9%8C%A2%E9%96%8B%E9%97%9C%E9%9B%A2%E9%9C%80%E9%9D%A2%E9%A1%A7%E9%AB%98%E9%BA%BC%EF%BC%81%EF%BC%8C%EF%BC%9F">
 <style>
-  /* ===== v5：多頁網站 ===== */
-  .secnav{display:none !important}
-  .topnav .wrap{gap:18px}
-  .nav-links{display:flex;align-items:center;gap:4px;margin-left:auto}
-  .nav-links a{color:var(--muted);text-decoration:none;font-size:.92rem;font-weight:700;padding:8px 12px;border-radius:999px;transition:background .15s,color .15s}
-  .nav-links a:hover{color:var(--ink);background:var(--brand-soft)}
-  .nav-links a.on{color:var(--brand);background:var(--brand-soft)}
-  .nav-links .nav-job{font-weight:500;border-left:1px solid var(--line);border-radius:0;margin-left:6px;padding-left:14px}
-  .nav-links .nav-job:hover{background:none}
-  .nav-right{display:flex;align-items:center;gap:8px}
-  .nav-burger{display:none;width:40px;height:40px;border:0;background:none;padding:0;cursor:pointer;position:relative}
-  .nav-burger span,.nav-burger span::before,.nav-burger span::after{position:absolute;left:10px;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:transform .2s,opacity .2s;content:""}
-  .nav-burger span{top:19px}
-  .nav-burger span::before{left:0;top:-6px}
-  .nav-burger span::after{left:0;top:6px}
-  .topnav.open .nav-burger span{background:transparent}
-  .topnav.open .nav-burger span::before{transform:translateY(6px) rotate(45deg)}
-  .topnav.open .nav-burger span::after{transform:translateY(-6px) rotate(-45deg)}
-  .page-head{padding:44px 0 36px;background:linear-gradient(180deg,var(--brand-soft),var(--bg))}
-  .page-head .crumb{margin:0 0 10px;font-size:.85rem;color:var(--muted)}
-  .page-head .crumb a{color:var(--muted)}
-  .page-head .crumb span{margin:0 8px}
-  .page-head h1{margin:0 0 10px;font-size:clamp(1.9rem,5.4vw,2.8rem)}
-  .page-head h1 em{font-style:normal;color:var(--brand)}
-  .page-head .lead{margin:0}
-  section.pg{padding:52px 0}
-  section.pg.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  #pricing.pg{background:none}
-  .pg .price-hero{margin:0 0 22px}
-  .steps-full{margin-top:34px}
-  .steps-full .steps-bar{margin-bottom:14px}
-  .go{background:#fff;border-top:1px solid var(--line)}
-  .go-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-  .go-card{position:relative;display:flex;flex-direction:column;gap:6px;padding:22px 20px 44px;border:1px solid var(--line);border-radius:18px;background:var(--surface);color:var(--ink);text-decoration:none;transition:border-color .15s,transform .15s,box-shadow .15s}
-  .go-card:hover{border-color:var(--brand);transform:translateY(-2px);box-shadow:0 14px 30px -20px rgba(240,106,42,.6)}
-  .go-ic{width:40px;height:40px;border-radius:12px;background:var(--brand-soft);color:var(--brand);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.1rem;margin-bottom:6px}
-  .go-card b{font-size:1.1rem}
-  .go-d{color:var(--muted);font-size:.9rem;line-height:1.55}
-  .go-arrow{position:absolute;right:18px;bottom:16px;color:var(--brand);font-weight:900}
-  body[data-page="pricing"] .go-grid,body[data-page="process"] .go-grid{grid-template-columns:repeat(3,1fr)}
-  body[data-page="faq"] .go-grid{grid-template-columns:repeat(2,1fr)}
-  @media (max-width:980px){
-    .nav-links{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;padding:8px 16px 16px;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:0 18px 30px -20px rgba(0,0,0,.25)}
-    .topnav.open .nav-links{display:flex}
-    .nav-links a{padding:14px 6px;border-radius:0;font-size:1.02rem;color:var(--ink);border-bottom:1px solid var(--line)}
-    .nav-links a.on{background:none}
-    .nav-links .nav-job{border-left:0;margin:0;padding-left:6px;color:var(--muted);border-bottom:0}
-    .nav-burger{display:block}
-    .topnav .wrap{position:relative}
-    .go-grid,body[data-page] .go-grid{grid-template-columns:1fr 1fr}
-  }
-  @media (max-width:760px){
-    .nav-cta{display:inline-block !important;padding:7px 12px;font-size:.8rem;white-space:nowrap}
-    .topnav .wrap{gap:8px}
-    .topnav .logo{gap:8px;min-width:0;font-size:.88rem;letter-spacing:.01em}
-    .topnav .logo span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .topnav .logo img{width:30px;height:30px}
-    .nav-right{gap:2px;flex:none}
-    .nav-burger{width:36px}
-    .page-head{padding:28px 0 26px}
-    section.pg{padding:40px 0}
-    .go-grid,body[data-page] .go-grid{grid-template-columns:1fr;gap:10px}
-    .go-card{flex-direction:row;flex-wrap:wrap;align-items:center;gap:4px 12px;padding:16px 40px 16px 16px}
-    .go-ic{margin:0;width:36px;height:36px}
-    .go-d{flex-basis:100%;padding-left:48px;margin-top:-6px;font-size:.86rem}
-    .go-arrow{top:50%;bottom:auto;transform:translateY(-50%)}
-    .steps-full .steps{grid-template-columns:1fr;grid-auto-flow:row;grid-auto-columns:auto;overflow:visible}
-    .steps-full .step{opacity:1;transform:none}
-    .steps-full .steps-bar{display:none}
-  }
+/* ===== v9：報紙首屏＋乾淨內頁・JOB365 藍白橘（2026-11）===== */
+:root{--paper:#f7f6f2;--white:#fff;--ink:#16294a;--sub:#3c4a63;--muted:#5d6779;--rule:#16294a;--hair:#d5d9e0;--neon:#ff6a2b;--neon-hover:#ff7f45;--tint:#fff1e8;--line-deep:#06893c;
+  --serif:"Noto Serif TC","Songti TC",serif;--sans:"Noto Sans TC",-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;--cond:"Barlow Condensed","Noto Sans TC",sans-serif;
+  --pad:clamp(20px,4vw,48px);--ease:cubic-bezier(.22,1,.36,1);--gap:clamp(72px,9vw,120px)}
+*{box-sizing:border-box}
+html{background:var(--paper);scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.9 var(--sans);letter-spacing:.03em;-webkit-font-smoothing:antialiased}
+::selection{background:#ffd0b8;color:var(--ink)}
+a{color:inherit}
+img,svg{display:block}
+p{margin:0}
+:focus-visible{outline:2px solid var(--neon);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 var(--pad)}
+.hl{background:linear-gradient(transparent 56%,var(--neon) 56%,var(--neon) 92%,transparent 92%);padding:0 .06em}
+.skip{position:absolute;left:12px;top:-60px;z-index:60;background:var(--ink);color:#fff;padding:10px 16px;text-decoration:none}
+.skip:focus{top:12px}
+.ul{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/100% 1px no-repeat;transition:background-size .3s var(--ease)}
+.ul:hover{background-size:0 1px}
+
+/* 刊頭 */
+.topnav{position:sticky;top:0;z-index:30;background:rgba(247,246,242,.96);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.mast{display:flex;align-items:center;gap:24px;height:68px;border-bottom:3px double var(--rule)}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;line-height:1.15;flex:none}
+.logo img{width:32px;height:32px;border-radius:8px}
+.logo b{display:block;font:900 1.35rem/1.15 var(--serif);letter-spacing:.24em}
+.logo small{font-size:.7rem;letter-spacing:.2em;color:var(--muted)}
+.nav-links{display:flex;align-items:center;gap:22px;margin-left:auto;font-size:.88rem;white-space:nowrap}
+.nav-links a{text-decoration:none;background:linear-gradient(var(--ink),var(--ink)) 0 100%/0 1px no-repeat;transition:background-size .3s var(--ease)}
+.nav-links a:hover,.nav-links a.on{background-size:100% 1px}
+.nav-links a.on{font-weight:700}
+.nav-links .nav-cta{background:var(--ink);color:#fff;padding:7px 16px;font-weight:700}
+.nav-links .nav-cta:hover{background:#0e1d38}
+.nav-right{display:none;margin-left:auto}
+.nav-burger{width:44px;height:44px;border:0;background:none;cursor:pointer;position:relative}
+.nav-burger span,.nav-burger span::before,.nav-burger span::after{position:absolute;left:12px;width:20px;height:2px;background:var(--ink);transition:transform .25s var(--ease)}
+.nav-burger span{top:21px}
+.nav-burger span::before,.nav-burger span::after{content:"";left:0}
+.nav-burger span::before{top:-6px}.nav-burger span::after{top:6px}
+.topnav.open .nav-burger span{background:transparent}
+.topnav.open .nav-burger span::before{transform:translateY(6px) rotate(45deg)}
+.topnav.open .nav-burger span::after{transform:translateY(-6px) rotate(-45deg)}
+
+/* 第一屏 */
+.front{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,5vw,72px);align-items:center;padding-top:clamp(48px,7vw,96px);padding-bottom:clamp(40px,5vw,64px)}
+h1{margin:0;font-family:var(--serif);font-weight:900}
+h1 .q{display:block;font-size:clamp(1.3rem,2.2vw,1.8rem);font-weight:600;letter-spacing:.06em;color:var(--sub);margin-bottom:8px}
+h1 .a{display:block;font-size:clamp(2.6rem,5vw,4.8rem);line-height:1.15;letter-spacing:.02em;white-space:nowrap}
+.deck{margin-top:24px;font-size:clamp(1.02rem,1.4vw,1.15rem);color:var(--sub);line-height:2}
+.offer{position:relative;background:var(--white);padding:26px 28px 28px;box-shadow:0 1px 0 var(--hair),0 24px 48px -36px rgba(22,41,74,.45)}
+.offer .t{font:700 .86rem var(--sans);letter-spacing:.2em;color:var(--muted)}
+.big{display:flex;align-items:flex-end;gap:8px;margin:6px 0 4px}
+.big small{font:900 1rem/1 var(--serif);margin-bottom:16px}
+.big strong{font:600 clamp(4.4rem,7.6vw,7rem)/.95 var(--cond);font-variant-numeric:tabular-nums}
+.big > span{font:900 1.2rem var(--serif);margin-bottom:14px}
+.offer .sub{font-weight:700;letter-spacing:.06em}
+.hanko{position:absolute;right:-18px;top:-26px;width:78px;height:78px;border:3px solid var(--neon);border-radius:50%;color:var(--neon);display:grid;place-items:center;text-align:center;font:900 .86rem/1.15 var(--serif);transform:rotate(-12deg);background:rgba(255,255,255,.85)}
+.cta{display:grid;gap:10px;margin-top:22px}
+.cta .note{text-align:center;font-size:.82rem;color:var(--sub);letter-spacing:.08em}
+.cta .note b{color:var(--ink)}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 20px;font:700 1rem/1 var(--sans);letter-spacing:.12em;text-decoration:none;border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;transition:background-color .15s,color .15s,transform .12s var(--ease)}
+.btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn:active{transform:translateY(1px) scale(.99)}
+.btn-brand{background:var(--neon);border-color:var(--neon);color:var(--ink)}
+.btn-brand:hover{background:var(--neon-hover);border-color:var(--neon-hover)}
+.btn-big{min-height:62px;font-size:1.12rem;letter-spacing:.2em}
+.btn-line{color:#05692e;border-color:var(--line-deep)}
+.btn-line:hover{background:var(--line-deep);color:#fff}
+.btn-line.solid{background:var(--line-deep);color:#fff}
+.btn-line.solid:hover{background:#05762f}
+.btn[disabled]{opacity:.6;cursor:wait}
+
+/* 數字列 */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.pf{padding:20px 0 18px 22px}
+.pf:first-child{padding-left:0}
+.pf + .pf{border-left:1px solid var(--hair)}
+.pf strong{display:block;font:600 clamp(2rem,3vw,2.6rem)/1.05 var(--cond);font-variant-numeric:tabular-nums}
+.pf strong small{font:700 .85rem var(--sans);margin-left:3px}
+.pf strong span{font:inherit}
+.pf strong .star{font-size:.6em;color:var(--neon);margin-left:4px}
+.pf > span{font-size:.84rem;color:var(--sub)}
+
+/* 段落共用 */
+.sec{padding-top:var(--gap)}
+.sec-h{margin:0 0 clamp(28px,4vw,44px);max-width:760px}
+.sec-h h2{margin:0;font:900 clamp(1.8rem,3.2vw,2.6rem)/1.35 var(--serif);letter-spacing:.03em;text-wrap:balance}
+.sec-h p{margin-top:12px;color:var(--sub);font-size:1.02rem}
+
+/* 我們怎麼找人 */
+.funnel{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:12px;padding:26px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--hair);margin-bottom:8px}
+.funnel div{display:flex;flex-direction:column;gap:2px}
+.funnel strong{font:600 clamp(2.4rem,4.6vw,3.8rem)/1 var(--cond);font-variant-numeric:tabular-nums}
+.funnel strong.zh{font:900 clamp(1.6rem,2.8vw,2.3rem)/1.25 var(--serif)}
+.funnel strong small{font:700 .9rem var(--sans);margin-left:3px}
+.funnel div > span{font-size:.86rem;color:var(--sub)}
+.funnel i{font-style:normal;font-size:1.4rem;color:var(--muted)}
+.funnel div:last-child strong{color:var(--ink)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);column-gap:clamp(24px,3vw,44px)}
+.steps li{padding:22px 0 20px;border-bottom:1px solid var(--hair)}
+.steps .n{font:600 1rem var(--cond);letter-spacing:.1em;color:var(--muted)}
+.steps h3{margin:4px 0 6px;font:900 1.12rem/1.5 var(--serif)}
+.steps p{font-size:.92rem;color:var(--sub);line-height:1.85}
+.zero{margin-top:24px;font:900 clamp(1.1rem,1.8vw,1.35rem)/1.6 var(--serif)}
+.zero b{color:#c2410c}
+
+/* 費用怎麼算 */
+.price{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:start}
+.plist{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.plist li{display:grid;grid-template-columns:28px 1fr;gap:4px 12px;padding:18px 0;border-bottom:1px solid var(--hair)}
+.plist svg{width:22px;height:22px;margin-top:4px;fill:none;stroke:#c2410c;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;grid-row:span 2}
+.plist b{font:900 1.12rem/1.5 var(--serif)}
+.plist span{font-size:.92rem;color:var(--sub)}
+.calc{background:var(--white);padding:26px 28px 24px;box-shadow:0 1px 0 var(--hair)}
+.calc h3{margin:0;font:900 1.1rem var(--serif);letter-spacing:.14em}
+.rate{font-size:.84rem;color:var(--muted);margin-top:2px}
+.slider label{display:flex;justify-content:space-between;align-items:baseline;font-size:.9rem;margin:18px 0 4px}
+.slider label b{font:600 1.3rem var(--cond)}
+input[type=range]{width:100%;height:32px;margin:0;-webkit-appearance:none;appearance:none;background:transparent;cursor:pointer;touch-action:pan-y}
+input[type=range]::-webkit-slider-runnable-track{height:4px;background:linear-gradient(90deg,var(--neon) var(--p,32%),var(--hair) var(--p,32%))}
+input[type=range]::-moz-range-track{height:4px;background:var(--hair)}
+input[type=range]::-moz-range-progress{height:4px;background:var(--neon)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;margin-top:-10px;border-radius:50%;background:var(--white);border:3px solid var(--ink)}
+input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--white);border:3px solid var(--ink)}
+.ticks{display:flex;justify-content:space-between;font-size:.72rem;color:var(--muted)}
+.result{display:flex;justify-content:space-between;align-items:baseline;margin-top:16px;padding-top:14px;border-top:2px solid var(--ink)}
+.result span{font-size:.9rem;font-weight:700}
+.result strong{font:600 2.4rem/1 var(--cond);font-variant-numeric:tabular-nums}
+.result strong small{font:700 .9rem var(--sans);margin-left:4px}
+.calc .how{margin-top:8px;font-size:.84rem;color:var(--sub);min-height:1.6em}
+.calc .note{margin-top:10px;font-size:.76rem;color:var(--muted)}
+
+/* 開始找人 */
+.start{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,72px);align-items:start;padding-bottom:var(--gap)}
+.roles-h{font-size:.86rem;font-weight:700;letter-spacing:.1em;margin:0 0 10px}
+.pick-grid{display:flex;flex-wrap:wrap;gap:8px}
+.pick-grid a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1.5px solid var(--ink);text-decoration:none;font-weight:700;font-size:.94rem;letter-spacing:.06em;transition:background-color .15s,color .15s}
+.pick-grid a:hover{background:var(--ink);color:#fff}
+.pick-grid a.on{background:var(--ink);color:#fff}
+.alt{margin-top:32px;padding-top:24px;border-top:1px solid var(--hair);display:grid;gap:10px;max-width:360px}
+.tel{font-size:.92rem;color:var(--sub)}
+.tel a{font:600 1.4rem var(--cond);letter-spacing:.06em;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink)}
+.hours{font-size:.82rem;color:var(--muted)}
+form#hireForm{background:var(--white);padding:clamp(22px,3vw,36px);box-shadow:0 1px 0 var(--hair),0 24px 48px -40px rgba(22,41,74,.4);border-top:4px solid var(--ink)}
+.ft{margin:0 0 18px;font:900 1.2rem var(--serif);letter-spacing:.2em}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:.86rem;font-weight:700;margin-bottom:6px;letter-spacing:.06em}
+.field label i{font-style:normal;color:#c2410c;margin-left:2px}
+.field input,.field textarea{width:100%;min-height:50px;padding:12px 14px;border:1.5px solid #c9ced8;border-radius:0;background:var(--white);font:400 1rem/1.5 var(--sans);color:var(--ink);transition:border-color .2s,box-shadow .2s}
+.field textarea{resize:vertical}
+.field input::placeholder,.field textarea::placeholder{color:#69728a}
+.field input:hover,.field textarea:hover{border-color:#9aa3b5}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px rgba(255,106,43,.25)}
+details.opt{margin:0 0 18px;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+details.opt .field{padding:0 2px 4px}
+summary{cursor:pointer;list-style:none;padding:13px 2px;font-size:.92rem;font-weight:500;color:var(--sub);display:flex;justify-content:space-between;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"＋";transition:transform .25s var(--ease)}
+details[open] > summary::after{transform:rotate(45deg)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+#hireForm .btn-brand{width:100%}
+.form-msg{min-height:1.6em;margin-top:12px;font-size:.92rem;font-weight:700}
+.privacy{font-size:.78rem;color:var(--muted);line-height:1.8;margin-top:4px}
+details.law{margin-top:6px;font-size:.8rem;color:var(--muted)}
+details.law summary{padding:8px 0;font-size:.8rem}
+details.law p{line-height:1.9;padding-bottom:8px}
+
+/* 頁尾 */
+.foot{background:var(--ink);color:#c9d0dc;padding:clamp(40px,5vw,64px) 0 calc(32px + env(safe-area-inset-bottom));font-size:.86rem;line-height:2}
+.foot a{color:#fff}
+.foot-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,3fr) minmax(0,3fr);gap:32px}
+.foot h3{margin:0 0 8px;font:900 1rem var(--serif);letter-spacing:.16em;color:#fff}
+.foot ul{list-style:none;margin:0;padding:0}
+.foot ul a{text-decoration:none}
+.foot ul a:hover{text-decoration:underline;text-underline-offset:4px}
+.foot .co strong{color:#fff}
+.foot .btn{margin-top:16px;border-color:#fff;color:#fff;min-height:46px;display:inline-flex}
+.foot .btn:hover{background:#fff;color:var(--ink)}
+.foot .legal{margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,.18);font-size:.76rem;color:#b9c3d3}
+
+/* 手機底部按鈕、回到頂端 */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:var(--paper);border-top:1px solid var(--rule)}
+.sticky .btn{flex:1;min-height:48px;padding:0 10px;letter-spacing:.08em}
+.to-top{position:fixed;right:20px;bottom:24px;z-index:21;width:46px;height:46px;border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);cursor:pointer;display:grid;place-items:center;opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .3s,transform .3s var(--ease),background-color .2s}
+.to-top svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.to-top.on{opacity:1;transform:none;pointer-events:auto}
+.to-top:hover{background:var(--white)}
+
+@media (prefers-reduced-motion:no-preference){
+  .hanko{animation:stamp .45s var(--ease) .9s both}
+  @keyframes stamp{from{opacity:0;transform:rotate(-12deg) scale(1.5)}}
+  .front .hl{background-size:0 100%;background-repeat:no-repeat;animation:mark .7s var(--ease) .35s forwards}
+  .front .big .hl{animation-delay:.6s}
+  @keyframes mark{to{background-size:100% 100%}}
+}
+
+@media (max-width:980px){
+  .nav-right{display:block}
+  .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:0 var(--pad) 12px;background:var(--paper);border-bottom:1px solid var(--rule);display:none;font-size:1rem;margin:0}
+  .topnav.open .nav-links{display:flex}
+  .nav-links a{padding:13px 2px;border-bottom:1px solid var(--hair);background:none}
+  .nav-links .nav-cta,.nav-links .nav-cta:hover{background:none;color:#c2410c;padding:13px 2px}
+  .front,.price,.start{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr 1fr}
+  .pf:nth-child(3){border-left:0;padding-left:0}
+  .pf:nth-child(n+3){border-top:1px solid var(--hair)}
+  .steps{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .foot-grid > :first-child{grid-column:1 / -1}
+}
+@media (max-width:600px){
+  .mast{height:60px}
+  .logo b{font-size:1.15rem;letter-spacing:.16em}
+  .logo small{letter-spacing:.1em}
+  .front{padding-top:32px;gap:28px}
+  h1 .a{font-size:10.4vw}
+  .offer{padding:22px 20px 24px}
+  .hanko{right:-6px;top:-24px;width:66px;height:66px;font-size:.74rem}
+  .funnel{grid-template-columns:1fr;gap:4px;padding:18px 0}
+  .funnel div{flex-direction:row;align-items:baseline;justify-content:space-between;padding:6px 0}
+  .funnel i{display:none}
+  .steps{grid-template-columns:1fr}
+  .row2{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .sticky{display:flex}
+  .to-top{bottom:84px;right:14px}
+  .foot{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
+}
+
+/* ===== v10：表單三件套、Q&A、試算快速鍵 ===== */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+#s-open:empty{display:inline-block;width:2.2em;height:.72em;vertical-align:middle;background:linear-gradient(90deg,#e6e8ed 25%,#f2f3f6 50%,#e6e8ed 75%) 0 0/200% 100%;animation:skel 1.2s linear infinite}
+@keyframes skel{to{background-position:-200% 0}}
+.fhead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px}
+.fhead .ft{margin:0}
+.fsteps{display:flex;gap:6px;list-style:none;margin:0;padding:0;font-size:.82rem;color:var(--muted)}
+.fsteps li{display:flex;align-items:center;gap:6px;padding:4px 10px 4px 4px;border:1px solid var(--hair);transition:all .25s var(--ease)}
+.fsteps b{width:20px;height:20px;display:grid;place-items:center;background:var(--hair);color:var(--ink);font:600 .8rem var(--cond)}
+.fsteps li.on{border-color:var(--ink);color:var(--ink);font-weight:700}
+.fsteps li.on b{background:var(--neon)}
+.fsteps li.ok b{background:var(--ink);color:#fff}
+fieldset.fstep{border:0;margin:0;padding:0;min-width:0}
+.fhint{margin-top:10px;text-align:center;font-size:.82rem;color:var(--sub);letter-spacing:.06em}
+.recap{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px;padding:12px 14px;background:var(--tint);font-size:.92rem;font-weight:700}
+.back{border:0;background:none;color:var(--ink);font:500 .84rem var(--sans);text-decoration:underline;text-underline-offset:4px;cursor:pointer;padding:6px 0;white-space:nowrap}
+.field .err{margin:6px 0 0;font-size:.82rem;font-weight:700;color:#b42318;display:flex;gap:6px;align-items:center}
+.field .err:empty{display:none}
+.field .err::before{content:"!";width:16px;height:16px;flex:none;display:grid;place-items:center;background:#b42318;color:#fff;font-size:.7rem;border-radius:50%}
+.field input[aria-invalid="true"]{border-color:#b42318;background:#fff8f7}
+.field input.okv{border-color:#4f7a5a}
+#hireForm.sent .fstep,#hireForm.sent .legal-f,#hireForm.sent .fsteps{display:none}
+#hireForm.sent .form-msg{display:flex;align-items:center;gap:12px;margin:4px 0 14px;font:900 1.35rem/1.4 var(--serif);color:var(--ink) !important}
+#hireForm.sent .form-msg::before{content:"";width:40px;height:40px;flex:none;border-radius:50%;background:var(--neon) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5' fill='none' stroke='%2316294a' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/22px no-repeat}
+.done p{color:var(--sub);margin-bottom:6px}
+.done-act{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.legal-f{margin-top:6px}
+.qa{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,40px);border-top:1px solid var(--rule)}
+.qa > div{padding-top:20px}
+.qa h3{margin:0 0 8px;font:900 1.12rem/1.5 var(--serif)}
+.qa h3::before{content:"Q.";font:600 1.2rem var(--cond);color:#c2410c;margin-right:8px}
+.qa p{color:var(--sub);font-size:.94rem}
+.qa-more{margin-top:22px;font-size:.92rem;font-weight:700}
+#ask + .start{padding-top:clamp(56px,7vw,96px)}
+.presets{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.presets button{min-height:40px;padding:0 14px;border:1.5px solid var(--hair);background:var(--white);font:700 .86rem var(--sans);color:var(--ink);cursor:pointer;transition:border-color .15s,background-color .15s}
+.presets button:hover{border-color:var(--ink)}
+.presets button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+input[type=range]{height:44px}
+input[type=range]::-webkit-slider-thumb{width:28px;height:28px;margin-top:-12px}
+input[type=range]::-moz-range-thumb{width:22px;height:22px}
+@media (max-width:980px){.qa{grid-template-columns:1fr;gap:0}.qa > div{padding:18px 0;border-bottom:1px solid var(--hair)}}
+@media (max-width:600px){.fhead{flex-direction:column;align-items:flex-start}.done-act{grid-template-columns:1fr}}
 </style>
-<style id="page-anim">
-  /* 換頁動畫：支援的瀏覽器用 View Transitions，其他瀏覽器淡入 */
-  @view-transition{navigation:auto}
-  ::view-transition-old(root){animation:vtOut .12s linear both}
-  ::view-transition-new(root){animation:vtIn .2s ease-out both}
-  @keyframes vtOut{to{opacity:0}}
-  @keyframes vtIn{from{opacity:0}}
-  .topnav{view-transition-name:topnav}
-  .sticky{view-transition-name:stickybar}
-  ::view-transition-group(topnav),::view-transition-group(stickybar){animation:none}
-  @supports not (view-transition-name:none){
-    .page-head,.hero,main,article,section,footer{animation:pgIn .2s ease-out both}
-    @keyframes pgIn{from{opacity:0}}
-  }
-  @media (prefers-reduced-motion:reduce){
-    @view-transition{navigation:none}
-    .page-head,.hero,main,article,section,footer{animation:none !important}
-  }
-</style>
-<style id="v6">
-  /* ===== v6：精緻化（參考 SmartHR／BizReach 企業端） ===== */
-  #bubbles{display:none !important}
-  body{background:#fbfaf8}
-  .hero6{padding:56px 0 64px;background:radial-gradient(1200px 500px at 85% -10%,#ffe9dc 0%,rgba(255,233,220,0) 60%),linear-gradient(180deg,#fff7f2 0%,#fbfaf8 100%);overflow:hidden}
-  .h6-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
-  .kicker{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;font-weight:700;color:var(--muted);text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px 6px 6px;box-shadow:0 6px 20px -14px rgba(0,0,0,.3)}
-  .kicker b{background:var(--brand);color:#fff;border-radius:999px;padding:2px 10px;font-size:.78rem}
-  .hero6 h1{font-size:clamp(2.1rem,5.6vw,3.5rem);line-height:1.22;letter-spacing:-.01em;margin:22px 0 18px;font-weight:900}
-  .hero6 h1 em{font-style:normal;color:var(--brand)}
-  .h6-lead{font-size:clamp(1.02rem,2.3vw,1.15rem);color:#41464f;line-height:1.85;margin:0 0 30px}
-  .h6-lead mark{background:linear-gradient(transparent 58%,#ffd9c4 58%);color:var(--ink);font-weight:800;padding:0 2px}
-  .cta6{display:flex;flex-direction:column;gap:12px;max-width:420px}
-  .btn6{position:relative;display:flex;align-items:center;justify-content:center;gap:10px;min-height:60px;border-radius:999px;font-weight:800;font-size:1.06rem;text-decoration:none;transition:transform .15s,box-shadow .2s}
-  .btn6 i{font-style:normal;position:absolute;right:22px;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.95rem}
-  .btn6 small{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:#ffe14d;color:#15171c;font-size:.74rem;font-weight:800;padding:2px 12px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 10px -6px rgba(0,0,0,.4)}
-  .btn6.primary{background:var(--brand);color:#fff;box-shadow:0 14px 30px -14px rgba(240,106,42,.9)}
-  .btn6.primary i{background:rgba(255,255,255,.22)}
-  .btn6.line{background:#fff;color:#06a849;border:2px solid #06c755}
-  .btn6.line i{background:#e8f9ef}
-  .btn6:hover{transform:translateY(-2px)}
-  .h6-visual{position:relative;padding:24px 18px}
-  .mock{background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 30px 60px -30px rgba(21,23,28,.35)}
-  .mock-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
-  .mock-top b{font-size:1rem}
-  .mock-top span{font-size:.75rem;color:var(--muted)}
-  .mock-row{display:flex;align-items:center;gap:12px;padding:12px 4px;border-top:1px solid #f0eee9}
-  .mock-row div{flex:1;min-width:0;line-height:1.35}
-  .mock-row b{display:block;font-size:.95rem}
-  .mock-row small{color:var(--muted);font-size:.78rem}
-  .av{width:38px;height:38px;border-radius:50%;background:#ffe2d1;color:var(--brand);display:flex;align-items:center;justify-content:center;font-weight:900;flex:none}
-  .av.b{background:#dff3f4;color:#2b9aa0}.av.c{background:#ece7ff;color:#6b55d6}
-  .ok{font-size:.74rem;font-weight:800;color:#15803d;background:#e8f7ee;border-radius:999px;padding:3px 10px;white-space:nowrap}
-  .mock-note{margin:6px 0 0;text-align:right;font-size:.68rem;color:#a2a7b0}
-  .float{position:absolute;background:#fff;border-radius:16px;padding:10px 14px;box-shadow:0 18px 40px -20px rgba(21,23,28,.45);line-height:1.3}
-  .float small{display:block;font-size:.72rem;color:var(--muted);font-weight:700}
-  .float b{font-size:1.05rem;color:var(--brand);font-weight:900}
-  .float.f1{left:-6px;bottom:-4px}.float.f2{right:-4px;top:4px}
-  .proof6{padding:0;background:#fbfaf8}
-  .p6-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:#fff;border:1px solid var(--line);border-radius:24px;margin-top:-28px;position:relative;box-shadow:0 20px 40px -30px rgba(0,0,0,.25)}
-  .p6{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:22px 12px;gap:2px}
-  .p6 + .p6{border-left:1px solid var(--line)}
-  .p6 > b{font-size:clamp(1.7rem,4.6vw,2.4rem);font-weight:900;line-height:1.1;letter-spacing:-.02em}
-  .p6 > b small{font-size:.45em;margin-left:2px}
-  .p6 > b em{font-style:normal;color:#f5b400;font-size:.8em}
-  .p6 > span{font-size:.8rem;color:var(--muted)}
-  .p6 a{color:var(--muted)}
-  .laurel-wrap{position:relative;color:#c79a3b}
-  .laurel{position:absolute;left:50%;top:50%;width:230px;transform:translate(-50%,-52%);opacity:.9}
-  .laurel-wrap div{position:relative;display:flex;flex-direction:column;align-items:center;line-height:1.25}
-  .laurel-wrap small{font-size:.72rem;color:var(--muted);font-weight:700}
-  .laurel-wrap b{font-size:1.25rem;font-weight:900;color:var(--ink)}
-  .laurel-wrap span{font-size:.72rem;color:var(--muted)}
-  .num6{display:flex;align-items:center;justify-content:center;gap:10px;margin:0 0 8px;font-size:.85rem;font-weight:800;color:var(--muted);letter-spacing:.06em}
-  .num6 span{color:var(--brand);font-size:1rem;font-weight:900;font-family:ui-monospace,Menlo,monospace}
-  .num6 span::after{content:"";display:inline-block;width:28px;height:2px;background:var(--brand);vertical-align:middle;margin-left:10px}
-  .num6.left{justify-content:flex-start}
-  .dark .num6{color:#a8afbb}
-  .h6c{text-align:center;margin-bottom:10px}
-  .sub6{text-align:center;color:var(--muted);margin:0 0 26px}
-  .pick6{padding:72px 0 64px}
-  .pick6 .pick-grid{max-width:640px;margin:0 auto;gap:10px}
-  .pick6 .pick-grid a{min-height:58px;border-radius:16px;font-size:1rem;background:#fff;box-shadow:0 8px 20px -18px rgba(0,0,0,.35)}
-  #why .h6c{margin-bottom:28px}
-  #why .pains-mini{justify-content:center}
-  .go .h6c{margin-bottom:28px}
-  @media (max-width:860px){
-    .h6-grid{grid-template-columns:1fr;gap:34px}
-    .h6-visual{max-width:440px;margin:0 auto;width:100%}
-  }
-  @media (max-width:760px){
-    .hero6{padding:28px 0 56px}
-    .hero6 h1{margin:18px 0 14px}
-    .h6-lead{margin-bottom:26px;font-size:1rem}
-    .cta6{max-width:none}
-    .h6-visual{padding:18px 8px 26px}
-    .mock{padding:14px}
-    .mock-row{padding:10px 2px}
-    .float{padding:8px 12px}
-    .float b{font-size:.95rem}
-    .p6-grid{grid-template-columns:1fr 1fr;border-radius:20px}
-    .p6.laurel-wrap{grid-column:1 / -1;border-bottom:1px solid var(--line);padding:26px 12px}
-    .p6 + .p6{border-left:0}
-    .p6:last-child{border-left:1px solid var(--line)}
-    .pick6{padding:56px 0 48px}
-    .stats,.trustline,.price-pill{display:none}
-  }
-  /* 無主視覺：首屏置中 */
-  .h6-grid{grid-template-columns:1fr !important;text-align:center;justify-items:center}
-  .h6-copy{max-width:720px}
-  .cta6{margin:0 auto;width:100%}
-  .hero6{padding-bottom:72px}
-  /* 置中對齊微調：標點只佔半格、上方標籤左右對稱、大標一律粗體 */
-  .hero6 h1 .pz{display:inline-block;width:.5em;overflow:visible}
-  .hero6 h1{letter-spacing:.02em}
-  .hero6 h1,.hero6 h1 em,.hero6 h1 .pz,h2,.h6c,.b3 h3,.go-card b{font-weight:900 !important;font-synthesis:weight}
-  .kicker{padding:5px 18px 5px 5px;gap:10px}
-  .kicker span{padding-right:4px}
-  .h6-copy{display:flex;flex-direction:column;align-items:center}
-</style>
+
 </head>
 <body data-page="home">
-<canvas id="bubbles" aria-hidden="true"></canvas>
+<a class="skip" href="#hireForm">跳到需求表單</a>
 
-<nav class="topnav">
-  <div class="wrap">
-    <a class="logo" href="/hire/"><img src="/job365map/favicon-192.png" alt="JOB365 Logo" width="32" height="32"><span>JOB365 × 中基層獵才<small>日玖國際旗下團隊</small></span></a>
-    <div class="nav-links" id="navLinks"><a href="/hire/" class="on" aria-current="page" data-ga="hire_nav_home">服務介紹</a><a href="/hire/pricing.html" data-ga="hire_nav_pricing">收費方式</a><a href="/hire/process.html" data-ga="hire_nav_process">合作流程</a><a href="/hire/faq.html" data-ga="hire_nav_faq">常見問題</a><a href="/hire/guide/" data-ga="hire_nav_guide">招募指南</a><a class="nav-job" href="/#jobs" data-ga="hire_to_jobs">合作職缺</a></div>
-    <div class="nav-right"><a class="nav-cta" href="/hire/#hireForm" data-ga="hire_nav_cta">免費諮詢</a><button class="nav-burger" type="button" aria-label="開啟選單" aria-expanded="false" aria-controls="navLinks"><span></span></button></div>
+<nav class="topnav" aria-label="主選單">
+  <div class="wrap mast">
+    <a class="logo" href="/hire/"><img src="/job365map/favicon-192.png" alt="JOB365 Logo" width="32" height="32"><span><b>中基層獵才</b><small>JOB365 × 日玖國際旗下團隊</small></span></a>
+    <div class="nav-links" id="navLinks"><a href="/hire/" class="on" aria-current="page" data-ga="hire_nav_home">服務介紹</a><a href="/hire/pricing.html" data-ga="hire_nav_pricing">收費方式</a><a href="/hire/process.html" data-ga="hire_nav_process">合作流程</a><a href="/hire/faq.html" data-ga="hire_nav_faq">常見問題</a><a href="/hire/guide/" data-ga="hire_nav_guide">招募指南</a><a class="nav-job" href="/#jobs" data-ga="hire_to_jobs">合作職缺</a><a class="nav-cta" href="/hire/#hireForm" data-ga="hire_nav_cta">免費諮詢</a></div>
+    <div class="nav-right"><button class="nav-burger" type="button" aria-label="開啟選單" aria-expanded="false" aria-controls="navLinks"><span></span></button></div>
   </div>
 </nav>
 
-<header class="hero6" id="top6">
-  <div class="wrap h6-grid">
-    <div class="h6-copy">
-      <a class="kicker" href="http://zjiou.com.tw/" target="_blank" rel="noopener" data-ga="parent_site_click"><b>日玖國際</b><span>旗下・正職代招服務</span></a>
-      <h1>職缺開了沒人來<span class="pz">？</span><br><em>交給中基層獵才<span class="pz">。</span></em></h1>
-      <p class="h6-lead">顧問主動找人、一對一面談後才推薦。<br><mark>人選報到才收費</mark>，<span style="white-space:nowrap">只收第一個月、最高 15,000 元。</span></p>
-      <div class="cta6">
-        <a class="btn6 primary" href="#hireForm" data-ga="hire_hero_form"><small>免費諮詢</small><span>填寫徵才需求</span><i aria-hidden="true">→</i></a>
-        <a class="btn6 line" href="https://line.me/R/ti/p/@642ahllq" target="_blank" rel="noopener" data-ga="employer_line_click"><span>LINE 免費諮詢</span><i aria-hidden="true">→</i></a>
-      </div>
+<header class="wrap front" id="top6">
+  <div>
+    <h1><span class="q">職缺開了沒人來？</span><span class="a"><span class="hl">交給</span>中基層獵才。</span></h1>
+    <p class="deck">顧問主動找人，一對一面談後才推薦。<br>人選報到才收費，第二個月起 0 元。</p>
+  </div>
+  <div>
+    <div class="offer">
+      <p class="t">收費上限</p>
+      <div class="big"><small>最高</small><strong class="hl">15,000</strong><span>元</span></div>
+      <p class="sub">只收人選到職的第一個月</p>
+      <div class="hanko" aria-hidden="true">報到<br>才收費</div>
+    </div>
+    <div class="cta">
+      <a class="btn btn-brand btn-big" href="#hireForm" data-ga="hire_hero_form">免費幫我找人<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <p class="note"><b>報到前 0 元</b>・沒有開案費、訂金</p>
+      <a class="btn btn-line" href="https://line.me/R/ti/p/@642ahllq" target="_blank" rel="noopener" data-ga="employer_line_click">LINE 免費諮詢<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
 </header>
 
-<section class="proof6">
-  <div class="wrap"><div class="p6-grid">
-    <div class="p6 laurel-wrap"><svg class="laurel" viewBox="0 0 120 60" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M30 54C14 46 8 30 12 10"/><path d="M90 54c16-8 22-24 18-44"/></g><g fill="currentColor"><ellipse cx="12" cy="18" rx="3.2" ry="7" transform="rotate(-20 12 18)"/><ellipse cx="11" cy="31" rx="3.2" ry="7" transform="rotate(-45 11 31)"/><ellipse cx="16" cy="43" rx="3.2" ry="7" transform="rotate(-65 16 43)"/><ellipse cx="108" cy="18" rx="3.2" ry="7" transform="rotate(20 108 18)"/><ellipse cx="109" cy="31" rx="3.2" ry="7" transform="rotate(45 109 31)"/><ellipse cx="104" cy="43" rx="3.2" ry="7" transform="rotate(65 104 43)"/></g></svg><div><small>日玖國際</small><b>在地深耕 30 年</b><span>人力資源公司</span></div></div>
-    <div class="p6"><b><span id="s-open">—</span></b><span>目前合作招募中職缺</span></div>
-    <div class="p6"><b>4.4<em>★</em></b><span>Google 評論 170+ 則<br><a href="https://maps.google.com/?cid=6082274333580411568" target="_blank" rel="noopener" data-ga="gbp_click">查看評論</a></span></div>
-  </div></div>
+<main>
+<section class="wrap" aria-label="服務實績">
+  <div class="facts">
+    <div class="pf"><strong>30<small>年</small></strong><span><a class="ul" href="http://zjiou.com.tw/" target="_blank" rel="noopener" data-ga="parent_site_click">日玖國際</a>在地人力資源</span></div>
+    <div class="pf"><strong>300<small>+</small></strong><span>服務過的企業，各行各業</span></div>
+    <div class="pf"><strong><span id="s-open"></span></strong><span id="s-open-label">目前合作招募中職缺</span></div>
+    <div class="pf"><strong>4.4<span class="star" aria-hidden="true">★</span></strong><span>Google 評論 170+ 則・<a class="ul" href="https://maps.google.com/?cid=6082274333580411568" target="_blank" rel="noopener" data-ga="gbp_click">看評論</a></span></div>
+  </div>
   <div hidden><span id="s-ind"></span><span id="s-chips"></span><p id="s-note"></p><div id="s-fresh" hidden><div id="s-bars"></div></div></div>
 </section>
 
-<section class="pick6" id="pick">
-  <div class="wrap">
-    <p class="num6"><span>01</span>職缺</p>
-    <h2 class="h6c">你要招哪一種人？</h2>
-    <p class="sub6">點一下，直接帶進需求表單</p>
-    <div class="pick-grid">
-        <a href="#hireForm" data-pick="會計" data-ga="hire_pick">會計</a><a href="#hireForm" data-pick="客服" data-ga="hire_pick">客服</a><a href="#hireForm" data-pick="設備工程師" data-ga="hire_pick">設備工程師</a><a href="#hireForm" data-pick="助理工程師" data-ga="hire_pick">助理工程師</a><a href="#hireForm" data-pick="行政助理" data-ga="hire_pick">行政助理</a><a href="#hireForm" data-pick="" data-ga="hire_pick">其他職缺</a>
+<section class="wrap sec" id="story">
+  <div class="sec-h">
+    <h2>一位人選，是怎麼被推薦到你面前的？</h2>
+    <p>不是把職缺放上去等人投，是顧問一個一個找、一個一個談。</p>
+  </div>
+  <div class="funnel" aria-label="一份職缺的篩選">
+    <div><strong>10–15<small>位</small></strong><span>主動聯繫</span></div><i aria-hidden="true">→</i>
+    <div><strong class="zh">每位都面談</strong><span>符合條件者</span></div><i aria-hidden="true">→</i>
+    <div><strong><span class="hl">3–4</span><small>位</small></strong><span>推薦給你</span></div>
+  </div>
+  <ol class="steps">
+    <li><span class="n">STEP 01</span><h3>先問清楚你要什麼人</h3><p>確認工作內容、班別、薪資範圍、通勤、團隊氣氛與希望到職時間。</p></li>
+    <li><span class="n">STEP 02</span><h3>主動聯繫 10–15 位</h3><p>不是等履歷上門，顧問從人才資料庫系統主動找可能適合的人。</p></li>
+    <li><span class="n">STEP 03</span><h3>符合條件的，每一位都面談</h3><p>一對一面談，先確認經歷、薪資期待、通勤班別與到職時間，才決定要不要推薦給你。</p></li>
+    <li><span class="n">STEP 04</span><h3>只推薦最適合的 3–4 位</h3><p>你不用自己從一疊履歷裡挑。</p></li>
+    <li><span class="n">STEP 05</span><h3>面試前，再三提醒人選</h3><p>減少放鳥，你排好的面試時間不白等。</p></li>
+    <li><span class="n">STEP 06</span><h3>報到後 3–5 天，先關心一次</h3><p>確認新人適應狀況，有問題早點知道。</p></li>
+  </ol>
+  <p class="zero">以上這些，人選報到前都是 <b>0 元</b>。</p>
+</section>
+
+<section class="wrap sec" id="why">
+  <div class="sec-h">
+    <h2>費用怎麼算？三句話講完</h2>
+  </div>
+  <div class="price">
+    <ul class="plist">
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><b>沒找到人，不用付錢</b><span>人選正式報到才收費，沒有開案費、訂金。</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><b>只收第一個月，最高 15,000 元</b><span>基層職缺 500 元／天，依職缺彈性微調。</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><b>第二個月起 0 元</b><span>沒有年薪抽成，人留得越久越划算。</span></li>
+    </ul>
+    <div class="calc" id="calc">
+      <h3>費用試算</h3>
+      <p class="rate">以基層職缺 500 元／天計算</p>
+      <div class="slider">
+        <label for="days">人選報到後工作了 <b><span id="dOut">20</span> 天</b></label>
+        <input type="range" id="days" min="1" max="60" value="20">
+        <div class="ticks"><span>第 1 天</span><span>滿一個月</span><span>第 60 天</span></div>
+        <div class="presets" role="group" aria-label="快速試算"><button type="button" data-d="7">7 天</button><button type="button" data-d="15">15 天</button><button type="button" data-d="30">滿一個月</button><button type="button" data-d="60">兩個月</button></div>
       </div>
-  </div>
-</section>
-
-<section class="dark" id="why">
-  <div class="wrap">
-    <p class="num6"><span>02</span>為什麼選我們</p>
-    <h2 class="h6c">不只刊登，<br>我們直接幫你找到人</h2>
-    <div class="pains-mini"><span>📭 刊登了，沒人投</span><span>🔍 有人投，不適合</span><span>⏳ HR 一人多工，沒空找人</span></div>
-    <div class="big3">
-      <div class="b3"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><h3>沒找到人，不用付錢</h3><p>人選正式報到才收費，沒有開案費、訂金</p></div></div>
-      <div class="b3"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M16.5 7.5c-.8-1.3-2.4-2-4.5-2-2.6 0-4 1.3-4 3s1.3 2.6 4 3.2 4.3 1.6 4.3 3.4-1.7 3.2-4.3 3.2c-2.2 0-3.9-.8-4.6-2.2"/></svg></span><div><h3>只收第一個月，最高 15,000</h3><p>第二個月起 0 元，沒有年薪抽成</p></div></div>
-      <div class="b3"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5.5 5.5"/></svg></span><div><h3>主動獵才，面談後才推薦</h3><p>推薦前先確認經歷、薪資期待、通勤班別與到職時間</p></div></div>
+      <div class="result" aria-live="polite"><span>你要付的費用</span><strong id="cSum">10,000<small>元</small></strong></div>
+      <p class="how" id="cHow">第一個月 20 天 × 500 元</p>
+      <p class="note">※ 實際日薪依職缺而定，歡迎諮詢報價。</p>
     </div>
   </div>
 </section>
 
-<section class="go" id="more">
-  <div class="wrap">
-    <p class="num6"><span>03</span>了解更多</p>
-    <h2 class="h6c">想先多了解一點？</h2>
-    <div class="go-grid"><a class="go-card" href="/hire/pricing.html" data-ga="hire_go_pricing"><span class="go-ic" aria-hidden="true">$</span><b>收費方式</b><span class="go-d">只收第一個月，最高 15,000 元。線上試算你的費用。</span><span class="go-arrow" aria-hidden="true">→</span></a><a class="go-card" href="/hire/process.html" data-ga="hire_go_process"><span class="go-ic" aria-hidden="true">→</span><b>合作流程</b><span class="go-d">需求確認 → 主動獵才 → 面試安排 → 錄取報到</span><span class="go-arrow" aria-hidden="true">→</span></a><a class="go-card" href="/hire/faq.html" data-ga="hire_go_faq"><span class="go-ic" aria-hidden="true">?</span><b>常見問題</b><span class="go-d">費用、適合職缺、服務地區，一次看懂。</span><span class="go-arrow" aria-hidden="true">→</span></a><a class="go-card" href="/hire/guide/" data-ga="hire_go_guide"><span class="go-ic" aria-hidden="true">≡</span><b>招募指南</b><span class="go-d">作業員招募、面試爽約、隱形招募成本⋯⋯</span><span class="go-arrow" aria-hidden="true">→</span></a></div>
+<section class="wrap sec" id="ask">
+  <div class="sec-h"><h2>開始之前，你可能想問</h2></div>
+  <div class="qa">
+    <div><h3>人選 30 天內離職怎麼辦？</h3><p>費用可以彈性調整。顧問會依實際狀況跟你討論，不會讓你白付。</p></div>
+    <div><h3>適合哪些職缺？</h3><p>以中基層正職為主：會計、客服、設備工程師、助理工程師、行政助理等，其他職缺也歡迎問。</p></div>
+    <div><h3>服務哪些地區？</h3><p>由新竹總公司統一服務全台，各縣市的職缺都可以委託。</p></div>
   </div>
+  <p class="qa-more"><a class="ul" href="/hire/faq.html" data-ga="hire_qa_faq">看更多常見問題</a></p>
 </section>
 
-<section id="contact" style="padding-top:24px">
-  <div class="wrap form-wrap">
-    <div>
-      <p class="num6 left"><span>04</span>聯絡我們</p>
-      <h2>如何開始合作</h2>
-      <p class="lead" style="margin-bottom:20px">完成表單填寫，由專人與你聯繫。<br>想更快？加入官方 LINE <strong>@642ahllq</strong>，加速諮詢流程。</p>
-      <a class="btn btn-line" href="https://line.me/R/ti/p/@642ahllq" target="_blank" rel="noopener" data-ga="employer_line_click">加入官方 LINE</a>
-      <p style="margin:14px 0 0;color:var(--muted)">也可撥打專線 <a href="tel:035643252" data-ga="employer_tel_click"><strong>03-5643252</strong></a></p>
-      <p class="contact-trust">人選報到才收費・只收第一個月・最高 15,000 元<br>日玖國際在地深耕 30 年・<a href="https://maps.google.com/?cid=6082274333580411568" target="_blank" rel="noopener" data-ga="gbp_click">Google 評論 4.4★</a></p>
+<section class="wrap sec start" id="contact">
+  <div>
+    <div class="sec-h">
+      <h2>開始找人</h2>
+      <p>留下需求，顧問會跟你聯繫。<br>想更快？加入官方 LINE <strong>@642ahllq</strong>。</p>
     </div>
-    <form id="hireForm" novalidate>
+    <p class="roles-h">先選職缺，會直接帶進表單</p>
+    <div class="pick-grid" id="pick">
+      <a href="#hireForm" data-pick="會計" data-ga="hire_pick">會計</a><a href="#hireForm" data-pick="客服" data-ga="hire_pick">客服</a><a href="#hireForm" data-pick="設備工程師" data-ga="hire_pick">設備工程師</a><a href="#hireForm" data-pick="助理工程師" data-ga="hire_pick">助理工程師</a><a href="#hireForm" data-pick="行政助理" data-ga="hire_pick">行政助理</a><a href="#hireForm" data-pick="" data-ga="hire_pick">其他職缺</a>
+    </div>
+    <div class="alt">
+      <a class="btn btn-line solid" href="https://line.me/R/ti/p/@642ahllq" target="_blank" rel="noopener" data-ga="employer_line_click">加入官方 LINE<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <p class="tel">或撥專線 <a href="tel:035643252" data-ga="employer_tel_click">03-5643252</a></p>
+      <p class="hours">受理時間 09:00–17:45（國定假日休息）・<a class="ul" href="https://maps.google.com/?cid=6082274333580411568" target="_blank" rel="noopener" data-ga="gbp_click">Google 評論 4.4★</a></p>
+    </div>
+  </div>
+  <form id="hireForm" novalidate>
+    <div class="fhead"><p class="ft">徵才需求表</p><ol class="fsteps" aria-label="填寫進度"><li class="on" id="st1"><b>1</b>需求</li><li id="st2"><b>2</b>聯絡方式</li></ol></div>
+    <fieldset class="fstep" id="fs1">
+      <legend class="sr">步驟 1：徵才需求</legend>
+      <div class="field"><label for="f-job">需求職缺 <i>*</i></label><input id="f-job" name="job" required placeholder="例如：助理工程師、會計" autocomplete="off"></div>
+      <div class="row2">
+        <div class="field"><label for="f-count">需求人數 <i>*</i></label><input id="f-count" name="count" required inputmode="numeric" pattern="[0-9]*" placeholder="例如：3"></div>
+        <div class="field"><label for="f-location">工作地點 <i>*</i></label><input id="f-location" name="location" required placeholder="例如：台中市西屯區"></div>
+      </div>
+      <details class="opt"><summary>補充需求（選填）</summary><div class="field"><label for="f-note">其他需求</label><textarea id="f-note" name="note" rows="3" placeholder="班別、薪資範圍、希望到職時間…"></textarea></div></details>
+      <button class="btn btn-brand btn-big" type="button" id="toStep2">下一步：留下聯絡方式<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <p class="fhint">只差一步・人選報到前 0 元</p>
+    </fieldset>
+    <fieldset class="fstep" id="fs2" hidden>
+      <legend class="sr">步驟 2：聯絡方式</legend>
+      <div class="recap"><span id="recap">—</span><button type="button" class="back" id="toStep1">修改需求</button></div>
       <div class="row2">
         <div class="field"><label for="f-company">公司名稱 <i>*</i></label><input id="f-company" name="company" required autocomplete="organization"></div>
         <div class="field"><label for="f-name">聯絡人 <i>*</i></label><input id="f-name" name="name" required autocomplete="name"></div>
       </div>
       <div class="row2">
-        <div class="field"><label for="f-phone">電話 <i>*</i></label><input id="f-phone" name="phone" type="tel" required autocomplete="tel"></div>
-        <div class="field"><label for="f-email">Email <i>*</i></label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
+        <div class="field"><label for="f-phone">電話 <i>*</i></label><input id="f-phone" name="phone" type="tel" required autocomplete="tel" placeholder="例如：0912-345-678"></div>
+        <div class="field"><label for="f-email">Email <i>*</i></label><input id="f-email" name="email" type="email" required autocomplete="email" placeholder="name@company.com"></div>
       </div>
-      <div class="row2">
-        <div class="field"><label for="f-job">需求職缺 <i>*</i></label><input id="f-job" name="job" required placeholder="例如：助理工程師、會計"></div>
-        <div class="field"><label for="f-count">需求人數 <i>*</i></label><input id="f-count" name="count" required inputmode="numeric" placeholder="例如：3"></div>
-      </div>
-      <div class="field"><label for="f-location">工作地點 <i>*</i></label><input id="f-location" name="location" required placeholder="例如：台中市西屯區"></div>
-      <details class="opt"><summary>補充需求（選填）</summary><div class="field"><label for="f-note">其他需求</label><textarea id="f-note" name="note" rows="3" placeholder="班別、薪資範圍、希望到職時間…"></textarea></div></details>
       <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <button class="btn btn-brand" type="submit" style="width:100%">送出徵才需求</button>
-      <div class="form-msg" id="formMsg" role="status"></div>
+      <button class="btn btn-brand btn-big" type="submit">送出徵才需求</button>
+    </fieldset>
+    <div class="form-msg" id="formMsg" role="status"></div>
+    <div class="done" id="formDone" hidden>
+      <p>顧問會在上班時間（09:00–17:45）儘快打電話給你，確認職缺細節。</p>
+      <p>等不及的話，也可以先加 LINE，直接傳訊息給我們。</p>
+      <div class="done-act"><a class="btn btn-line solid" href="https://line.me/R/ti/p/@642ahllq" target="_blank" rel="noopener" data-ga="employer_line_after_submit" data-noconv>加入官方 LINE<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><button type="button" class="btn" id="again">再填一份需求</button></div>
+    </div>
+    <div class="legal-f">
       <p class="privacy">你填寫的資料僅用於聯繫徵才需求，不會提供給第三方。送出即表示你已閱讀並同意下方個人資料蒐集告知。</p>
-      <details style="font-size:.82rem;padding:10px 14px;margin-top:8px"><summary>個人資料蒐集告知</summary><p>依《個人資料保護法》第 8 條，日玖國際（JOB365 中基層獵才團隊）告知如下：<br>1. 蒐集目的：人力仲介與招募服務之聯繫、報價及客戶服務。<br>2. 蒐集類別：公司名稱、聯絡人姓名、電話、Email 及你填寫的徵才需求。<br>網站使用 Google Analytics、Google Ads 與 Meta 像素等 Cookie 工具統計瀏覽與廣告成效；送出表單時，你的 Email 會經加密（雜湊）處理後提供給 Google，僅用於衡量廣告成效，其他表單內容不會提供給廣告平台。<br>3. 利用期間、地區、對象及方式：於上述目的存續期間或法令規定之保存期間內，在台灣地區由日玖國際及所屬團隊以電話、Email、LINE 等方式與你聯繫；除法令另有規定外，不會提供給第三方。<br>4. 你的權利：可隨時透過官方 LINE @642ahllq 或專線 03-5643252，請求查詢、閱覽、製給複本、補充或更正、停止蒐集處理利用或刪除你的個人資料。<br>5. 你可自由選擇是否提供資料；未提供必填欄位時，我們將無法與你聯繫。</p></details>
-    </form>
-  </div>
+      <details class="law"><summary>個人資料蒐集告知</summary><p>依《個人資料保護法》第 8 條，日玖國際（JOB365 中基層獵才團隊）告知如下：<br>1. 蒐集目的：人力仲介與招募服務之聯繫、報價及客戶服務。<br>2. 蒐集類別：公司名稱、聯絡人姓名、電話、Email 及你填寫的徵才需求。<br>網站使用 Google Analytics、Google Ads 與 Meta 像素等 Cookie 工具統計瀏覽與廣告成效；送出表單時，你的 Email 會經加密（雜湊）處理後提供給 Google，僅用於衡量廣告成效，其他表單內容不會提供給廣告平台。<br>3. 利用期間、地區、對象及方式：於上述目的存續期間或法令規定之保存期間內，在台灣地區由日玖國際及所屬團隊以電話、Email、LINE 等方式與你聯繫；除法令另有規定外，不會提供給第三方。<br>4. 你的權利：可隨時透過官方 LINE @642ahllq 或專線 03-5643252，請求查詢、閱覽、製給複本、補充或更正、停止蒐集處理利用或刪除你的個人資料。<br>5. 你可自由選擇是否提供資料；未提供必填欄位時，我們將無法與你聯繫。</p></details>
+    </div>
+  </form>
 </section>
+</main>
 
-<div class="wrap">
-  <div class="trust">
-    <p><strong>JOB365 中基層獵才團隊</strong>為 <a href="http://zjiou.com.tw/" target="_blank" rel="noopener" data-ga="parent_site_click">日玖國際</a> 旗下團隊，專注中基層人才正職代招。日玖國際是在地深耕 30 年的人力資源公司，公司資訊都可公開查詢。<br><span style="color:var(--muted);font-size:.92rem">日玖國際總公司：新竹市東區關新路27號15樓之1（<a href="https://maps.google.com/?cid=6082274333580411568" target="_blank" rel="noopener" data-ga="gbp_click">Google 地圖・評論</a>）｜專線 <a href="tel:035643252" data-ga="employer_tel_click">03-5643252</a><br>由新竹總公司統一服務全台</span></p>
-    <div style="display:flex;flex-wrap:wrap;gap:10px"><a class="btn btn-ghost" href="http://zjiou.com.tw/" target="_blank" rel="noopener" data-ga="parent_site_click">認識日玖國際</a></div>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="co">
+        <h3>中基層獵才</h3>
+        <p><strong>JOB365 中基層獵才團隊</strong>為 <a class="ul" href="http://zjiou.com.tw/" target="_blank" rel="noopener" data-ga="parent_site_click">日玖國際</a> 旗下團隊，專注中基層人才正職代招。日玖國際是在地深耕 30 年的人力資源公司，公司資訊都可公開查詢。<br>總公司：新竹市東區關新路27號15樓之1（<a class="ul" href="https://maps.google.com/?cid=6082274333580411568" target="_blank" rel="noopener" data-ga="gbp_click">Google 地圖・評論</a>）<br>專線 <a class="ul" href="tel:035643252" data-ga="employer_tel_click">03-5643252</a>｜由新竹總公司統一服務全台</p>
+        <a class="btn" href="http://zjiou.com.tw/" target="_blank" rel="noopener" data-ga="parent_site_click">認識日玖國際<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div>
+        <h3>了解更多</h3>
+        <ul id="more"><li><a href="/hire/pricing.html" data-ga="hire_go_pricing">收費方式</a></li><li><a href="/hire/process.html" data-ga="hire_go_process">合作流程</a></li><li><a href="/hire/faq.html" data-ga="hire_go_faq">常見問題</a></li><li><a href="/hire/guide/" data-ga="hire_go_guide">招募指南</a></li></ul>
+      </div>
+      <div>
+        <h3>招募指南</h3>
+        <ul><li><a href="/hire/guide/recruitment-fee.html" data-ga="hire_to_guide">代招費用怎麼算</a></li><li><a href="/hire/guide/what-is-recruitment-outsourcing.html" data-ga="hire_to_guide">正職代招是什麼</a></li><li><a href="/hire/guide/operator-hiring.html" data-ga="hire_to_guide">作業員招不到人</a></li><li><a href="/hire/guide/" data-ga="hire_to_guide">全部文章</a></li></ul>
+      </div>
+    </div>
+    <div class="legal">© JOB365 × 中基層獵才｜日玖國際旗下團隊・日玖國際股份有限公司・勞動部私立就業服務機構許可證字號 2024</div>
   </div>
-</div>
-
-<footer>
-  <p>© JOB365 × 中基層獵才｜日玖國際旗下團隊</p>
-  <p style="font-size:.8em;opacity:.75">日玖國際股份有限公司・勞動部私立就業服務機構許可證字號 2024</p>
-  <p>招募指南：<a href="/hire/guide/recruitment-fee.html" data-ga="hire_to_guide">代招費用怎麼算</a>・<a href="/hire/guide/what-is-recruitment-outsourcing.html" data-ga="hire_to_guide">正職代招是什麼</a>・<a href="/hire/guide/operator-hiring.html" data-ga="hire_to_guide">作業員招不到人</a>・<a href="/hire/guide/" data-ga="hire_to_guide">全部文章</a></p>
 </footer>
 
-<button class="to-top" id="to-top" type="button" aria-label="回到頂端" data-ga="hire_to_top">↑</button>
+<button class="to-top" id="to-top" type="button" aria-label="回到頂端" data-ga="hire_to_top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
 <script>(function(){var b=document.getElementById("to-top");function t(){b.classList.toggle("on",window.scrollY>600);}window.addEventListener("scroll",t,{passive:true});t();b.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});});})();</script>
 
 <div class="sticky">
-  <a class="btn btn-brand" href="#hireForm" data-ga="hire_sticky_form">填寫需求</a>
+  <a class="btn btn-brand" href="#hireForm" data-ga="hire_sticky_form">免費幫我找人</a>
   <a class="btn btn-line" href="https://line.me/R/ti/p/@642ahllq" target="_blank" rel="noopener" data-ga="employer_line_click">LINE 諮詢</a>
 </div>
 
 <script>
-// ---- 互動效果 ----
+// 費用試算、職缺按鈕選中狀態
 (function(){
-  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
-  function ev(name, p){ if (typeof gtag === "function") gtag("event", name, Object.assign({source:"hire"}, p||{})); }
-
-  // 步驟：捲動到時依序出現，上方進度條跟著填滿
-  var steps = document.querySelectorAll(".step"), bar = document.getElementById("stepsBar"), shown = 0;
-  function lit(el){ if (el.classList.contains("in")) return; el.classList.add("in"); shown++; if (bar) bar.style.width = (shown / steps.length * 100) + "%"; }
-  if ("IntersectionObserver" in window && !reduce){
-    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (!e.isIntersecting) return; var i = Array.prototype.indexOf.call(steps, e.target); setTimeout(function(){ lit(e.target); }, i * 220); io.unobserve(e.target); }); }, {threshold: .35});
-    steps.forEach(function(s){ io.observe(s); });
-  } else steps.forEach(lit);
-
-  // 卡片傾斜
-  if (!reduce && matchMedia("(hover:hover)").matches) document.querySelectorAll(".tilt").forEach(function(c){
-    c.addEventListener("pointermove", function(e){ var r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; c.style.transform = "perspective(700px) rotateY(" + (x * 10) + "deg) rotateX(" + (-y * 10) + "deg) translateY(-3px)"; });
-    c.addEventListener("pointerleave", function(){ c.style.transform = ""; });
-  });
-
-  if (document.getElementById("days")) {
-  // 費用試算
-  var days = document.getElementById("days"), people = 1, feeEl = document.getElementById("feeOut"), shownFee = 10000, raf;
-  function fmt(n){ return n.toLocaleString("en-US"); }
-  function calc(){
-    var d = +days.value, per = Math.min(500 * d, 15000), total = per * people;
-    document.getElementById("daysOut").textContent = d;
-    document.getElementById("pOut").textContent = people + " 人";
-    days.style.setProperty("--p", ((d - 1) / 29 * 100) + "%");
-    document.getElementById("capTag").classList.toggle("on", 500 * d >= 15000);
-    document.getElementById("feeBd").textContent = 500 * d >= 15000 ? "上限 15,000 元 × " + people + " 人" : "500 元 × " + d + " 天 × " + people + " 人";
-    cancelAnimationFrame(raf);
-    if (reduce){ shownFee = total; feeEl.innerHTML = fmt(total) + "<small>元</small>"; return; }
-    var from = shownFee, t0 = performance.now();
-    (function step(t){ var p = Math.min(1, (t - t0) / 350); shownFee = Math.round(from + (total - from) * (1 - Math.pow(1 - p, 3))); feeEl.innerHTML = fmt(shownFee) + "<small>元</small>"; if (p < 1) raf = requestAnimationFrame(step); })(t0);
+  var r = document.getElementById("days");
+  if (r){
+    var o = document.getElementById("dOut"), cs = document.getElementById("cSum"), how = document.getElementById("cHow"), sent = false;
+    var calc = function(){
+      var v = +r.value, paid = Math.min(v, 30), sum = Math.min(paid * 500, 15000);
+      r.style.setProperty("--p", ((v - 1) / 59 * 100) + "%");
+      o.textContent = v; cs.innerHTML = sum.toLocaleString("en-US") + "<small>元</small>";
+      how.textContent = v <= 30 ? "第一個月 " + v + " 天 × 500 元" : "第一個月已收滿，第二個月起 0 元";
+    };
+    r.addEventListener("input", calc);
+    r.addEventListener("change", function(){ if (!sent && typeof gtag === "function"){ sent = true; gtag("event", "hire_calc", {source:"hire", days:+r.value}); } });
+    calc();
   }
-  days.addEventListener("input", calc);
-  days.addEventListener("change", function(){ ev("fee_calc", {days: +days.value, people: people}); });
-  document.getElementById("pMinus").onclick = function(){ people = Math.max(1, people - 1); calc(); };
-  document.getElementById("pPlus").onclick = function(){ people = Math.min(20, people + 1); calc(); };
-  calc();
+  var picks = document.querySelectorAll(".pick-grid a");
+  picks.forEach(function(a){ a.addEventListener("click", function(){ picks.forEach(function(x){ x.classList.toggle("on", x === a); }); }); });
+})();
+</script>
 
-  // 人力銀行 vs 正職代招
-  var vsSw = document.getElementById("vsSwitch"), vs = document.getElementById("vs");
-  vsSw.querySelectorAll("button").forEach(function(b){
-    b.addEventListener("click", function(){
-      var v = b.dataset.v; if (vs.dataset.v === v) return;
-      vsSw.dataset.v = v; vs.dataset.v = v;
-      vsSw.querySelectorAll("button").forEach(function(x){ x.setAttribute("aria-pressed", x === b); });
-      vs.querySelectorAll("dd").forEach(function(dd, i){
-        dd.classList.add("swap");
-        setTimeout(function(){ dd.textContent = dd.dataset[v]; dd.classList.remove("swap"); }, reduce ? 0 : 160 + i * 60);
-      });
-      ev("compare_toggle", {view: v});
+<script>
+// v10：兩步驟表單、即時檢查、成功畫面、試算快速鍵、CTA 聚焦
+(function(){
+  var form = document.getElementById("hireForm"); if (!form) return;
+  var fs1 = document.getElementById("fs1"), fs2 = document.getElementById("fs2"), st1 = document.getElementById("st1"), st2 = document.getElementById("st2"),
+      recap = document.getElementById("recap"), msg = document.getElementById("formMsg"), done = document.getElementById("formDone");
+  function ga(n,p){ if (typeof gtag === "function") gtag("event", n, Object.assign({source:"hire"}, p||{})); }
+  function num(v){ return v.replace(/[０-９]/g, function(c){ return String.fromCharCode(c.charCodeAt(0) - 65248); }); }
+  var rules = {
+    job: function(v){ return v ? "" : "請填寫需求職缺"; },
+    count: function(v){ v = num(v); return !v ? "請填寫需求人數" : (/^[0-9]+$/.test(v) && +v > 0 ? "" : "人數請填數字，例如：3"); },
+    location: function(v){ return v ? "" : "請填寫工作地點，方便顧問找通勤合適的人"; },
+    company: function(v){ return v ? "" : "請填寫公司名稱"; },
+    name: function(v){ return v ? "" : "請填寫聯絡人"; },
+    phone: function(v){ return !v ? "請填寫電話，方便顧問聯繫你" : (num(v).replace(/[^0-9]/g, "").length >= 8 ? "" : "電話號碼好像少了幾碼，請再確認"); },
+    email: function(v){ return !v ? "請填寫 Email" : (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) ? "" : "Email 格式不太對，請再確認"); }
+  };
+  function errEl(inp){
+    var f = inp.closest(".field"), e = f.querySelector(".err");
+    if (!e){ e = document.createElement("p"); e.className = "err"; e.id = "e-" + inp.id; f.appendChild(e); inp.setAttribute("aria-describedby", e.id); }
+    return e;
+  }
+  function check(inp){
+    var rule = rules[inp.name]; if (!rule) return true;
+    var m = rule(inp.value.trim());
+    errEl(inp).textContent = m; inp.setAttribute("aria-invalid", m ? "true" : "false"); inp.classList.toggle("okv", !m && !!inp.value.trim());
+    return !m;
+  }
+  function checkAll(box){
+    var bad = null;
+    box.querySelectorAll("input[name]").forEach(function(i){ if (rules[i.name] && !check(i) && !bad) bad = i; });
+    if (bad) bad.focus();
+    return !bad;
+  }
+  form.querySelectorAll("input[name]").forEach(function(i){
+    i.addEventListener("blur", function(){ if (i.value.trim() || i.getAttribute("aria-invalid") === "true") check(i); });
+    i.addEventListener("input", function(){ if (i.getAttribute("aria-invalid") === "true") check(i); });
+  });
+  function step(n, focus){
+    fs1.hidden = n !== 1; fs2.hidden = n !== 2;
+    st1.className = n === 1 ? "on" : "ok"; st2.className = n === 2 ? "on" : "";
+    if (n === 2){
+      recap.textContent = [form.job.value.trim(), form.count.value.trim() + " 名", form.location.value.trim()].join("・");
+      if (focus !== false) setTimeout(function(){
+        var f = ["company", "name", "phone", "email"].map(function(k){ return form[k]; }).filter(function(x){ return !x.value; })[0] || form.company;
+        f.focus();
+      }, 50);
+    }
+  }
+  document.getElementById("toStep2").addEventListener("click", function(){ if (checkAll(fs1)){ step(2); ga("hire_form_step", {step: 2}); } });
+  document.getElementById("toStep1").addEventListener("click", function(){ step(1); form.job.focus(); });
+  // 送出前先檢查（在原本的送出程式之前攔下）
+  document.addEventListener("submit", function(e){
+    if (e.target !== form) return;
+    if (!fs1.hidden){ e.preventDefault(); e.stopPropagation(); document.getElementById("toStep2").click(); return; }
+    if (!checkAll(fs2)){ e.preventDefault(); e.stopPropagation(); msg.textContent = ""; }
+  }, true);
+  // 成功畫面：沿用原本的成功訊息文字（Google Ads 轉換追蹤依賴它）
+  new MutationObserver(function(){
+    if (msg.textContent.indexOf("已收到你的徵才需求") > -1){
+      form.classList.add("sent"); done.hidden = false;
+      form.querySelectorAll(".okv").forEach(function(i){ i.classList.remove("okv"); });
+    }
+  }).observe(msg, {childList: true, characterData: true, subtree: true});
+  document.getElementById("again").addEventListener("click", function(){ form.classList.remove("sent"); done.hidden = true; msg.textContent = ""; step(1); form.job.focus(); });
+  // 選職缺時回到第一步
+  document.querySelectorAll("[data-pick]").forEach(function(a){ a.addEventListener("click", function(){ if (!form.classList.contains("sent")) step(1, false); }); });
+  // 按下主按鈕後，游標直接放進表單第一個空格
+  document.querySelectorAll('a[href$="#hireForm"]:not([data-pick])').forEach(function(a){
+    a.addEventListener("click", function(){
+      setTimeout(function(){
+        if (form.classList.contains("sent")) return;
+        var box = fs1.hidden ? fs2 : fs1, f = Array.prototype.filter.call(box.querySelectorAll("input[name]"), function(x){ return !x.value; })[0];
+        if (f) f.focus({preventScroll: true});
+      }, 900);
     });
   });
-  // 捲到比較區時，自動示範切換一次
-  if ("IntersectionObserver" in window && !reduce){
-    var demo = new IntersectionObserver(function(es){ if (es[0].isIntersecting){ demo.disconnect(); setTimeout(function(){ if (vs.dataset.v === "bank") vsSw.querySelector('[data-v="us"]').click(); }, 1400); } }, {threshold: .6});
-    demo.observe(vs);
-  }
-
-  }
-  // 淡色泡泡背景
-  var cv = document.getElementById("bubbles"), ctx = cv.getContext && cv.getContext("2d");
-  if (ctx && !reduce && getComputedStyle(cv).display !== "none"){
-    var W, H, bs = [], pops = [], px = 0, py = 0, tx = 0, ty = 0, C = ["240,106,42", "63,193,201", "255,179,127"], last = 0;
-    var size = function(){ var d = Math.min(2, devicePixelRatio || 1); W = innerWidth; H = innerHeight; cv.width = W * d; cv.height = H * d; ctx.setTransform(d, 0, 0, d, 0, 0); };
-    var mk = function(y){ return {x: Math.random() * W, y: y == null ? Math.random() * H : y, r: 8 + Math.random() * 28, vy: .12 + Math.random() * .35, sw: Math.random() * 6.28, dp: .3 + Math.random() * .9, c: C[Math.floor(Math.random() * 3)], a: .05 + Math.random() * .08}; };
-    size(); addEventListener("resize", size);
-    for (var i = 0; i < Math.round(Math.min(22, Math.max(10, W / 50))); i++) bs.push(mk());
-    var trail = function(x, y){ var n = performance.now(); if (n - last < 55) return; last = n; pops.push({x: x, y: y, vx: (Math.random() - .5) * .8, vy: -.5 - Math.random() * .8, r: 2 + Math.random() * 4, l: 1, c: C[Math.floor(Math.random() * 3)]}); };
-    addEventListener("pointermove", function(e){ tx = e.clientX / W - .5; ty = e.clientY / H - .5; trail(e.clientX, e.clientY); }, {passive: true});
-    addEventListener("touchmove", function(e){ var t = e.touches[0]; if (t) trail(t.clientX, t.clientY); }, {passive: true});
-    var ly = scrollY; addEventListener("scroll", function(){ var d = scrollY - ly; ly = scrollY; bs.forEach(function(b){ b.y -= d * .12 * b.dp; }); }, {passive: true});
-    (function loop(){
-      ctx.clearRect(0, 0, W, H); px += (tx - px) * .05; py += (ty - py) * .05;
-      for (var i = 0; i < bs.length; i++){
-        var b = bs[i]; b.y -= b.vy * b.dp; b.sw += .01;
-        if (b.y < -60){ bs[i] = mk(H + 40); continue; } if (b.y > H + 80) b.y = -40;
-        var x = b.x + Math.sin(b.sw) * 12 - px * 36 * b.dp, y = b.y - py * 26 * b.dp;
-        var g = ctx.createRadialGradient(x - b.r * .35, y - b.r * .35, b.r * .1, x, y, b.r);
-        g.addColorStop(0, "rgba(255,255,255," + (b.a * 3) + ")"); g.addColorStop(.4, "rgba(" + b.c + "," + b.a + ")"); g.addColorStop(1, "rgba(" + b.c + ",0)");
-        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, b.r, 0, 6.283); ctx.fill();
-        ctx.strokeStyle = "rgba(" + b.c + "," + (b.a * 1.6) + ")"; ctx.lineWidth = 1; ctx.stroke();
-      }
-      for (var j = pops.length - 1; j >= 0; j--){
-        var p = pops[j]; p.x += p.vx; p.y += p.vy; p.vy -= .01; p.l -= .02;
-        if (p.l <= 0){ pops.splice(j, 1); continue; }
-        ctx.beginPath(); ctx.arc(p.x, p.y, p.r * (1.3 - p.l * .3), 0, 6.283); ctx.strokeStyle = "rgba(" + p.c + "," + (p.l * .6) + ")"; ctx.lineWidth = 1.2; ctx.stroke();
-      }
-      requestAnimationFrame(loop);
-    })();
+  // 試算快速鍵
+  var r = document.getElementById("days"), pre = document.querySelectorAll(".presets button");
+  if (r){
+    var mark = function(){ pre.forEach(function(b){ b.setAttribute("aria-pressed", +b.dataset.d === +r.value); }); };
+    pre.forEach(function(b){ b.addEventListener("click", function(){ r.value = b.dataset.d; r.dispatchEvent(new Event("input")); r.dispatchEvent(new Event("change")); }); });
+    r.addEventListener("input", mark); mark();
   }
 })();
-
+</script>
+<script>
 // ---- 設定：需求表單送到哪裡（Google Apps Script 網頁應用程式網址）----
 var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxbaaqzVKwTEWvMwTuUi_VQo325OEzF_uV4m9P23ZBckkkOgw9o4gL9HKWx99QdPUyuVA/exec";
 
@@ -827,7 +680,7 @@ var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxbaaqzVKwTEWvMwTuU
 
   // 服務數據：讀取職缺地圖每天產生的統計
   if (document.getElementById("s-open")) fetch("/job365map/jobs/stats.json", {cache:"no-store"}).then(function(r){ return r.ok ? r.json() : null; }).then(function(s){
-    if (!s) return;
+    if (!s || !s.open) return openFallback();
     document.getElementById("s-open").innerHTML = s.open + "<small>筆</small>";
     document.getElementById("s-ind").innerHTML = s.industries.length + "<small>類</small>";
     document.getElementById("s-note").textContent = "資料來自 JOB365 職缺地圖，更新於 " + s.updated;
@@ -847,7 +700,8 @@ var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxbaaqzVKwTEWvMwTuU
       var c = document.createElement("span"); c.className = "chip"; c.textContent = i.name;
       var b = document.createElement("b"); b.textContent = i.n; c.appendChild(b); chips.appendChild(c);
     });
-  }).catch(function(){});
+  }).catch(openFallback);
+  function openFallback(){ var o = document.getElementById("s-open"), l = document.getElementById("s-open-label"); if (o) o.textContent = "全台"; if (l) l.textContent = "服務範圍"; }
 
   // 名單來源：網址 UTM 優先；其次記住第一次從外部進站的來源；再來是上一頁
   function src(){
@@ -979,7 +833,7 @@ var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxbaaqzVKwTEWvMwTuU
   // 需求職缺：一鍵清除（不小心點到職缺按鈕時可以刪掉）
   var f = document.getElementById("f-job"); if (!f) return;
   var st = document.createElement("style");
-  st.textContent = ".job-wrap{position:relative;display:block}.job-wrap input{padding-right:42px}.job-clr{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:32px;height:32px;border:0;border-radius:50%;background:#eceae6;color:#5d6472;font-size:18px;line-height:32px;text-align:center;cursor:pointer;display:none;padding:0}.job-clr.on{display:block}.job-clr:hover{background:#ffe2d1;color:#f06a2a}";
+  st.textContent = ".job-wrap{position:relative;display:block}.job-wrap input{padding-right:42px}.job-clr{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:32px;height:32px;border:0;border-radius:50%;background:#eceae6;color:#5d6472;font-size:18px;line-height:32px;text-align:center;cursor:pointer;display:none;padding:0}.job-clr.on{display:block}.job-clr:hover{background:#ffe2d1;color:var(--brand-text)}";
   document.head.appendChild(st);
   var w = document.createElement("span"); w.className = "job-wrap";
   f.parentNode.insertBefore(w, f); w.appendChild(f);
