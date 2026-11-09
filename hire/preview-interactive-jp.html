@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>首屏預覽：互動招募進度（日系調整）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+:root{--cream:#fff6ee;--peach:#ffe2cf;--ink:#1d1f24;--sub:#4b505a;--muted:#6b707a;--line:#ece4da;--line2:#e3ddd4;
+  --brand:#c84b14;--brand-hover:#b04110;--bright:#f06a2a;--soft:#fdf0e8;--ok:#15803d;--ok-soft:#e7f6ec;
+  --ff:"Noto Sans TC",-apple-system,"PingFang TC",sans-serif;--fn:"Barlow","Noto Sans TC",sans-serif;--ease:cubic-bezier(.22,1,.36,1);--pad:clamp(20px,4vw,40px)}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);font:400 15px/2 var(--ff);letter-spacing:.06em;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 var(--pad)}
+nav.top{background:#fff}
+nav.top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-weight:700;font-size:.95rem;text-decoration:none;display:flex;gap:10px;align-items:baseline}
+.logo small{font-weight:400;color:var(--muted);font-size:.72rem}
+.links{display:flex;gap:6px;font-size:.86rem;color:var(--sub)}
+.links a{text-decoration:none;padding:8px 12px;border-radius:999px;transition:background-color .2s}
+.links a:hover{background:var(--cream);color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 28px;border-radius:999px;font:700 .95rem/1 var(--ff);letter-spacing:.1em;text-decoration:none;border:1.5px solid transparent;cursor:pointer;white-space:nowrap;transition:background-color .2s,transform .15s var(--ease)}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:scale(.98)}
+.btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn.main{background:var(--brand);color:#fff;box-shadow:0 4px 0 #9a3a0e}.btn.main:active{box-shadow:0 1px 0 #9a3a0e;transform:translateY(3px)}.btn.main:hover{background:var(--brand-hover)}
+.btn.line{background:#fff;color:#047a35;border-color:#06c755}.btn.line:hover{background:#effbf3}
+.btn.sm{min-height:42px;padding:0 18px;font-size:.84rem;box-shadow:none}.go{box-shadow:none !important}
+.hero{position:relative;overflow:hidden;background:var(--cream);border-radius:0 0 40px 40px;padding:clamp(48px,6vw,88px) 0 clamp(56px,6vw,96px)}
+.hero::before{content:"";position:absolute;right:-40px;top:-30px;width:360px;height:300px;background:radial-gradient(#f3c9a8 1.4px,transparent 1.6px) 0 0/16px 16px;opacity:.7;-webkit-mask:linear-gradient(225deg,#000 20%,transparent 75%);mask:linear-gradient(225deg,#000 20%,transparent 75%)}
+.hero::after{content:"";position:absolute;left:-110px;bottom:-120px;width:220px;height:220px;border-radius:50%;background:var(--peach);opacity:.55}
+.hero .wrap{position:relative;z-index:1}
+.copy{position:relative;padding-left:clamp(0px,4vw,56px)}
+.tate{position:absolute;left:0;top:6px;writing-mode:vertical-rl;font-size:.74rem;letter-spacing:.42em;color:var(--brand);display:flex;align-items:center;gap:14px}
+.tate::after{content:"";width:1px;height:72px;background:var(--brand);opacity:.5}
+.hg{display:grid;grid-template-columns:minmax(0,.84fr) minmax(0,1.16fr);gap:clamp(32px,5vw,64px);align-items:center}
+h1{margin:0;font-size:clamp(1.9rem,3.4vw,2.7rem);line-height:1.6;font-weight:700;letter-spacing:.1em}
+h1 .s{font-size:.78em;font-weight:500;letter-spacing:.12em;color:var(--sub)}
+h1 em{font-style:normal;color:var(--brand)}
+.lead{margin:22px 0 34px;color:var(--sub);line-height:2.1}
+.lead b{color:var(--ink);background:linear-gradient(transparent 60%,#fff0a0 60%);padding:0 2px}
+.acts{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end}
+.cta1{display:flex;flex-direction:column;align-items:center;gap:6px}
+.fuki{font-size:.8rem;font-weight:700;color:var(--brand);letter-spacing:.12em}
+.meta{margin-top:30px;padding-top:18px;border-top:1px dotted #d9c8b6;display:flex;flex-wrap:wrap;gap:8px 26px;font-size:.8rem;color:var(--muted)}
+.meta span::before{content:"";display:inline-block;width:6px;height:6px;background:var(--bright);margin-right:8px;vertical-align:middle;position:relative;top:-2px}
+.kome{margin:10px 0 0;font-size:.74rem;color:var(--muted);letter-spacing:.06em}
+.meta span{white-space:nowrap}
+.meta b{font:600 1.15rem var(--fn);color:var(--ink);margin-right:4px}
+
+/* 互動介面 */
+.app{background:#fff;border-radius:20px;box-shadow:0 1px 0 rgba(120,60,20,.05),0 30px 60px -34px rgba(120,60,20,.4);overflow:hidden}
+.bar{display:flex;align-items:center;gap:8px;padding:12px 18px;border-bottom:1px dotted #e0d3c4;letter-spacing:.1em;font-size:.78rem;color:var(--muted)}
+.bar i{width:9px;height:9px;border-radius:50%;background:#ebe5dc}
+.bar span{margin-left:8px}
+.bar b{margin-left:auto;font-weight:500;padding:2px 10px;border-radius:999px;background:var(--soft);color:var(--brand)}
+.body{padding:20px 22px 22px}
+.roles{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px;padding:0;border:0}
+.roles legend{font-size:.74rem;color:var(--muted);margin-bottom:8px;padding:0}
+.chip{min-height:36px;padding:0 14px;border-radius:999px;border:1px solid var(--line2);background:#fff;font-size:.84rem;font-weight:500;cursor:pointer;transition:background-color .2s,border-color .2s,color .2s}
+.chip:hover{border-color:var(--bright)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;padding-top:16px;border-top:1px dotted #e0d3c4}
+.head h3{margin:0;font-size:1.1rem}
+.head p{margin:2px 0 0;font-size:.78rem;color:var(--muted)}
+.fee{text-align:right;flex:none}
+.fee small{display:block;font-size:.72rem;color:var(--muted)}
+.fee strong{font:600 1.75rem/1.1 var(--fn);font-variant-numeric:tabular-nums;transition:color .3s}
+.fee strong span{font:500 .8rem var(--ff);margin-left:3px}
+.fee strong.on{color:var(--brand)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:18px 0 14px;padding:0;list-style:none}
+.step{width:100%;text-align:left;background:none;border:0;padding:16px 4px 6px 0;cursor:pointer;position:relative;font-size:.8rem;color:var(--muted);border-radius:6px}
+.step::before{content:"";position:absolute;top:5px;left:0;right:0;height:3px;border-radius:2px;background:var(--line);transition:background-color .3s}
+.step::after{content:"";position:absolute;top:0;left:0;width:13px;height:13px;border-radius:50%;background:#fff;border:2px solid var(--line2);box-sizing:border-box;transition:all .3s var(--ease)}
+.step:hover{color:var(--ink)}
+.step.done{color:var(--ink)}
+.step.done::before,.step.cur::before{background:var(--bright)}
+.step.done::after{background:var(--bright);border-color:var(--bright)}
+.step.cur{color:var(--ink);font-weight:700}
+.step.cur::after{border-color:var(--bright);box-shadow:0 0 0 5px rgba(240,106,42,.16)}
+.stage{background:var(--cream);border-radius:14px;padding:16px 18px;min-height:150px}
+.stage h4{margin:0 0 4px;font-size:.92rem;letter-spacing:.1em}
+.stage h4::before{content:"";display:inline-block;width:4px;height:1em;background:var(--bright);margin-right:8px;vertical-align:-2px;border-radius:1px}
+.stage p{margin:0;font-size:.86rem;color:var(--sub);line-height:1.85}
+.zero{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:.78rem;font-weight:500;color:var(--ok);background:var(--ok-soft);padding:3px 10px;border-radius:999px}
+.calc label{display:flex;justify-content:space-between;align-items:baseline;font-size:.84rem;margin:10px 0 6px}
+.calc label b{font:600 1.1rem var(--fn)}
+input[type=range]{width:100%;height:28px;margin:0;-webkit-appearance:none;appearance:none;background:transparent;cursor:pointer;touch-action:pan-y}
+input[type=range]::-webkit-slider-runnable-track{height:6px;border-radius:3px;background:linear-gradient(90deg,var(--bright) var(--p,50%),var(--line2) var(--p,50%))}
+input[type=range]::-moz-range-track{height:6px;border-radius:3px;background:linear-gradient(90deg,var(--bright) var(--p,50%),var(--line2) var(--p,50%))}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;margin-top:-9px;border-radius:50%;background:#fff;border:2px solid var(--brand);box-shadow:0 2px 6px rgba(0,0,0,.15)}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#fff;border:2px solid var(--brand)}
+.ticks{display:flex;justify-content:space-between;font-size:.7rem;color:var(--muted)}
+.calc .out{margin-top:8px;font-size:.84rem;color:var(--sub)}
+.calc .out b{color:var(--ink)}
+.go{margin-top:14px;width:100%}
+[hidden]{display:none !important}
+@media (prefers-reduced-motion:no-preference){
+  .copy > *{animation:up .8s var(--ease) both}.copy > :nth-child(2){animation-delay:.07s}.copy > :nth-child(3){animation-delay:.14s}.copy > :nth-child(4){animation-delay:.2s}
+  .app{animation:up .9s var(--ease) .12s both}
+  .stage > div:not([hidden]){animation:fade .35s var(--ease)}
+  @keyframes up{from{opacity:0;transform:translateY(14px)}}
+  @keyframes fade{from{opacity:0;transform:translateY(4px)}}
+}
+@media (max-width:920px){
+  .tate{display:none}.copy{padding-left:0}
+  .cta1{align-items:stretch;width:100%}.cta1 .btn{width:100%}.fuki{text-align:center}
+  .hero::before{width:220px;height:200px}
+  .links,.logo small{display:none}
+  .hg{grid-template-columns:1fr}
+  .acts{flex-direction:column}.acts .btn{width:100%}
+  .body{padding:16px 14px 16px}
+  .hero{border-radius:0 0 28px 28px}
+}
+@media (max-width:420px){ .step{font-size:.72rem} .stage{padding:14px} }
+</style>
+</head>
+<body>
+<nav class="top"><div class="wrap">
+  <a class="logo" href="/hire/">JOB365 × 中基層獵才<small>日玖國際旗下團隊</small></a>
+  <div class="links"><a href="/hire/pricing.html">收費方式</a><a href="/hire/process.html">合作流程</a><a href="/hire/faq.html">常見問題</a><a href="/hire/guide/">招募指南</a></div>
+  <a class="btn main sm" href="#hireForm">免費諮詢</a>
+</div></nav>
+<header class="hero">
+  <div class="wrap hg">
+    <div class="copy">
+      <p class="tate" aria-hidden="true">日玖國際　在地三十年</p>
+      <h1><span class="s">職缺開了沒人來？</span><br><em>交給中基層獵才。</em></h1>
+      <p class="lead">顧問主動找人、一對一面談後才推薦。<br><b>人選報到才收費</b>，<span style="white-space:nowrap">只收第一個月、最高 15,000 元。</span></p>
+      <div class="acts">
+        <div class="cta1"><span class="fuki" aria-hidden="true">＼ 諮詢免費・報到才收費 ／</span><a class="btn main" href="#hireForm">免費諮詢・填寫徵才需求<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        <a class="btn line" href="https://line.me/R/ti/p/@642ahllq" target="_blank" rel="noopener">LINE 免費諮詢<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="meta"><span><b>30</b>年在地人力資源</span><span><b>185</b>筆合作職缺</span><span><b>4.4</b>Google 評論</span></div>
+      <p class="kome">※ 基層職缺 500 元／天，依職缺彈性微調。只收第一個月，上限 15,000 元。</p>
+    </div>
+
+    <div class="app" id="demo">
+      <div class="bar"><i></i><i></i><i></i><span>合作流程試看</span><b>範例案件</b></div>
+      <div class="body">
+        <fieldset class="roles"><legend>先選你要招的職缺</legend>
+          <button type="button" class="chip" aria-pressed="false">會計</button><button type="button" class="chip" aria-pressed="true">客服</button><button type="button" class="chip" aria-pressed="false">設備工程師</button><button type="button" class="chip" aria-pressed="false">助理工程師</button><button type="button" class="chip" aria-pressed="false">行政助理</button>
+        </fieldset>
+        <div class="head">
+          <div><h3><span id="role">客服</span>・1 名</h3><p>點下面的步驟，看每一階段在做什麼</p></div>
+          <div class="fee"><small id="feeLab">目前費用</small><strong id="fee">0<span>元</span></strong></div>
+        </div>
+        <ol class="steps">
+          <li><button type="button" class="step" data-s="0">需求確認</button></li>
+          <li><button type="button" class="step" data-s="1">主動獵才</button></li>
+          <li><button type="button" class="step" data-s="2">面試安排</button></li>
+          <li><button type="button" class="step" data-s="3">錄取報到</button></li>
+        </ol>
+        <div class="stage" aria-live="polite">
+          <div data-p="0"><h4>招募需求確認</h4><p>你提供<span class="r">客服</span>的招募細節：工作內容、班別、薪資範圍、希望到職時間。</p><span class="zero">目前費用 0 元</span></div>
+          <div data-p="1" hidden><h4>主動出擊獵才</h4><p>啟動人才庫＆職缺大量曝光，顧問一對一面談，精選<span class="r">客服</span>人選推薦給你。</p><span class="zero">還在找人，費用 0 元</span></div>
+          <div data-p="2" hidden><h4>面試安排・雙向溝通</h4><p>安排面試、面試後人選關懷、企業端面試評價。不滿意可以繼續推薦。</p><span class="zero">還沒報到，費用 0 元</span></div>
+          <div data-p="3" hidden class="calc">
+            <h4>錄取與報到：從這天才開始計費</h4>
+            <label for="days">人選報到後工作了 <b><span id="dOut">20</span> 天</b></label>
+            <input type="range" id="days" min="1" max="60" value="20">
+            <div class="ticks"><span>第 1 天</span><span>滿一個月</span><span>第 60 天</span></div>
+            <p class="out" id="calcOut"></p>
+          </div>
+        </div>
+        <a class="btn main go" id="goForm" href="#hireForm" hidden>用這個職缺開始找人<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</header>
+<script>
+(function(){
+  var demo = document.getElementById("demo"), chips = demo.querySelectorAll(".chip"), steps = demo.querySelectorAll(".step"),
+      panes = demo.querySelectorAll("[data-p]"), fee = document.getElementById("fee"), lab = document.getElementById("feeLab"),
+      days = document.getElementById("days"), dOut = document.getElementById("dOut"), out = document.getElementById("calcOut"),
+      go = document.getElementById("goForm"), roleEl = document.getElementById("role"), cur = 0, role = "客服", timer = null, shown = 0, raf;
+  var RATE = 500, CAP = 15000;
+  function money(n){ return n.toLocaleString("en-US"); }
+  function tween(to){
+    cancelAnimationFrame(raf); var from = shown, t0 = performance.now();
+    (function f(t){ var p = Math.min(1, (t - t0) / 380), v = Math.round(from + (to - from) * (1 - Math.pow(1 - p, 3)));
+      fee.innerHTML = money(v) + "<span>元</span>"; shown = v; if (p < 1) raf = requestAnimationFrame(f); })(t0);
+  }
+  function calc(){
+    var d = +days.value, paid = Math.min(d, 30), total = Math.min(paid * RATE, CAP);
+    days.style.setProperty("--p", ((d - 1) / 59 * 100) + "%");
+    dOut.textContent = d;
+    out.innerHTML = d <= 30
+      ? "第一個月：" + paid + " 天 × " + RATE + " 元 = <b>" + money(total) + " 元</b>"
+      : "第一個月已收滿 <b>" + money(CAP) + " 元</b>，第二個月起 <b>0 元</b>";
+    lab.textContent = d <= 30 ? "第一個月費用" : "總費用（不會再增加）";
+    tween(total); fee.classList.add("on");
+  }
+  function setStep(i){
+    cur = i;
+    steps.forEach(function(s, j){ s.className = "step" + (j < i ? " done" : j === i ? " cur" : ""); s.setAttribute("aria-current", j === i ? "step" : "false"); });
+    panes.forEach(function(p){ p.hidden = +p.dataset.p !== i; });
+    go.hidden = i !== 3;
+    if (i === 3) calc(); else { lab.textContent = "目前費用"; fee.classList.remove("on"); tween(0); }
+  }
+  function setRole(r){
+    role = r; roleEl.textContent = r;
+    demo.querySelectorAll(".r").forEach(function(e){ e.textContent = r; });
+    chips.forEach(function(c){ c.setAttribute("aria-pressed", c.textContent === r); });
+    go.dataset.pick = r;
+  }
+  function stopAuto(){ if (timer){ clearInterval(timer); timer = null; } }
+  chips.forEach(function(c){ c.addEventListener("click", function(){ stopAuto(); setRole(c.textContent); }); });
+  steps.forEach(function(s){ s.addEventListener("click", function(){ stopAuto(); setStep(+s.dataset.s); }); });
+  days.addEventListener("input", function(){ stopAuto(); calc(); });
+  demo.addEventListener("pointerdown", stopAuto);
+  // 帶職缺到表單（正式頁接上 #f-job）
+  go.addEventListener("click", function(){ var f = document.getElementById("f-job"); if (f){ f.value = role; f.dataset.auto = role; } });
+  setRole(role); setStep(0);
+  // 自動示範：一步步走到報到，再拉滿一個月；使用者一碰就停
+  if (!matchMedia("(prefers-reduced-motion: reduce)").matches){
+    var seq = [1, 2, 3, "d30", "d45", 0], k = 0;
+    timer = setInterval(function(){
+      var a = seq[k++ % seq.length];
+      if (typeof a === "number") setStep(a);
+      else { days.value = +a.slice(1); calc(); }
+    }, 2600);
+  }
+})();
+</script>
+</body>
+</html>

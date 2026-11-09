@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>首屏預覽：報紙排版・藍白橘螢光（3 秒版）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;900&display=swap">
+<style>
+:root{--paper:#f7f6f2;--ink:#16294a;--sub:#3c4a63;--muted:#5d6779;--rule:#16294a;--hair:#b9c0cc;--neon:#ff6a2b;--neon-hover:#ff7f45;
+  --serif:"Noto Serif TC",serif;--sans:"Noto Sans TC",sans-serif;--cond:"Barlow Condensed",sans-serif;--pad:clamp(16px,3vw,40px);--ease:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box}
+html{background:#dfe3ea}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 15px/1.9 var(--sans);letter-spacing:.03em;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(rgba(22,41,74,.04) 1px,transparent 1.2px);background-size:5px 5px}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--neon);outline-offset:2px}
+.sheet{max-width:1320px;margin:0 auto;padding:0 var(--pad)}
+.hl{background:linear-gradient(transparent 56%,var(--neon) 56%,var(--neon) 92%,transparent 92%);padding:0 .06em}
+
+/* 細刊頭：一條就好 */
+.mast{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;padding:12px 0 10px;border-bottom:4px double var(--rule)}
+.mast .date{font-size:.74rem;letter-spacing:.1em;color:var(--muted)}
+.mast .name{text-decoration:none;line-height:1.1;display:flex;align-items:center;gap:12px;justify-self:center}
+.mast .name img{width:34px;height:34px;border-radius:8px;flex:none}
+.mast .name span{text-align:center}
+.mast .name b{display:block;font:900 clamp(1.5rem,2.4vw,2rem)/1.1 var(--serif);letter-spacing:.3em;padding-left:.3em}
+.mast .name small{font-size:.66rem;letter-spacing:.28em;color:var(--muted)}
+.mast nav{display:flex;justify-content:flex-end;gap:18px;font-size:.82rem}
+.mast nav a{text-decoration:none;background:linear-gradient(var(--ink),var(--ink)) 0 100%/0 1px no-repeat;transition:background-size .3s var(--ease)}
+.mast nav a:hover{background-size:100% 1px}
+
+/* 第一屏：大標 → 15,000 → 按鈕 */
+.front{display:grid;grid-template-columns:repeat(12,1fr);border-bottom:3px solid var(--rule);min-height:min(78vh,720px)}
+.headcol{grid-column:1 / 8;padding:clamp(28px,4vw,56px) clamp(20px,3vw,40px) clamp(28px,4vw,48px) 0;border-right:1px solid var(--rule);display:flex;flex-direction:column;justify-content:center}
+.side{grid-column:8 / 13;padding:clamp(28px,4vw,56px) 0 clamp(28px,4vw,48px) clamp(20px,3vw,40px);display:flex;flex-direction:column;justify-content:center}
+h1{margin:0;font-family:var(--serif);font-weight:900}
+h1 .q{display:block;font-size:clamp(1.4rem,2.4vw,2rem);font-weight:600;letter-spacing:.06em;color:var(--sub);margin-bottom:6px}
+h1 .a{display:block;font-size:clamp(2.6rem,5.1vw,5rem);line-height:1.15;letter-spacing:.02em;white-space:nowrap}
+.deck{margin:22px 0 0;padding-top:16px;border-top:3px solid var(--rule);font:600 clamp(1.05rem,1.5vw,1.25rem)/1.7 var(--serif)}
+
+.notice{position:relative;border:2px solid var(--ink);padding:18px 20px 22px;background:rgba(255,255,255,.5)}
+.notice .t{font:900 1rem var(--serif);letter-spacing:.24em;border-bottom:1px solid var(--ink);padding-bottom:8px}
+.big{display:flex;align-items:flex-start;gap:8px;margin:14px 0 8px}
+.big small{font:900 1.05rem/1 var(--serif);writing-mode:vertical-rl;letter-spacing:.2em;margin-top:14px}
+.big strong{font:600 clamp(5rem,9vw,8.4rem)/.9 var(--cond);font-variant-numeric:tabular-nums}
+.big span{font:900 1.3rem var(--serif);align-self:flex-end;margin-bottom:12px}
+.notice p{margin:0;font-weight:700;font-size:.98rem;letter-spacing:.08em}
+.notice p span{color:var(--neon);margin:0 .3em}
+.hanko{position:absolute;right:-22px;top:-36px;width:88px;height:88px;border:3px solid var(--neon);border-radius:50%;color:var(--neon);display:grid;place-items:center;text-align:center;font:900 .95rem/1.15 var(--serif);transform:rotate(-12deg);background:rgba(247,246,242,.75)}
+.hanko::after{content:"";position:absolute;inset:4px;border:1px solid var(--neon);border-radius:50%}
+.btns{margin-top:18px;display:grid;gap:10px}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 18px;font:700 1rem/1 var(--sans);letter-spacing:.12em;text-decoration:none;border:2px solid var(--ink);transition:background-color .15s,color .15s,transform .12s var(--ease)}
+.btn.main{min-height:64px;font-size:1.15rem;letter-spacing:.2em}
+.btn:active{transform:translateY(2px)}
+.btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn.main{background:var(--neon);border-color:var(--neon);color:var(--ink);box-shadow:4px 4px 0 var(--ink)}
+.btn.main:hover{background:var(--neon-hover)}
+.btn.main:active{box-shadow:1px 1px 0 var(--ink);transform:translate(3px,3px)}
+.btns .note{margin:-2px 0 2px;text-align:center;font-size:.8rem;font-weight:500;color:var(--sub);letter-spacing:.1em}
+.btns .note b{color:var(--ink);background:linear-gradient(transparent 60%,rgba(255,106,43,.35) 60%)}
+.btn.line{background:transparent;color:#05692e;border-color:#06893c}.btn.line:hover{background:#06893c;color:#fff}
+.more{display:block;text-align:center;font-size:.78rem;color:var(--muted);letter-spacing:.2em;padding:10px 0 12px;text-decoration:none}
+.more::after{content:"";display:block;width:1px;height:22px;background:var(--muted);margin:6px auto 0;animation:drip 2.4s var(--ease) infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+
+/* 本期專題：把流程講出來 */
+.feature{display:grid;grid-template-columns:repeat(12,1fr);border-bottom:3px solid var(--rule)}
+.f-main{grid-column:1 / 8;padding:30px clamp(20px,3vw,40px) 36px 0;border-right:1px solid var(--rule)}
+.f-side{grid-column:8 / 13;padding:30px 0 36px clamp(20px,3vw,40px)}
+.f-kick{display:inline-block;background:var(--ink);color:var(--paper);font-weight:700;font-size:.78rem;letter-spacing:.22em;padding:3px 12px;margin-bottom:12px}
+.f-main h2{margin:0;font:900 clamp(1.6rem,2.7vw,2.3rem)/1.4 var(--serif);letter-spacing:.03em;text-wrap:balance}
+.f-deck{margin:14px 0 22px;padding:12px 0;border-top:3px solid var(--rule);border-bottom:1px solid var(--rule);font:600 clamp(1rem,1.4vw,1.15rem)/1.8 var(--serif)}
+.f-deck b{font-weight:900}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;column-gap:28px}
+.steps li{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;padding:14px 0;border-top:1px solid var(--hair)}
+.steps li:nth-child(-n+2){border-top:0}
+.steps .n{grid-row:span 2;font:600 2.4rem/1 var(--cond);color:var(--ink);min-width:1.4em}
+.steps h3{margin:0;font:900 1.08rem/1.5 var(--serif)}
+.steps p{margin:0;font-size:.9rem;color:var(--sub)}
+.funnel{border:2px solid var(--ink);padding:16px 18px 18px;background:rgba(255,255,255,.5)}
+.funnel .t{font:900 1rem var(--serif);letter-spacing:.24em;border-bottom:1px solid var(--ink);padding-bottom:8px;margin-bottom:6px}
+.fn{display:grid;gap:6px;justify-items:center;margin-top:12px}
+.fn div{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:12px 16px;background:var(--ink);color:var(--paper);width:100%}
+.fn div:nth-child(2){width:78%;background:#2c4470}
+.fn div:nth-child(3){width:56%;background:var(--neon);color:var(--ink)}
+.fn span{font-size:.84rem;font-weight:700;letter-spacing:.1em}
+.fn strong{font:600 2rem/1 var(--cond);font-variant-numeric:tabular-nums;white-space:nowrap}
+.fn strong.zh{font:900 1.15rem/1.6 var(--serif);letter-spacing:.08em}
+.fn strong small{font:700 .78rem var(--sans);margin-left:3px}
+.f-zero{margin:14px 0 0;font:900 1.05rem/1.6 var(--serif);text-align:center}
+@media (max-width:980px){.feature{grid-template-columns:1fr}.f-main,.f-side{grid-column:1 / -1;padding-left:0;padding-right:0;border-right:0}.f-side{border-top:1px solid var(--rule)}}
+@media (max-width:600px){.steps{grid-template-columns:1fr}.steps li:nth-child(2){border-top:1px solid var(--hair)}.fn .w2,.fn .w3{margin-right:0}}
+/* 第二層：讀下去 */
+.paper2{display:grid;grid-template-columns:repeat(12,1fr);border-bottom:3px solid var(--rule)}
+.story{grid-column:1 / 8;padding:28px clamp(20px,3vw,40px) 32px 0;border-right:1px solid var(--rule)}
+.story .sh{font:900 clamp(1.4rem,2.2vw,1.8rem)/1.4 var(--serif);margin:0 0 14px;letter-spacing:.04em}
+.cols{column-count:3;column-gap:26px;column-rule:1px solid var(--hair);font-size:.92rem;color:var(--sub)}
+.cols p{margin:0 0 .9em;text-align:justify}
+.cols p:first-child::first-letter{float:left;font:900 3.2em/.9 var(--serif);color:var(--neon);margin:.08em .12em 0 0}
+.cols h3{margin:0 0 .3em;font:900 1.04rem/1.5 var(--serif);color:var(--ink);break-after:avoid}
+.cols h3::before{content:"■ ";color:var(--neon)}
+.calcbox{grid-column:8 / 13;padding:28px 0 32px clamp(20px,3vw,40px)}
+.calcbox .sh{font:900 1.1rem var(--serif);letter-spacing:.2em;margin:0 0 4px}
+.calcbox .rate{font-size:.82rem;color:var(--muted);margin:0 0 6px}
+.slider label{display:flex;justify-content:space-between;font-size:.84rem;margin:10px 0 2px}
+.slider label b{font:600 1.1rem var(--cond)}
+input[type=range]{width:100%;height:28px;margin:0;-webkit-appearance:none;appearance:none;background:transparent;cursor:pointer;touch-action:pan-y}
+input[type=range]::-webkit-slider-runnable-track{height:3px;background:linear-gradient(90deg,var(--neon) var(--p,32%),var(--ink) var(--p,32%))}
+input[type=range]::-moz-range-track{height:3px;background:var(--ink)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;margin-top:-7.5px;background:var(--paper);border:2px solid var(--ink);transform:rotate(45deg)}
+input[type=range]::-moz-range-thumb{width:14px;height:14px;background:var(--paper);border:2px solid var(--ink);border-radius:0}
+table.calc{width:100%;border-collapse:collapse;margin-top:10px;font-size:.84rem}
+table.calc td{border-top:1px solid var(--hair);padding:7px 0}
+table.calc td:last-child{text-align:right;font:600 1.15rem var(--cond);font-variant-numeric:tabular-nums}
+table.calc tr.sum td{border-top:2px solid var(--ink)}
+table.calc tr.sum td:last-child{font-size:1.6rem}
+.classified{border-bottom:3px solid var(--rule);padding:16px 0 26px}
+.classified .h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:12px}
+.classified .h b{font:900 1.5rem var(--serif);letter-spacing:.3em}
+.classified .h span{font-size:.8rem;color:var(--muted)}
+.ads{display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid var(--ink);border-left:1px solid var(--ink)}
+.ads a{border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:14px 12px 12px;text-decoration:none;display:flex;flex-direction:column;gap:4px;min-height:112px;transition:background-color .18s,color .18s}
+.ads small{font-size:.72rem;letter-spacing:.3em;font-weight:700}
+.ads b{font:900 1.3rem/1.3 var(--serif);letter-spacing:.06em}
+.ads span{margin-top:auto;font-size:.74rem;color:var(--muted);display:flex;justify-content:space-between}
+.ads a:hover{background:var(--neon)}
+.ads a:hover span{color:var(--ink)}
+.bottom{display:flex;justify-content:space-between;gap:16px;padding:10px 0 40px;font-size:.74rem;color:var(--muted);letter-spacing:.1em}
+@media (prefers-reduced-motion:no-preference){
+  .hanko{animation:stamp .5s cubic-bezier(.3,1.6,.6,1) .9s both}
+  @keyframes stamp{from{opacity:0;transform:rotate(-12deg) scale(1.8)}}
+  .hl{background-size:0 100%;background-repeat:no-repeat;animation:mark .7s var(--ease) .35s forwards}
+  .big strong.hl{animation-delay:.6s}
+  @keyframes mark{to{background-size:100% 100%}}
+}
+@media (prefers-reduced-motion:reduce){.more::after{animation:none}}
+@media (max-width:980px){
+  .mast{grid-template-columns:1fr auto}.mast nav{display:none}
+  .front,.paper2{grid-template-columns:1fr;min-height:0}
+  .headcol,.side,.story,.calcbox{grid-column:1 / -1;padding-left:0;padding-right:0;border-right:0}
+  .side{padding-top:8px}
+  .calcbox{border-top:1px solid var(--rule)}
+  .cols{column-count:2}
+  .ads{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:600px){
+  .mast{grid-template-columns:1fr}.mast .date{display:none}
+  .headcol{padding-top:26px}
+  h1 .a{font-size:10.4vw}
+  .deck{font-size:1rem}
+  .hanko{right:-4px;top:-30px;width:72px;height:72px;font-size:.8rem}
+  .cols{column-count:1}
+  .ads{grid-template-columns:repeat(2,1fr)}.ads a{min-height:92px}
+  .bottom{flex-direction:column;gap:2px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <header class="mast">
+    <span class="date" id="today">中華民國 115 年 11 月 9 日</span>
+    <a class="name" href="/hire/"><img src="/job365map/favicon-192.png" alt="JOB365" width="34" height="34"><span><b>中基層獵才</b><small>JOB365 × 日玖國際旗下團隊</small></span></a>
+    <nav aria-label="主選單"><a href="/hire/pricing.html">收費方式</a><a href="/hire/process.html">合作流程</a><a href="/hire/faq.html">常見問題</a><a href="/hire/guide/">招募指南</a></nav>
+  </header>
+
+  <section class="front">
+    <div class="headcol">
+      <h1><span class="q">職缺開了沒人來？</span><span class="a"><span class="hl">交給</span>中基層獵才。</span></h1>
+      <p class="deck">顧問主動找人，一對一面談後才推薦。</p>
+    </div>
+    <aside class="side">
+      <div class="notice">
+        <div class="t">收費公告</div>
+        <div class="big"><small>最高</small><strong class="hl">15,000</strong><span>元</span></div>
+        <p>報到才收費<span>／</span>只收第一個月</p>
+        <div class="hanko" aria-hidden="true">報到<br>才收費</div>
+      </div>
+      <div class="btns">
+        <a class="btn main" href="#hireForm">免費幫我找人<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <p class="note"><b>報到前 0 元</b>・沒有開案費、訂金</p>
+        <a class="btn line" href="https://line.me/R/ti/p/@642ahllq" target="_blank" rel="noopener">LINE 免費諮詢<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </aside>
+  </section>
+  <a class="more" href="#story">往下看・我們怎麼幫你找人</a>
+
+  <section class="feature" id="story">
+    <article class="f-main">
+      <span class="f-kick">本期專題</span>
+      <h2>一位人選，是怎麼被推薦到你面前的？</h2>
+      <p class="f-deck">你收到的 <b>3–4 位</b>推薦人選背後，是顧問先主動聯繫 <b>10–15 位</b>、符合條件的每一位都面談過的結果。</p>
+      <ol class="steps">
+        <li><span class="n">01</span><h3>先問清楚你要什麼人</h3><p>確認工作內容、班別、薪資範圍、希望到職時間。</p></li>
+        <li><span class="n">02</span><h3>主動聯繫 10–15 位</h3><p>不是等履歷上門，顧問從人才庫主動找可能適合的人。</p></li>
+        <li><span class="n">03</span><h3>符合條件的，每一位都面談</h3><p>一對一面談過，才決定要不要推薦給你。</p></li>
+        <li><span class="n">04</span><h3>只推薦最適合的 3–4 位</h3><p>你不用自己從一疊履歷裡挑。</p></li>
+        <li><span class="n">05</span><h3>面試前，再三提醒人選</h3><p>減少放鳥，你排好的面試時間不白等。</p></li>
+        <li><span class="n">06</span><h3>報到後 3–5 天，先關心一次</h3><p>確認新人適應狀況，有問題早點知道。</p></li>
+      </ol>
+    </article>
+    <aside class="f-side">
+      <div class="funnel">
+        <div class="t">一份職缺的篩選</div>
+        <div class="fn">
+          <div><span>主動聯繫</span><strong>10–15<small>位</small></strong></div>
+          <div><span>面談</span><strong class="zh">符合者全部</strong></div>
+          <div><span>推薦</span><strong>3–4<small>位</small></strong></div>
+        </div>
+      </div>
+      <p class="f-zero">以上這些，<br>人選報到前都是 <span class="hl">0 元</span>。</p>
+    </aside>
+  </section>
+
+  <section class="paper2" id="why">
+    <article class="story">
+      <h2 class="sh">不只刊登，我們直接幫你找到人</h2>
+      <div class="cols">
+        <p>刊登了，沒人投；有人投，不適合；HR 一人多工，沒空找人。這是許多中小企業開出職缺後的日常。中基層獵才不只把職缺放上去，而是由顧問主動找人，面談過後才推薦給你。</p>
+        <h3>沒找到人，不用付錢</h3>
+        <p>人選正式報到才收費，沒有開案費、訂金。</p>
+        <h3>只收第一個月，最高 15,000</h3>
+        <p>第二個月起 0 元，沒有年薪抽成。</p>
+        <h3>主動獵才，面談後才推薦</h3>
+        <p>獨家專業獵才系統＋顧問一對一把關。日玖國際在地深耕 30 年，Google 評論 4.4 分、170 則以上。</p>
+      </div>
+    </article>
+    <aside class="calcbox">
+      <h2 class="sh">費用試算</h2>
+      <p class="rate">基層職缺 500 元／天（依職缺彈性微調）</p>
+      <div class="slider">
+        <label for="days">人選報到後工作 <b><span id="dOut">20</span> 天</b></label>
+        <input type="range" id="days" min="1" max="60" value="20">
+      </div>
+      <table class="calc" aria-live="polite">
+        <tr><td>第一個月計費天數</td><td id="cDays">20 天</td></tr>
+        <tr><td>第二個月起</td><td>0 元</td></tr>
+        <tr class="sum"><td>應付費用</td><td><span class="hl" id="cSum">10,000 元</span></td></tr>
+      </table>
+    </aside>
+  </section>
+
+  <section class="classified" aria-label="選擇職缺">
+    <div class="h"><b>徵才啟事</b><span>點一下，直接帶進需求表單</span></div>
+    <div class="ads">
+      <a href="#hireForm" data-pick="會計"><small>誠徵</small><b>會計</b><span>填寫需求<i>→</i></span></a>
+      <a href="#hireForm" data-pick="客服"><small>誠徵</small><b>客服</b><span>填寫需求<i>→</i></span></a>
+      <a href="#hireForm" data-pick="設備工程師"><small>誠徵</small><b>設備工程師</b><span>填寫需求<i>→</i></span></a>
+      <a href="#hireForm" data-pick="助理工程師"><small>誠徵</small><b>助理工程師</b><span>填寫需求<i>→</i></span></a>
+      <a href="#hireForm" data-pick="行政助理"><small>誠徵</small><b>行政助理</b><span>填寫需求<i>→</i></span></a>
+      <a href="#hireForm" data-pick=""><small>其他</small><b>其他職缺</b><span>填寫需求<i>→</i></span></a>
+    </div>
+  </section>
+  <div class="bottom"><span>日玖國際股份有限公司・勞動部私立就業服務機構許可證字號 2024</span><span>專線 03-5643252・受理時間 09:00–17:45</span></div>
+</div>
+<script>
+(function(){
+  var d = new Date(), w = "日一二三四五六"[d.getDay()];
+  document.getElementById("today").textContent = "中華民國 " + (d.getFullYear() - 1911) + " 年 " + (d.getMonth() + 1) + " 月 " + d.getDate() + " 日　星期" + w;
+  var r = document.getElementById("days"), o = document.getElementById("dOut"), cd = document.getElementById("cDays"), cs = document.getElementById("cSum");
+  function calc(){
+    var v = +r.value, paid = Math.min(v, 30), sum = Math.min(paid * 500, 15000);
+    r.style.setProperty("--p", ((v - 1) / 59 * 100) + "%");
+    o.textContent = v; cd.textContent = paid + " 天" + (v > 30 ? "（已滿）" : ""); cs.textContent = sum.toLocaleString("en-US") + " 元";
+  }
+  r.addEventListener("input", calc); calc();
+})();
+</script>
+</body>
+</html>

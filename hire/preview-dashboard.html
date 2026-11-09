@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>首屏風格預覽：工具介面</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+:root{--bg:#f7f7f5;--ink:#16181d;--sub:#4b505a;--muted:#6b707a;--line:#e5e4df;--panel:#fff;
+  --brand:#c84b14;--brand-hover:#b04110;--bright:#f06a2a;--soft:#fdf0e8;--ok:#15803d;--ok-soft:#e7f6ec;--wait:#8a5a00;--wait-soft:#fff4d6;--info:#1d6fa5;--info-soft:#e6f1f9;
+  --ff:"Noto Sans TC",-apple-system,"PingFang TC",sans-serif;--fn:"Barlow","Noto Sans TC",sans-serif;--ease:cubic-bezier(.22,1,.36,1);--pad:clamp(20px,4vw,40px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.75 var(--ff);letter-spacing:.02em;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 var(--pad)}
+nav.top{background:#fff;border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:700;font-size:.95rem;text-decoration:none;display:flex;gap:10px;align-items:center}
+.logo small{font-weight:400;color:var(--muted);font-size:.72rem}
+.links{display:flex;gap:26px;font-size:.86rem;color:var(--sub)}
+.links a{text-decoration:none}.links a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:8px;font:700 .98rem/1 var(--ff);letter-spacing:.05em;text-decoration:none;border:1.5px solid transparent;transition:background-color .2s,transform .12s var(--ease)}
+.btn:active{transform:scale(.98)}
+.btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn.main{background:var(--brand);color:#fff}.btn.main:hover{background:var(--brand-hover)}
+.btn.line{background:#fff;color:#047a35;border-color:#06c755}.btn.line:hover{background:#effbf3}
+.btn.sm{min-height:40px;padding:0 16px;font-size:.84rem}
+.hero{padding:clamp(48px,6vw,80px) 0 clamp(56px,6vw,88px);background:#fff;border-bottom:1px solid var(--line)}
+.hg{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:clamp(32px,5vw,64px);align-items:center}
+h1{margin:0;font-size:clamp(2rem,3.8vw,3rem);line-height:1.42;font-weight:700;letter-spacing:.04em}
+h1 em{font-style:normal;color:var(--brand)}
+.lead{margin:22px 0 30px;color:var(--sub);line-height:2}
+.lead b{color:var(--ink)}
+.acts{display:flex;flex-wrap:wrap;gap:12px}
+.meta{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px 22px;font-size:.82rem;color:var(--muted)}
+.meta span{white-space:nowrap}.meta b{font:600 1.15rem var(--fn);color:var(--ink);margin-right:4px}
+/* 介面樣張 */
+.app{background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:0 1px 0 rgba(0,0,0,.03),0 30px 60px -36px rgba(22,24,29,.35);overflow:hidden}
+.bar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);background:#fbfbfa;font-size:.78rem;color:var(--muted)}
+.bar i{width:9px;height:9px;border-radius:50%;background:#e2e0da}
+.bar span{margin-left:10px}
+.bar b{margin-left:auto;font-weight:500;padding:2px 10px;border-radius:999px;background:var(--soft);color:var(--brand)}
+.body{padding:22px 22px 18px}
+.head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.head h3{margin:0;font-size:1.05rem}
+.head p{margin:2px 0 0;font-size:.8rem;color:var(--muted)}
+.fee{text-align:right}
+.fee small{display:block;font-size:.72rem;color:var(--muted)}
+.fee strong{font:600 1.6rem/1.1 var(--fn);font-variant-numeric:tabular-nums;transition:color .3s}
+.fee strong span{font:500 .8rem var(--ff);margin-left:3px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);margin:22px 0 18px;list-style:none;padding:0;counter-reset:s}
+.steps li{position:relative;padding-top:18px;font-size:.78rem;color:var(--muted);text-align:left}
+.steps li::before{content:"";position:absolute;top:5px;left:0;right:0;height:3px;background:var(--line)}
+.steps li::after{content:"";position:absolute;top:0;left:0;width:13px;height:13px;border-radius:50%;background:#fff;border:2px solid var(--line);box-sizing:border-box}
+.steps li.done{color:var(--ink)}
+.steps li.done::before{background:var(--bright)}
+.steps li.done::after{background:var(--bright);border-color:var(--bright)}
+.steps li.cur{color:var(--ink);font-weight:700}
+.steps li.cur::after{border-color:var(--bright);background:#fff;box-shadow:0 0 0 4px rgba(240,106,42,.15)}
+table{width:100%;border-collapse:collapse;font-size:.84rem}
+th{text-align:left;font-weight:500;color:var(--muted);font-size:.74rem;padding:8px 6px;border-bottom:1px solid var(--line)}
+td{padding:11px 6px;border-bottom:1px solid #f0efeb;vertical-align:middle}
+tr:last-child td{border-bottom:0}
+.who{display:flex;align-items:center;gap:10px}
+.av{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:.78rem;font-weight:700;flex:none}
+.a1{background:#e6f1f9;color:#1d6fa5}.a2{background:#fdf0e8;color:#b04110}.a3{background:#efeafc;color:#5b4bb0}
+.tag{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;font-size:.74rem;font-weight:500;white-space:nowrap;transition:background-color .3s,color .3s}
+.tag::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.t-info{background:var(--info-soft);color:var(--info)}.t-wait{background:var(--wait-soft);color:var(--wait)}.t-ok{background:var(--ok-soft);color:var(--ok)}
+.note{margin-top:14px;padding:10px 12px;border-radius:8px;background:var(--bg);font-size:.76rem;color:var(--sub);display:flex;gap:8px;align-items:center}
+.note svg{width:16px;height:16px;flex:none;fill:none;stroke:var(--brand);stroke-width:2;stroke-linecap:round}
+@media (prefers-reduced-motion:no-preference){
+  .copy > *{animation:up .8s var(--ease) both}.copy > :nth-child(2){animation-delay:.07s}.copy > :nth-child(3){animation-delay:.14s}.copy > :nth-child(4){animation-delay:.2s}
+  .app{animation:up .9s var(--ease) .12s both}
+  @keyframes up{from{opacity:0;transform:translateY(14px)}}
+}
+@media (max-width:920px){
+  .links{display:none}
+  .logo small{display:none}
+  .btn.sm{white-space:nowrap}
+  .hg{grid-template-columns:1fr}
+  .acts{flex-direction:column}.acts .btn{width:100%}
+  .hero{background:#fff}
+  .body{padding:18px 14px 14px}
+  .hide-m{display:none}
+}
+</style>
+</head>
+<body>
+<nav class="top"><div class="wrap">
+  <a class="logo" href="/hire/">JOB365 × 中基層獵才<small>日玖國際旗下團隊</small></a>
+  <div class="links"><a href="/hire/pricing.html">收費方式</a><a href="/hire/process.html">合作流程</a><a href="/hire/faq.html">常見問題</a><a href="/hire/guide/">招募指南</a></div>
+  <a class="btn main sm" href="#">免費諮詢</a>
+</div></nav>
+<header class="hero">
+  <div class="wrap hg">
+    <div class="copy">
+      <h1>職缺開了沒人來？<br><em>交給中基層獵才。</em></h1>
+      <p class="lead">顧問主動找人、一對一面談後才推薦。<br><b>人選報到才收費</b>，<span style="white-space:nowrap">只收第一個月、最高 15,000 元。</span></p>
+      <div class="acts">
+        <a class="btn main" href="#">免費諮詢・填寫徵才需求<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn line" href="#">LINE 免費諮詢<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="meta"><span><b>30</b>年在地人力資源</span><span><b>185</b>筆合作職缺</span><span><b>4.4</b>Google 評論</span></div>
+    </div>
+    <div class="app" aria-label="招募進度示意">
+      <div class="bar"><i></i><i></i><i></i><span>招募進度</span><b>範例案件</b></div>
+      <div class="body">
+        <div class="head">
+          <div><h3>設備工程師・2 名</h3><p>新竹・正職</p></div>
+          <div class="fee"><small id="feeLabel">目前費用</small><strong id="feeNum">0<span>元</span></strong></div>
+        </div>
+        <ol class="steps" id="steps">
+          <li class="done">需求確認</li><li class="cur">主動獵才</li><li>面試安排</li><li>錄取報到</li>
+        </ol>
+        <table>
+          <thead><tr><th>推薦人選</th><th class="hide-m">顧問面談</th><th>狀態</th></tr></thead>
+          <tbody>
+            <tr><td><div class="who"><span class="av a1">陳</span>陳＊＊</div></td><td class="hide-m">已面談</td><td><span class="tag t-info" id="r1">已推薦</span></td></tr>
+            <tr><td><div class="who"><span class="av a2">林</span>林＊＊</div></td><td class="hide-m">已面談</td><td><span class="tag t-wait" id="r2">等待面試</span></td></tr>
+            <tr><td><div class="who"><span class="av a3">黃</span>黃＊＊</div></td><td class="hide-m">安排中</td><td><span class="tag t-wait">約談中</span></td></tr>
+          </tbody>
+        </table>
+        <p class="note"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16v.5"/></svg><span id="noteTxt">人選報到前，費用都是 0 元。</span></p>
+      </div>
+    </div>
+  </div>
+</header>
+<script>
+// 示範：進度往前走，人選報到那一刻才開始計費
+(function(){
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var li = document.querySelectorAll("#steps li"), fee = document.getElementById("feeNum"), lab = document.getElementById("feeLabel"),
+      r1 = document.getElementById("r1"), r2 = document.getElementById("r2"), note = document.getElementById("noteTxt"), k = 1;
+  function set(i){
+    li.forEach(function(l, j){ l.className = j < i ? "done" : j === i ? "cur" : ""; });
+    if (i === 3){ li[3].className = "done";
+      r1.className = "tag t-ok"; r1.textContent = "已報到"; r2.className = "tag t-info"; r2.textContent = "已錄取";
+      lab.textContent = "第一個月費用（上限）"; fee.innerHTML = "15,000<span>元</span>"; fee.style.color = "#c84b14";
+      note.textContent = "從第二個月起 0 元，沒有年薪抽成。";
+    } else {
+      r1.className = "tag t-info"; r1.textContent = i === 2 ? "面試中" : "已推薦"; r2.className = "tag t-wait"; r2.textContent = "等待面試";
+      lab.textContent = "目前費用"; fee.innerHTML = "0<span>元</span>"; fee.style.color = ""; note.textContent = "人選報到前，費用都是 0 元。";
+    }
+  }
+  setInterval(function(){ k = k === 3 ? 1 : k + 1; set(k); }, 2800);
+})();
+</script>
+</body>
+</html>

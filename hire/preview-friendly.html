@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>首屏風格預覽：日系 SaaS 親切</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+:root{--cream:#fff6ee;--peach:#ffe2cf;--peach2:#ffd0b2;--ink:#1f2228;--sub:#4c515b;--muted:#6b707a;--line:#efe6dc;
+  --brand:#c84b14;--brand-hover:#b04110;--bright:#f06a2a;--teal:#2a8f95;--teal-soft:#dff2f2;
+  --ff:"Noto Sans TC",-apple-system,"PingFang TC",sans-serif;--fn:"Nunito","Noto Sans TC",sans-serif;--ease:cubic-bezier(.22,1,.36,1);--pad:clamp(20px,4vw,40px)}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);font:400 16px/1.8 var(--ff);letter-spacing:.03em;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 var(--pad)}
+nav.top{background:#fff}
+nav.top .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;text-decoration:none}
+.logo i{width:32px;height:32px;border-radius:10px;background:var(--bright);display:grid;place-items:center;color:#fff;font:800 1rem var(--fn);font-style:normal}
+.logo small{display:block;font-weight:400;font-size:.7rem;color:var(--muted);line-height:1.2}
+.logo span{line-height:1.25;font-size:.95rem}
+.links{display:flex;gap:6px}
+.links a{padding:8px 14px;border-radius:999px;font-size:.88rem;font-weight:500;color:var(--sub);text-decoration:none;transition:background-color .2s,color .2s}
+.links a:hover{background:var(--cream);color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 30px;border-radius:999px;font:700 1rem/1 var(--ff);letter-spacing:.06em;text-decoration:none;border:2px solid transparent;transition:background-color .2s,transform .15s var(--ease),box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn.main{background:var(--brand);color:#fff;box-shadow:0 6px 0 #9a3a0e}
+.btn.main:hover{background:var(--brand-hover);box-shadow:0 8px 0 #9a3a0e}
+.btn.main:active{box-shadow:0 3px 0 #9a3a0e}
+.btn.line{background:#fff;color:#047a35;border-color:#06c755}
+.btn.line:hover{background:#effbf3}
+.btn.sm{min-height:44px;padding:0 20px;font-size:.88rem;box-shadow:none}
+.btn.sm:hover{box-shadow:none}
+
+.hero{background:var(--cream);border-radius:0 0 48px 48px;padding:clamp(40px,6vw,72px) 0 clamp(88px,9vw,112px);overflow:hidden}
+.hg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+h1{margin:0;font-size:clamp(2.1rem,4.4vw,3.3rem);line-height:1.42;font-weight:700;letter-spacing:.05em}
+h1 em{font-style:normal;color:var(--brand);position:relative;white-space:nowrap}
+h1 em::after{content:"";position:absolute;left:0;right:.5em;bottom:.08em;height:.28em;background:var(--peach2);z-index:-1;border-radius:4px}
+h1 em{z-index:0}
+.lead{margin:24px 0 32px;font-size:1.05rem;line-height:2;color:var(--sub)}
+.lead b{color:var(--ink)}
+.acts{display:flex;flex-wrap:wrap;gap:14px}
+.checks{display:flex;flex-wrap:wrap;gap:8px 18px;margin:28px 0 0;padding:0;list-style:none;font-size:.88rem;color:var(--sub)}
+.checks li{display:flex;align-items:center;gap:8px}
+.checks svg{width:20px;height:20px;flex:none}
+.art{position:relative}
+.art svg{width:100%;height:auto;display:block}
+.stats{margin-top:-64px;position:relative}
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.st{background:#fff;border-radius:24px;padding:24px 26px;box-shadow:0 18px 40px -26px rgba(120,60,20,.35);display:flex;align-items:center;gap:16px}
+.st .ic{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;flex:none}
+.st .ic svg{width:26px;height:26px;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.st strong{display:block;font:800 1.9rem/1.1 var(--fn);letter-spacing:0}
+.st strong small{font:700 .9rem var(--ff);margin-left:3px}
+.st span{font-size:.84rem;color:var(--sub)}
+.ic.o{background:var(--peach)}.ic.o svg{stroke:var(--brand)}
+.ic.t{background:var(--teal-soft)}.ic.t svg{stroke:var(--teal)}
+.ic.y{background:#fff1c7}.ic.y svg{stroke:#a87500}
+@media (prefers-reduced-motion:no-preference){
+  .copy > *{animation:up .8s var(--ease) both}.copy > :nth-child(2){animation-delay:.07s}.copy > :nth-child(3){animation-delay:.14s}.copy > :nth-child(4){animation-delay:.2s}
+  .art{animation:up .9s var(--ease) .15s both}
+  .stamp{animation:pop .5s cubic-bezier(.34,1.56,.64,1) .9s both;transform-box:fill-box;transform-origin:center}
+  @keyframes up{from{opacity:0;transform:translateY(14px)}}
+  @keyframes pop{from{opacity:0;transform:scale(.4)}}
+}
+@media (max-width:900px){
+  .links{display:none}
+  .hg{grid-template-columns:1fr}
+  .art{max-width:460px;margin:8px auto 0;width:100%}
+  .acts{flex-direction:column}
+  .acts .btn{width:100%}
+  .sg{grid-template-columns:1fr}
+  .st{padding:18px 20px}
+  .hero{border-radius:0 0 32px 32px}
+}
+</style>
+</head>
+<body>
+<nav class="top"><div class="wrap">
+  <a class="logo" href="/hire/"><i>J</i><span>JOB365 × 中基層獵才<small>日玖國際旗下團隊</small></span></a>
+  <div class="links"><a href="/hire/pricing.html">收費方式</a><a href="/hire/process.html">合作流程</a><a href="/hire/faq.html">常見問題</a><a href="/hire/guide/">招募指南</a></div>
+  <a class="btn main sm" href="#">免費諮詢</a>
+</div></nav>
+
+<header class="hero">
+  <div class="wrap hg">
+    <div class="copy">
+      <h1>職缺開了沒人來？<br><em>交給中基層獵才。</em></h1>
+      <p class="lead">顧問主動找人、一對一面談後才推薦。<br><b>人選報到才收費</b>，<span style="white-space:nowrap">只收第一個月、最高 15,000 元。</span></p>
+      <div class="acts">
+        <a class="btn main" href="#">免費諮詢・填寫徵才需求<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn line" href="#">LINE 免費諮詢<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <ul class="checks">
+        <li><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#ffd0b2"/><path d="M6 10.4l2.6 2.6L14 7.6" fill="none" stroke="#c84b14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>沒有開案費、訂金</li>
+        <li><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#ffd0b2"/><path d="M6 10.4l2.6 2.6L14 7.6" fill="none" stroke="#c84b14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>第二個月起 0 元</li>
+        <li><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#ffd0b2"/><path d="M6 10.4l2.6 2.6L14 7.6" fill="none" stroke="#c84b14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>新竹總公司・服務全台</li>
+      </ul>
+    </div>
+    <div class="art" aria-hidden="true">
+      <svg viewBox="0 0 520 440">
+        <!-- 背景色塊 -->
+        <path d="M260 22c118 0 228 62 236 178 9 128-96 222-236 222S20 340 26 214C32 92 142 22 260 22z" fill="#ffe2cf"/>
+        <circle cx="440" cy="70" r="16" fill="#ffd0b2"/><circle cx="64" cy="360" r="10" fill="#dff2f2"/>
+        <!-- 後方履歷卡 -->
+        <rect x="236" y="96" width="210" height="150" rx="20" fill="#fff" opacity=".7"/>
+        <!-- 主履歷卡 -->
+        <g>
+          <rect x="196" y="128" width="240" height="196" rx="22" fill="#fff"/>
+          <circle cx="248" cy="182" r="26" fill="#dff2f2"/>
+          <circle cx="248" cy="174" r="10" fill="#2a8f95"/>
+          <path d="M230 198c4-10 32-10 36 0" fill="#2a8f95"/>
+          <rect x="288" y="166" width="96" height="12" rx="6" fill="#1f2228"/>
+          <rect x="288" y="188" width="64" height="10" rx="5" fill="#d9d4cc"/>
+          <rect x="222" y="232" width="86" height="28" rx="14" fill="#fff1e8"/>
+          <text x="265" y="251" text-anchor="middle" font-family="Noto Sans TC,sans-serif" font-size="13" font-weight="700" fill="#c84b14">設備工程師</text>
+          <rect x="222" y="276" width="188" height="9" rx="4.5" fill="#ece7e0"/>
+          <rect x="222" y="294" width="140" height="9" rx="4.5" fill="#ece7e0"/>
+          <!-- 報到章 -->
+          <g class="stamp">
+            <circle cx="420" cy="138" r="34" fill="#c84b14"/>
+            <path d="M405 138l10 10 20-21" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+        </g>
+        <!-- 顧問 -->
+        <g>
+          <path d="M70 420c0-74 30-128 82-128s82 54 82 128z" fill="#f06a2a"/>
+          <path d="M126 300h52v22c0 14-52 14-52 0z" fill="#f3c9a8"/>
+          <circle cx="152" cy="252" r="42" fill="#f3c9a8"/>
+          <path d="M110 250c-2-38 28-56 52-52 26 4 38 24 34 44-14-14-40-20-56-10-12 8-22 14-30 18z" fill="#2b2d33"/>
+          <!-- 手臂指向履歷 -->
+          <path d="M196 344c22-10 40-26 52-44" fill="none" stroke="#f06a2a" stroke-width="26" stroke-linecap="round"/>
+          <circle cx="252" cy="296" r="13" fill="#f3c9a8"/>
+        </g>
+        <!-- 對話框 -->
+        <g>
+          <rect x="44" y="118" width="128" height="58" rx="18" fill="#fff"/>
+          <path d="M120 176l12 16 4-16z" fill="#fff"/>
+          <rect x="62" y="136" width="70" height="9" rx="4.5" fill="#2a8f95"/>
+          <rect x="62" y="152" width="92" height="9" rx="4.5" fill="#cfe9ea"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</header>
+<section class="stats"><div class="wrap sg">
+  <div class="st"><span class="ic o"><svg viewBox="0 0 24 24"><path d="M4 20V9l8-5 8 5v11M9 20v-6h6v6"/></svg></span><div><strong>30<small>年</small></strong><span>日玖國際在地人力資源公司</span></div></div>
+  <div class="st"><span class="ic t"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="3"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></span><div><strong>185<small>筆</small></strong><span>目前合作招募中職缺</span></div></div>
+  <div class="st"><span class="ic y"><svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg></span><div><strong>4.4</strong><span>Google 評論 170+ 則</span></div></div>
+</div></section>
+<div style="height:80px"></div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>首屏風格預覽：編輯排版</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=Barlow:wght@500;600&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;900&display=swap">
+<style>
+:root{--paper:#f4f0e8;--ink:#17181b;--sub:#4a4c52;--rule:#17181b;--hair:#cfc8bb;--brand:#c84b14;--brand-hover:#b04110;
+  --serif:"Noto Serif TC",serif;--sans:"Noto Sans TC",sans-serif;--cond:"Barlow Condensed","Barlow",sans-serif;--pad:clamp(20px,4vw,48px);--ease:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.8 var(--sans);letter-spacing:.02em;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+/* 刊頭 */
+.mast{border-bottom:2px solid var(--rule)}
+.mast .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:20px}
+.brand{font-weight:700;font-size:.95rem;letter-spacing:.06em;text-decoration:none}
+.brand small{font-weight:400;color:var(--sub);margin-left:10px;font-size:.75rem}
+.mast nav{display:flex;gap:22px;font-size:.86rem}
+.mast nav a{text-decoration:none;color:var(--sub);background:linear-gradient(var(--ink),var(--ink)) 0 100%/0 1px no-repeat;transition:background-size .3s var(--ease),color .2s}
+.mast nav a:hover{color:var(--ink);background-size:100% 1px}
+.mast .cta{font-weight:700;font-size:.86rem;text-decoration:none;border-bottom:2px solid var(--brand);padding-bottom:2px;color:var(--brand)}
+.issue{border-bottom:1px solid var(--hair)}
+.issue .wrap{display:flex;justify-content:space-between;height:36px;align-items:center;font:500 .74rem/1 var(--cond);letter-spacing:.18em;text-transform:uppercase;color:var(--sub)}
+/* 首屏 */
+.hero{padding:clamp(40px,6vw,72px) 0 0}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:clamp(16px,2vw,28px)}
+h1{grid-column:1 / 8;margin:0;font:900 clamp(2.6rem,6.2vw,5.4rem)/1.18 var(--serif);letter-spacing:.02em}
+h1 span{display:block}
+h1 em{font-style:normal;color:var(--brand)}
+.num{grid-column:8 / 13;align-self:start;border-left:1px solid var(--rule);padding-left:clamp(16px,2vw,28px)}
+.num .k{font-size:.8rem;color:var(--sub);display:flex;justify-content:space-between;border-bottom:1px solid var(--hair);padding-bottom:10px}
+.num strong{display:block;font:600 clamp(5.5rem,11vw,10rem)/.86 var(--cond);letter-spacing:-.01em;margin:18px 0 22px;font-variant-numeric:tabular-nums}
+.num strong sup{font:700 clamp(1rem,1.6vw,1.3rem)/1 var(--sans);vertical-align:top;margin-left:6px;position:relative;top:.6em}
+.num p{margin:0;font-size:.92rem;color:var(--sub);line-height:1.9}
+.num p b{color:var(--ink)}
+.foot{margin-top:clamp(36px,5vw,64px);border-top:2px solid var(--rule);padding:24px 0 clamp(40px,5vw,64px)}
+.foot .lead{grid-column:1 / 6;margin:0;font-size:1.02rem;line-height:2;color:var(--sub)}
+.foot .lead b{color:var(--ink)}
+.foot .acts{grid-column:7 / 13;display:flex;gap:12px;align-items:flex-start;justify-content:flex-end}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:56px;padding:0 26px;font:700 1rem/1 var(--sans);letter-spacing:.06em;text-decoration:none;border:1.5px solid var(--ink);transition:background-color .2s,color .2s,transform .12s var(--ease)}
+.btn:active{transform:scale(.98)}
+.btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn.main{background:var(--brand);border-color:var(--brand);color:#fff}
+.btn.main:hover{background:var(--brand-hover)}
+.btn.line{background:transparent;color:#047a35;border-color:#06c755}
+.btn.line:hover{background:#e9f6ec}
+/* 下一段的刊頭，示意整頁節奏 */
+.next{border-top:1px solid var(--hair)}
+.next .wrap{display:grid;grid-template-columns:repeat(3,1fr)}
+.next .wrap > div{padding:22px 0;display:flex;gap:14px;align-items:baseline}
+.next .wrap > div + div{border-left:1px solid var(--hair);padding-left:24px}
+.next strong{font:600 2.4rem/1 var(--cond)}
+.next span{font-size:.82rem;color:var(--sub)}
+@media (prefers-reduced-motion:no-preference){
+  .num strong{animation:rise .9s var(--ease) .15s both}
+  h1 span{animation:rise .8s var(--ease) both}h1 span + span{animation-delay:.08s}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}}
+}
+@media (max-width:860px){
+  .mast nav{display:none}
+  .brand small{display:none}
+  .grid{grid-template-columns:1fr}
+  h1,.num,.foot .lead,.foot .acts{grid-column:1 / -1}
+  .num{border-left:0;padding-left:0;margin-top:32px;border-top:1px solid var(--rule);padding-top:14px}
+  .num .k{border-bottom:0}
+  .foot .acts{flex-direction:column;align-items:stretch;margin-top:24px}
+  .btn{justify-content:center}
+  .issue .wrap span:last-child{display:none}
+  .next .wrap{grid-template-columns:1fr 1fr}
+  .next .wrap > div:first-child{grid-column:1 / -1;border-bottom:1px solid var(--hair)}
+  .next .wrap > div + div{border-left:0;padding-left:0}
+  .next .wrap > div:last-child{border-left:1px solid var(--hair);padding-left:18px}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="ar" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol></svg>
+<header class="mast"><div class="wrap">
+  <a class="brand" href="/hire/">JOB365 × 中基層獵才<small>日玖國際旗下團隊</small></a>
+  <nav><a href="/hire/pricing.html">收費方式</a><a href="/hire/process.html">合作流程</a><a href="/hire/faq.html">常見問題</a><a href="/hire/guide/">招募指南</a></nav>
+  <a class="cta" href="#">免費諮詢</a>
+</div></header>
+<div class="issue"><div class="wrap"><span>正職代招・中基層人才</span><span>新竹總公司・服務全台</span></div></div>
+
+<section class="hero">
+  <div class="wrap grid">
+    <h1><span>職缺開了</span><span>沒人來？</span><span><em>交給中基層獵才。</em></span></h1>
+    <div class="num">
+      <div class="k"><span>人選報到才收費</span><span>只收第一個月</span></div>
+      <strong>15,000<sup>元</sup></strong>
+      <p>這是<b>最高</b>收費。基層職缺 500 元／天（依職缺彈性微調），第二個月起 0 元，沒有開案費、訂金。</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="foot grid">
+      <p class="lead">顧問主動找人、一對一面談後才推薦。<br><b>人選報到才收費</b>，只收第一個月、最高 15,000 元。</p>
+      <div class="acts">
+        <a class="btn main" href="#">免費諮詢・填寫徵才需求<svg><use href="#ar"/></svg></a>
+        <a class="btn line" href="#">LINE 免費諮詢<svg><use href="#ar"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="next"><div class="wrap">
+  <div><strong>30</strong><span>年・日玖國際在地人力資源公司</span></div>
+  <div><strong>185</strong><span>筆・目前合作招募中職缺</span></div>
+  <div><strong>4.4</strong><span>Google 評論 170+ 則</span></div>
+</div></section>
+</body>
+</html>
