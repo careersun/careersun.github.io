@@ -53,3 +53,38 @@ jobs:
           git add sitemap.xml
           git commit -m "chore: auto-update sitemap lastmod"
           git push
+
+      - name: Notify Bing via IndexNow
+        if: github.event_name == 'push'
+        continue-on-error: true
+        env:
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+        run: |
+          python3 - <<'PY'
+          import json, os, pathlib, re, subprocess, urllib.request
+          BASE = "https://careersun.github.io/"
+          KEY = "665c4cec3e5c0df43947cb2896e4421e"
+          before, after = os.environ["BEFORE"], os.environ["AFTER"]
+          if re.fullmatch(r"0+", before):
+              files = [p.as_posix() for p in pathlib.Path(".").rglob("*.html")]
+          else:
+              files = subprocess.run(["git", "diff", "--name-only", "--diff-filter=AM", before, after],
+                                     capture_output=True, text=True).stdout.split()
+          urls = []
+          for s in files:
+              p = pathlib.Path(s)
+              if p.suffix != ".html" or s.startswith(".") or re.match(r"google[0-9a-f]+\.html$", p.name) or not p.exists():
+                  continue
+              if re.search(r"<meta[^>]+name=[\"']robots[\"'][^>]+noindex", p.read_text(encoding="utf-8", errors="ignore"), re.I):
+                  continue
+              urls.append(BASE + (s[:-len("index.html")] if p.name == "index.html" else s))
+          if not urls:
+              print("no indexable pages changed"); raise SystemExit
+          body = json.dumps({"host": "careersun.github.io", "key": KEY,
+                             "keyLocation": BASE + KEY + ".txt", "urlList": urls}).encode()
+          req = urllib.request.Request("https://api.indexnow.org/indexnow", data=body,
+                                       headers={"Content-Type": "application/json; charset=utf-8"})
+          with urllib.request.urlopen(req, timeout=30) as r:
+              print("IndexNow", r.status, "for", len(urls), "URLs"); print("\n".join(urls))
+          PY
