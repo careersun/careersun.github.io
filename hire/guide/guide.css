@@ -299,7 +299,7 @@ main.wrap > .meta{margin-bottom:0}
   .trust{grid-template-columns:1fr}
   .ctas .btn{width:100%}
   .sticky{display:flex}
-  .to-top{bottom:84px;right:14px}
+  .to-top{bottom:calc(88px + env(safe-area-inset-bottom));right:14px;width:42px;height:42px}
   body[data-page] footer{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
 }
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
