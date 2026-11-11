@@ -377,9 +377,9 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px}
 @media (max-width:600px){.fhead{flex-direction:column;align-items:flex-start}.done-act{grid-template-columns:1fr}}
 
 .steps{grid-template-columns:repeat(4,1fr)}
-.steps ul{margin:0;padding:0 0 0 1.1em;color:var(--sub);font-size:.92rem;line-height:1.85}
-.steps ul li{padding:0;margin:0 0 4px;border:0}
-.steps ul li::marker{color:#c2410c}
+.steps ul{list-style:none;margin:0;padding:0;color:var(--sub);font-size:.92rem;line-height:1.85}
+.steps ul li{position:relative;padding:0 0 0 1.1em;margin:0 0 4px;border:0}
+.steps ul li::before{content:"";position:absolute;left:0;top:.72em;width:6px;height:6px;border-radius:50%;background:#c2410c}
 .steps > li h3{margin-bottom:10px}
 @media (max-width:980px){.steps{grid-template-columns:1fr 1fr}}
 @media (max-width:600px){.steps{grid-template-columns:1fr}}
