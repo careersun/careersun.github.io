@@ -116,6 +116,35 @@
   footer{position:relative;z-index:1;margin-top:40px;text-align:center;font-size:.8rem;color:var(--muted)}
   footer a{color:var(--muted)}
   @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}#bubbles{display:none}}
+
+  /* 合作職缺：沿用 /hire/ 的報紙感藍白橘語言 */
+  #p-jobs{margin:0 -16px;padding:34px 16px 28px;background:#f7f6f2;color:#16294a;font-family:"Noto Sans TC",-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif}
+  #p-jobs .jobs-wrap{max-width:620px;margin:0 auto}
+  #p-jobs .jobs-kicker{margin:0 0 7px;color:#5d6779;font-size:.78rem;font-weight:700;letter-spacing:.18em}
+  #p-jobs h2{margin:0;font-family:"Noto Serif TC","Songti TC",serif;font-size:clamp(1.7rem,7vw,2.35rem);line-height:1.35;letter-spacing:.03em}
+  #p-jobs .jobs-deck{margin:9px 0 20px;color:#3c4a63;font-size:.95rem;line-height:1.8}
+  #p-jobs .jobs-count{display:flex;align-items:end;gap:8px;padding:18px 0;border-top:1px solid #16294a;border-bottom:1px solid #16294a}
+  #p-jobs .jobs-count b{font:600 3.3rem/.85 "Barlow Condensed","Arial Narrow",sans-serif;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+  #p-jobs .jobs-count span{padding-bottom:2px;color:#3c4a63;font-size:.88rem}
+  #p-jobs .jobs-count small{margin-left:auto;padding-bottom:2px;color:#5d6779;font-size:.76rem}
+  #p-jobs .job-filters{display:flex;gap:8px;overflow:auto;padding:18px 0 8px;scrollbar-width:none}
+  #p-jobs .job-filters::-webkit-scrollbar{display:none}
+  #p-jobs .job-filter{flex:none;border:1px solid #d5d9e0;background:#fff;color:#16294a;border-radius:0;padding:7px 12px;font:700 .82rem "Noto Sans TC",sans-serif;cursor:pointer}
+  #p-jobs .job-filter[aria-pressed="true"]{background:#16294a;border-color:#16294a;color:#fff}
+  #p-jobs .job-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px}
+  #p-jobs .job-card{display:flex;min-height:172px;flex-direction:column;justify-content:space-between;padding:15px;background:#fff;border:1px solid #d5d9e0;color:#16294a;text-decoration:none;transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease}
+  #p-jobs .job-card:hover{transform:translateY(-3px);border-color:#ff6a2b;box-shadow:0 12px 24px -18px rgba(22,41,74,.45)}
+  #p-jobs .job-card .place{font-size:.78rem;color:#5d6779}
+  #p-jobs .job-card .title{margin:8px 0;font-family:"Noto Serif TC","Songti TC",serif;font-weight:900;line-height:1.45}
+  #p-jobs .job-card .pay{color:#c2410c;font-size:.82rem;font-weight:700;line-height:1.45}
+  #p-jobs .job-card .shift{margin-top:5px;color:#5d6779;font-size:.76rem}
+  #p-jobs .jobs-empty{grid-column:1/-1;padding:28px 12px;text-align:center;color:#5d6779;background:#fff;border:1px solid #d5d9e0}
+  #p-jobs .jobs-all{display:flex;align-items:center;justify-content:center;min-height:52px;margin-top:18px;border:2px solid #16294a;background:#ff6a2b;color:#16294a;text-decoration:none;font-weight:700;letter-spacing:.1em}
+  #p-jobs .jobs-all:hover{background:#ff7f45}
+  #p-jobs .jobs-employer{margin-top:22px;padding-top:18px;border-top:1px solid #d5d9e0;text-align:center;color:#3c4a63;font-size:.86rem}
+  #p-jobs .jobs-employer a{color:#16294a;font-weight:700}
+  @media(max-width:380px){#p-jobs .job-grid{grid-template-columns:1fr}#p-jobs .job-card{min-height:132px}}
+
 </style>
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "@id": "https://careersun.github.io/#org", "name": "JOB365 中基層獵才", "alternateName": ["JOB365", "中基層獵才", "JOB365 × 中基層獵才", "JOB365 中基層獵才團隊"], "url": "https://careersun.github.io/", "logo": "https://careersun.github.io/job365map/favicon-192.png", "description": "日玖國際旗下的中基層正職代招團隊，為台灣中小企業招募會計、客服、設備工程師、倉管、助理工程師、行政助理等正職人才；人選報到才收費，只收第一個月，最高 15,000 元。", "areaServed": {"@type": "Country", "name": "台灣"}, "contactPoint": {"@type": "ContactPoint", "telephone": "+886-3-564-3252", "contactType": "sales", "areaServed": "TW", "availableLanguage": "zh-Hant"}, "sameAs": ["https://line.me/R/ti/p/@642ahllq", "https://www.threads.com/@job_for_you365"], "parentOrganization": {"@id": "https://careersun.github.io/#zjiou"}}, {"@context": "https://schema.org", "@type": "Organization", "@id": "https://careersun.github.io/#zjiou", "name": "日玖國際", "legalName": "日玖國際股份有限公司", "url": "http://zjiou.com.tw/", "taxID": "86424581", "identifier": {"@type": "PropertyValue", "propertyID": "勞動部私立就業服務機構許可證字號", "value": "2024"}, "telephone": "+886-3-564-3252", "address": {"@type": "PostalAddress", "streetAddress": "關新路27號15樓之1", "addressLocality": "東區", "addressRegion": "新竹市", "postalCode": "300", "addressCountry": "TW"}, "sameAs": ["https://maps.google.com/?cid=6082274333580411568", "https://www.facebook.com/zjioumanpower"], "subOrganization": {"@id": "https://careersun.github.io/#org"}, "image": "https://careersun.github.io/hire/og-hire.jpg?v=2"}]</script>
 </head>
@@ -174,12 +203,15 @@
 
   <!-- 合作職缺 -->
   <section class="panel" id="p-jobs" role="tabpanel" aria-labelledby="t-jobs" hidden>
-    <div class="intro rv">我們<b>正在為合作企業招募</b>的職缺數，每日自動更新。</div>
-    <div class="count rv"><span><span class="live"></span>目前招募中</span><b data-count="open">—</b><span>筆職缺</span></div>
-
-
-    <div class="row rv" style="margin-top:22px;grid-template-columns:1fr;justify-items:center">
-      <a class="btn primary" href="/hire/" data-ga="employer_click" style="width:calc(50% - 5px)">我要找人才</a>
+    <div class="jobs-wrap">
+      <p class="jobs-kicker">LIVE JOBS · 每日更新</p>
+      <h2>合作職缺</h2>
+      <p class="jobs-deck">正在替合作企業招募的正職工作。從地區開始，找一個適合你的下一站。</p>
+      <div class="jobs-count"><b data-count="open">—</b><span>筆職缺正在招募</span><small id="jobs-updated">資料更新中</small></div>
+      <div class="job-filters" id="jobFilters" aria-label="依地區篩選職缺"></div>
+      <div class="job-grid" id="jobGrid" aria-live="polite"><p class="jobs-empty">正在讀取最新職缺…</p></div>
+      <a class="jobs-all" href="/job365map/jobs/" data-ga="jobs_all_click">查看全部合作職缺　→</a>
+      <p class="jobs-employer">企業正在找人？<a href="/hire/" data-ga="employer_click">了解正職代招</a></p>
     </div>
   </section>
 
@@ -306,8 +338,33 @@
       document.getElementById("ind-label").hidden = false;
       s.industries.slice(0, 10).forEach(function(i){ var sp = document.createElement("span"); sp.textContent = i.name; var b = document.createElement("b"); b.textContent = i.n; sp.appendChild(b); inds.appendChild(sp); });
     }
+    renderJobs(s);
     runCounts(panels[sw.dataset.tab]);
-  }).catch(function(){});
+  }).catch(function(){
+    var grid = document.getElementById("jobGrid");
+    if (grid) grid.innerHTML = '<p class="jobs-empty">暫時無法讀取職缺，請稍後再試。</p>';
+  });
+
+  function renderJobs(s){
+    var grid = document.getElementById("jobGrid"), filters = document.getElementById("jobFilters"), updated = document.getElementById("jobs-updated");
+    if (!grid || !filters) return;
+    if (updated && s.updated) updated.textContent = "更新：" + s.updated;
+    var choices = [{label:"全部", key:""}];
+    (s.regions || []).filter(function(r){ return r.n >= 6; }).slice(0,8).forEach(function(r){
+      choices.push({label:r.name, key:r.name.replace(/[市縣]/g,"")});
+    });
+    var active = "";
+    function draw(){
+      filters.querySelectorAll("button").forEach(function(b){ b.setAttribute("aria-pressed", b.dataset.key === active ? "true" : "false"); });
+      var jobs = (s.latest || []).filter(function(j){ return !active || ((j.region || "") + " " + (j.area || "")).indexOf(active) >= 0; }).slice(0,8);
+      grid.innerHTML = jobs.length ? jobs.map(function(j){
+        return '<a class="job-card" href="' + j.url + '" target="_blank" rel="noopener"><span class="place">' + (j.region || j.area || "合作企業") + '</span><span class="title">' + j.title + '</span><span><span class="pay">' + (j.salary || "薪資面議") + '</span><span class="shift">' + (j.area || "") + (j.shift ? " · " + j.shift : "") + '</span></span></a>';
+      }).join("") : '<p class="jobs-empty">此地區暫時沒有最新職缺，歡迎查看全部合作職缺。</p>';
+    }
+    filters.innerHTML = choices.map(function(c){ return '<button type="button" class="job-filter" data-key="' + c.key + '" aria-pressed="' + (!c.key ? "true" : "false") + '">' + c.label + '</button>'; }).join("");
+    filters.addEventListener("click", function(e){ var b=e.target.closest(".job-filter"); if (!b) return; active=b.dataset.key; draw(); });
+    draw();
+  }
 
   if (location.hash === "#jobs") show("jobs", false); else { watch(panels.talent); }
 })();
