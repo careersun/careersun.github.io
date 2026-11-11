@@ -1,5 +1,7 @@
 # careersun.github.io 協作規則
 
+網站正式網域：https://job365hire.com.tw（GitHub repo 仍是 careersun/careersun.github.io，根目錄 CNAME 檔不要刪；職缺地圖在 /job365map/）。網址一律寫 job365hire.com.tw，不要再寫 careersun.github.io。
+
 這個網站由 Li san（日玖國際行銷）負責。`/hire/`（正職代招）的設計與版面以 2026-11-09 改版那個對話為主；其他對話改 `/hire/` 底下的頁面時，照下面的規則做，不要換掉版面或樣式。
 
 ## 改網站之前

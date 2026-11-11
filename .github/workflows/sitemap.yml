@@ -21,7 +21,7 @@ jobs:
         run: |
           python3 - <<'PY'
           import pathlib, re, subprocess
-          BASE = "https://careersun.github.io/"
+          BASE = "https://job365hire.com.tw/"
           urls = []
           for p in pathlib.Path(".").rglob("*.html"):
               s = p.as_posix()
@@ -63,7 +63,7 @@ jobs:
         run: |
           python3 - <<'PY'
           import json, os, pathlib, re, subprocess, urllib.request
-          BASE = "https://careersun.github.io/"
+          BASE = "https://job365hire.com.tw/"
           KEY = "665c4cec3e5c0df43947cb2896e4421e"
           before, after = os.environ["BEFORE"], os.environ["AFTER"]
           if re.fullmatch(r"0+", before):
@@ -81,7 +81,7 @@ jobs:
               urls.append(BASE + (s[:-len("index.html")] if p.name == "index.html" else s))
           if not urls:
               print("no indexable pages changed"); raise SystemExit
-          body = json.dumps({"host": "careersun.github.io", "key": KEY,
+          body = json.dumps({"host": "job365hire.com.tw", "key": KEY,
                              "keyLocation": BASE + KEY + ".txt", "urlList": urls}).encode()
           req = urllib.request.Request("https://api.indexnow.org/indexnow", data=body,
                                        headers={"Content-Type": "application/json; charset=utf-8"})

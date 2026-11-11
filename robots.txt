@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://careersun.github.io/sitemap.xml
-Sitemap: https://careersun.github.io/job365map/sitemap.xml
+Sitemap: https://job365hire.com.tw/sitemap.xml
+Sitemap: https://job365hire.com.tw/job365map/sitemap.xml
