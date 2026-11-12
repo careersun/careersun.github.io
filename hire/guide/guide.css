@@ -305,3 +305,13 @@ main.wrap > .meta{margin-bottom:0}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
 .trust .btn,.cta .btn,.article .btn{text-decoration:none !important}
 .article h2 + .checks,.article h2 + .faq details:first-of-type{border-top:0}
+
+/* 對齊：以文字為基準，色框外推 */
+html body .tldr,html body .live{margin-left:-22px}
+html body .answer{margin-left:-24px}
+html body .price-main,html body .pg .calc{padding-left:28px;margin-left:-28px}
+html body .cta{padding-left:40px;margin-left:-40px}
+html body p.tag,html body a>.tag:first-child{margin-left:-10px}
+html body .chips{margin-left:-17.5px}
+html body .live .chips{margin-left:0}
+@media(max-width:1000px){html body .tldr,html body .live,html body .price-main,html body .pg .calc,html body .cta{margin-left:-12px;margin-right:-12px;padding-left:12px;padding-right:12px}html body .answer{margin-left:-12px;margin-right:-12px;padding-left:8px;padding-right:12px}html body .chips{margin-left:-13.5px}html body .chips .chip{padding-left:12px;padding-right:12px}html body .live .chips{margin-left:0}html body .trust .btn-ghost{margin-left:-14px;padding-left:12px;padding-right:12px}}
