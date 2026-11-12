@@ -27,7 +27,7 @@
   }
   function run(){
     var done=document.querySelectorAll('[data-al]');
-    for(var i=0;i<done.length;i++){done[i].style.textIndent=done[i].getAttribute('data-al');done[i].removeAttribute('data-al');}
+    for(var i=0;i<done.length;i++){var o=JSON.parse(done[i].getAttribute('data-al'));done[i].style.textIndent=o[0];done[i].style.paddingLeft=o[1];done[i].style.marginLeft=o[2];done[i].removeAttribute('data-al');}
     var rows=[],tw=document.createTreeWalker(document.body,4,{acceptNode:function(n){return /\S/.test(n.textContent)?1:2;}}),n;
     while((n=tw.nextNode())){
       var el=n.parentElement;if(!el||el.closest(SKIP))continue;
@@ -42,7 +42,7 @@
       if(Math.abs(rc.left-(cl+ti))>1.5)continue;
       blk.__seen=1;
       var sec=secOf(blk);
-      rows.push({blk:blk,sec:sec,cl:cl,ink:rc.left+bear(el,n.textContent[idx]),fs:parseFloat(cs.fontSize),top:rc.top,ti:ti,hd:!!blk.closest('h1,h2,h3')});
+      rows.push({blk:blk,sec:sec,cl:cl,base:cl+bear(el,'\u53e3'),ink:rc.left+bear(el,n.textContent[idx]),fs:parseFloat(cs.fontSize),top:rc.top,ti:ti,hd:!!blk.closest('h1,h2,h3')});
     }
     rows.forEach(function(r){r.blk.__seen=0;});
     var groups=[];
@@ -56,10 +56,13 @@
       if(a&&a.fs>=20)ref=a.ink;
       else{if(g.items.length<2)return;var b=g.items.filter(function(r){return !r.hd;});if(!b.length)b=g.items;var v=b.map(function(r){return r.ink;}).sort(function(x,y){return x-y;});ref=v[Math.floor((v.length-1)/2)];a=null;}
       g.items.forEach(function(r){
-        if(r===a)return;var d=ref-r.ink;
-        if(Math.abs(d)<0.8||Math.abs(d)>5)return;
-        r.blk.setAttribute('data-al',r.blk.style.textIndent||'');
-        r.blk.style.textIndent=(r.ti+d).toFixed(2)+'px';
+        if(r===a)return;var d=ref-r.ink,db=ref-r.base;
+        if(Math.abs(db)<0.8||Math.abs(db)>5)db=0;
+        var di=d-db;if(Math.abs(di)<0.8||Math.abs(d)>5)di=0;
+        if(!db&&!di)return;
+        var st=r.blk.style;r.blk.setAttribute('data-al',JSON.stringify([st.textIndent,st.paddingLeft,st.marginLeft]));
+        if(db){var bcs=getComputedStyle(r.blk);if(db>0)st.paddingLeft=(parseFloat(bcs.paddingLeft)+db).toFixed(2)+'px';else st.marginLeft=(parseFloat(bcs.marginLeft)+db).toFixed(2)+'px';}
+        if(di)st.textIndent=(r.ti+di).toFixed(2)+'px';
       });
     });
   }
