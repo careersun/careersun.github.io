@@ -42,7 +42,7 @@
       if(Math.abs(rc.left-(cl+ti))>1.5)continue;
       blk.__seen=1;
       var sec=secOf(blk);
-      rows.push({blk:blk,sec:sec,cl:cl,base:cl+bear(el,'\u53e3'),ink:rc.left+bear(el,n.textContent[idx]),fs:parseFloat(cs.fontSize),top:rc.top,ti:ti,hd:!!blk.closest('h1,h2,h3')});
+      rows.push({blk:blk,sec:sec,cl:cl,ink:rc.left+bear(el,n.textContent[idx]),fs:parseFloat(cs.fontSize),top:rc.top,ti:ti,hd:!!blk.closest('h1,h2,h3')});
     }
     rows.forEach(function(r){r.blk.__seen=0;});
     var groups=[];
@@ -55,8 +55,10 @@
       var ref;
       if(a&&a.fs>=20)ref=a.ink;
       else{if(g.items.length<2)return;var b=g.items.filter(function(r){return !r.hd;});if(!b.length)b=g.items;var v=b.map(function(r){return r.ink;}).sort(function(x,y){return x-y;});ref=v[Math.floor((v.length-1)/2)];a=null;}
+      var bs=g.items.filter(function(r){return r!==a;}).map(function(r){return r.ink-r.cl;}).sort(function(x,y){return x-y;});
+      var typ=bs.length?bs[Math.floor((bs.length-1)/2)]:0;
       g.items.forEach(function(r){
-        if(r===a)return;var d=ref-r.ink,db=ref-r.base;
+        if(r===a)return;var d=ref-r.ink,db=ref-(r.cl+typ);
         if(Math.abs(db)<0.8||Math.abs(db)>5)db=0;
         var di=d-db;if(Math.abs(di)<0.8||Math.abs(d)>5)di=0;
         if(!db&&!di)return;
