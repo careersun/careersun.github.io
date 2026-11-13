@@ -301,7 +301,7 @@ var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxbaaqzVKwTEWvMwTuU
   // 服務數據：讀取職缺地圖每天產生的統計
   if (document.getElementById("s-open")) fetch("/job365map/jobs/stats.json", {cache:"no-store"}).then(function(r){ return r.ok ? r.json() : null; }).then(function(s){
     if (!s) return;
-    document.getElementById("s-open").innerHTML = s.open + "<small>筆</small>";
+    document.getElementById("s-open").innerHTML = (s.total || s.open) + "<small>筆</small>";
     document.getElementById("s-ind").innerHTML = s.industries.length + "<small>類</small>";
     document.getElementById("s-note").textContent = "資料來自 JOB365 職缺地圖，更新於 " + s.updated;
     if (s.monthly && s.monthly.length) {

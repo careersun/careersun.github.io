@@ -433,7 +433,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px}
   <div class="facts">
     <div class="pf"><strong>30<small>+年</small></strong><span><a class="ul" href="http://zjiou.com.tw/" target="_blank" rel="noopener" data-ga="parent_site_click">日玖國際</a>人力資源經驗</span></div>
     <div class="pf"><strong>300<small>+</small></strong><span>客戶群涵蓋各行各業</span></div>
-    <div class="pf"><strong><span id="s-open"></span></strong><span id="s-open-label">目前合作招募中職缺</span></div>
+    <div class="pf"><strong><span id="s-open"></span></strong><span id="s-open-label">合作職缺總數</span></div>
     <div class="pf"><strong>4.4<span class="star" aria-hidden="true">★</span></strong><span>Google 評論 170+ 則・<a class="ul" href="https://maps.google.com/?cid=6082274333580411568" target="_blank" rel="noopener" data-ga="gbp_click">看評論</a></span></div>
   </div>
   <div hidden><span id="s-ind"></span><span id="s-chips"></span><p id="s-note"></p><div id="s-fresh" hidden><div id="s-bars"></div></div></div>
@@ -712,8 +712,8 @@ var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxbaaqzVKwTEWvMwTuU
 
   // 服務數據：讀取職缺地圖每天產生的統計
   if (document.getElementById("s-open")) fetch("/job365map/jobs/stats.json", {cache:"no-store"}).then(function(r){ return r.ok ? r.json() : null; }).then(function(s){
-    if (!s || !s.open) return openFallback();
-    document.getElementById("s-open").innerHTML = s.open + "<small>筆</small>";
+    if (!s || !(s.total || s.open)) return openFallback();
+    document.getElementById("s-open").innerHTML = (s.total || s.open) + "<small>筆</small>";
     document.getElementById("s-ind").innerHTML = s.industries.length + "<small>類</small>";
     document.getElementById("s-note").textContent = "資料來自 JOB365 職缺地圖，更新於 " + s.updated;
     if (s.monthly && s.monthly.length) {

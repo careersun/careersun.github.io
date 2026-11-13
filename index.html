@@ -460,7 +460,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px}
   </div>
   <div>
     <div class="offer">
-      <p class="t live"><i aria-hidden="true"></i>企業委託中的職缺・每日更新</p>
+      <p class="t live"><i aria-hidden="true"></i>企業委託職缺總數・每日更新</p>
       <div class="big"><strong id="j-open">187</strong><span>筆</span></div>
       <div class="row"><span>近 30 天新增</span><b id="j-new">28<small>筆</small></b></div>
       <div class="row"><span>涵蓋產業</span><b id="j-ind">24<small>類</small></b></div>
@@ -492,7 +492,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px}
   <div class="feat">
     <div class="feat-l">
       <p class="feat-n"><strong id="j-ind2">24</strong><span>類產業</span></p>
-      <p>合作企業目前委託我們招募中的正職職缺，依產業統計，每天自動更新。從半導體、製造到餐飲、銷售、服務業都有。</p>
+      <p>合作企業委託我們招募的正職職缺，依產業統計，每天自動更新。從半導體、製造到餐飲、銷售、服務業都有。</p>
     </div>
     <div>
       <ol class="bars" id="j-bars"></ol>
@@ -644,7 +644,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px}
   // 職缺統計（每日由排程更新 /job365map/jobs/stats.json）
   fetch("/job365map/jobs/stats.json", {cache: "no-store"}).then(function(r){ return r.ok ? r.json() : null; }).then(function(s){
     if (!s) return;
-    countUp(document.getElementById("j-open"), s.open);
+    countUp(document.getElementById("j-open"), s.total || s.open);
     if (s.new30 != null) countUp(document.getElementById("j-new"), s.new30, "筆");
     // 產業：合併「半導體／半導體業」這類同名
     var m = {}, order = [];
