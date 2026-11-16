@@ -397,6 +397,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px}
 </style>
 
 <style>.front h1 .hl{margin-left:-.06em;background-origin:padding-box}.role-list{margin-left:-17.5px}footer .co>.btn{margin-left:-22px}@media(max-width:1000px){.role-list{margin-left:-13.5px}.role-list li{padding-left:12px;padding-right:12px}.offer,.calc{margin-left:-12px;margin-right:-12px;padding-left:12px;padding-right:12px}.offer .hanko{right:6px}footer .co>.btn{margin-left:-14px;padding-left:12px;padding-right:12px}}</style>
+<script src="/hire/src.js"></script>
 </head>
 <body data-page="home">
 <a class="skip" href="#hireForm">跳到需求表單</a>
@@ -736,22 +737,8 @@ var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxbaaqzVKwTEWvMwTuU
   }).catch(openFallback);
   function openFallback(){ var o = document.getElementById("s-open"), l = document.getElementById("s-open-label"); if (o) o.textContent = "全台"; if (l) l.textContent = "服務範圍"; }
 
-  // 名單來源：網址 UTM 優先；其次記住第一次從外部進站的來源；再來是上一頁
-  function src(){
-    var q = new URLSearchParams(location.search), u = ["utm_source","utm_medium","utm_campaign"].map(function(k){ return q.get(k); }).filter(Boolean);
-    if (u.length) return "UTM：" + u.join(" / ");
-    var saved = null; try { saved = localStorage.getItem("j365_src"); } catch(e){}
-    if (saved) return saved;
-    var r = document.referrer;
-    if (!r) return "直接進站";
-    try { var h = new URL(r); return h.host === location.host ? "站內：" + h.pathname : "外部：" + h.host; } catch(e){ return "外部：" + r.slice(0, 80); }
-  }
-  try {
-    var q0 = new URLSearchParams(location.search), r0 = document.referrer, s0 = null;
-    if (q0.get("utm_source")) s0 = "UTM：" + ["utm_source","utm_medium","utm_campaign"].map(function(k){ return q0.get(k); }).filter(Boolean).join(" / ");
-    else if (r0 && new URL(r0).host !== location.host) s0 = "外部：" + new URL(r0).host;
-    if (s0 && !localStorage.getItem("j365_src")) localStorage.setItem("j365_src", s0);
-  } catch(e){}
+  // 名單來源：見 /hire/src.js
+  function src(){ return window.j365Src ? window.j365Src() : "無法判斷"; }
 
   // 需求表單
   var form = document.getElementById("hireForm"), msg = document.getElementById("formMsg");
