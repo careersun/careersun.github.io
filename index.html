@@ -462,7 +462,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px}
   <div>
     <div class="offer">
       <p class="t live"><i aria-hidden="true"></i>企業委託職缺總數・每日更新</p>
-      <div class="big"><strong id="j-open">180+</strong><span>筆</span></div>
+      <div class="big"><strong id="j-open">190</strong><span>+筆</span></div>
       <div class="row"><span>近 30 天新增</span><b id="j-new">28<small>筆</small></b></div>
       <div class="row"><span>涵蓋產業</span><b id="j-ind">24<small>類</small></b></div>
       <div class="hanko" aria-hidden="true">報到<br>才收費</div>
@@ -645,7 +645,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px}
   // 職缺統計（每日由排程更新 /job365map/jobs/stats.json）
   fetch("/job365map/jobs/stats.json", {cache: "no-store"}).then(function(r){ return r.ok ? r.json() : null; }).then(function(s){
     if (!s) return;
-    var jt = Math.floor((s.total || s.open || 0) / 10) * 10; if (jt) document.getElementById("j-open").textContent = jt + "+";
+    var jt = Math.floor((s.total || s.open || 0) / 10) * 10; if (jt) document.getElementById("j-open").textContent = jt;
     if (s.new30 != null) countUp(document.getElementById("j-new"), s.new30, "筆");
     // 產業：合併「半導體／半導體業」這類同名
     var m = {}, order = [];
