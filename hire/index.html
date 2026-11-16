@@ -433,10 +433,10 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px}
 <main>
 <section class="wrap" aria-label="服務實績">
   <div class="facts">
-    <div class="pf"><strong>30<small>+年</small></strong><span><a class="ul" href="http://zjiou.com.tw/" target="_blank" rel="noopener" data-ga="parent_site_click">日玖國際</a>人力資源經驗</span></div>
-    <div class="pf"><strong>300<small>+</small></strong><span>客戶群涵蓋各行各業</span></div>
+    <div class="pf"><strong data-count="30">30<small>+年</small></strong><span><a class="ul" href="http://zjiou.com.tw/" target="_blank" rel="noopener" data-ga="parent_site_click">日玖國際</a>人力資源經驗</span></div>
+    <div class="pf"><strong data-count="300">300<small>+</small></strong><span>客戶群涵蓋各行各業</span></div>
     <div class="pf"><strong><span id="s-open"></span></strong><span id="s-open-label">合作職缺總數</span></div>
-    <div class="pf"><strong>4.4<span class="star" aria-hidden="true">★</span></strong><span>Google 評論 180+ 則・<a class="ul" href="https://maps.google.com/?cid=6082274333580411568" target="_blank" rel="noopener" data-ga="gbp_click">看評論</a></span></div>
+    <div class="pf"><strong data-count="4.4">4.4<span class="star" aria-hidden="true">★</span></strong><span>Google 評論 180+ 則・<a class="ul" href="https://maps.google.com/?cid=6082274333580411568" target="_blank" rel="noopener" data-ga="gbp_click">看評論</a></span></div>
   </div>
   <div hidden><span id="s-ind"></span><span id="s-chips"></span><p id="s-note"></p><div id="s-fresh" hidden><div id="s-bars"></div></div></div>
 </section>
@@ -712,11 +712,12 @@ var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxbaaqzVKwTEWvMwTuU
   function ev(name, params){ if (typeof gtag === "function") gtag("event", name, Object.assign({source:"hire"}, params||{})); }
   document.querySelectorAll("a[data-ga]").forEach(function(a){ a.addEventListener("click", function(){ ev(a.dataset.ga); }); });
 
+  function j365c(id, v){ var e = document.getElementById(id); if (!e) return; e.setAttribute("data-count", v); if (window.j365Count) j365Count(e, v); }
   // 服務數據：讀取職缺地圖每天產生的統計
   if (document.getElementById("s-open")) fetch("/job365map/jobs/stats.json", {cache:"no-store"}).then(function(r){ return r.ok ? r.json() : null; }).then(function(s){
     if (!s || !(s.total || s.open)) return openFallback();
-    document.getElementById("s-open").innerHTML = Math.floor((s.total || s.open) / 10) * 10 + "<small>+筆</small>";
-    document.getElementById("s-ind").innerHTML = s.industries.length + "<small>類</small>";
+    document.getElementById("s-open").innerHTML = Math.floor((s.total || s.open) / 10) * 10 + "<small>+筆</small>"; j365c("s-open", Math.floor((s.total || s.open) / 10) * 10);
+    document.getElementById("s-ind").innerHTML = s.industries.length + "<small>類</small>"; j365c("s-ind", s.industries.length);
     document.getElementById("s-note").textContent = "資料來自 JOB365 職缺地圖，更新於 " + s.updated;
     if (s.monthly && s.monthly.length) {
       var max = Math.max.apply(null, s.monthly.map(function(m){ return m.n; })), bars = document.getElementById("s-bars");
@@ -868,6 +869,7 @@ var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxbaaqzVKwTEWvMwTuU
 </script>
 <style>#hireForm,#contact{scroll-margin-top:76px}</style>
 <script>(function(){var s=location.search,q=new URLSearchParams(s).get('go'),id={form:'hireForm',contact:'contact'}[q]||(/%23hireForm|#hireForm/i.test(s)?'hireForm':'');if(!id)return;function go(){var e=document.getElementById(id);if(e)e.scrollIntoView();}addEventListener('load',function(){go();setTimeout(go,700);});})();</script>
+<script src="/count.js"></script>
 <script src="/align.js" defer></script>
 </body>
 </html>
