@@ -462,9 +462,9 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px}
   <div>
     <div class="offer">
       <p class="t live"><i aria-hidden="true"></i>企業委託職缺總數・每日更新</p>
-      <div class="big"><strong id="j-open">190</strong><span>+筆</span></div>
-      <div class="row"><span>近 30 天新增</span><b id="j-new">28<small>筆</small></b></div>
-      <div class="row"><span>涵蓋產業</span><b id="j-ind">24<small>類</small></b></div>
+      <div class="big"><strong id="j-open" data-count="190">190</strong><span>+筆</span></div>
+      <div class="row"><span>近 30 天新增</span><b id="j-new" data-count="28">28<small>筆</small></b></div>
+      <div class="row"><span>涵蓋產業</span><b id="j-ind" data-count="24">24<small>類</small></b></div>
       <div class="hanko" aria-hidden="true">報到<br>才收費</div>
     </div>
     <div class="cta">
@@ -479,10 +479,10 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px}
 <main id="main">
 <section class="wrap" aria-label="服務實績">
   <div class="facts">
-    <div class="pf"><strong>30<small>+年</small></strong><span><a class="ul" href="http://zjiou.com.tw/" target="_blank" rel="noopener" data-ga="parent_site_click">日玖國際</a>人力資源經驗</span></div>
-    <div class="pf"><strong>300<small>+</small></strong><span>客戶群涵蓋各行各業</span></div>
+    <div class="pf"><strong data-count="30">30<small>+年</small></strong><span><a class="ul" href="http://zjiou.com.tw/" target="_blank" rel="noopener" data-ga="parent_site_click">日玖國際</a>人力資源經驗</span></div>
+    <div class="pf"><strong data-count="300">300<small>+</small></strong><span>客戶群涵蓋各行各業</span></div>
     <div class="pf"><strong>500–2,000<small>元／天</small></strong><span>依職缺計算，只收第一個月</span></div>
-    <div class="pf"><strong>4.4<span class="star" aria-hidden="true">★</span></strong><span>Google 評論 180+ 則・<a class="ul" href="https://maps.google.com/?cid=6082274333580411568" target="_blank" rel="noopener" data-ga="gbp_click">看評論</a></span></div>
+    <div class="pf"><strong data-count="4.4">4.4<span class="star" aria-hidden="true">★</span></strong><span>Google 評論 180+ 則・<a class="ul" href="https://maps.google.com/?cid=6082274333580411568" target="_blank" rel="noopener" data-ga="gbp_click">看評論</a></span></div>
   </div>
 </section>
 
@@ -492,7 +492,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px}
   </div>
   <div class="feat">
     <div class="feat-l">
-      <p class="feat-n"><strong id="j-ind2">24</strong><span>類產業</span></p>
+      <p class="feat-n"><strong id="j-ind2" data-count="24">24</strong><span>類產業</span></p>
       <p>合作企業委託我們招募的正職職缺，依產業統計，每天自動更新。從半導體、製造到餐飲、銷售、服務業都有。</p>
     </div>
     <div>
@@ -630,6 +630,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px}
   document.querySelectorAll("a[data-ga]").forEach(function(a){ a.addEventListener("click", function(){ ev(a.dataset.ga); }); });
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   function countUp(el, to, sfx){
+    el.setAttribute("data-count", to); if (window.j365Count){ j365Count(el, to); return; }
     sfx = sfx ? "<small>" + sfx + "</small>" : "";
     // 從畫面上現有的數字變到最新數字，不歸零重跳（第一屏少變動，Speed Index 較好）
     var from = parseInt(el.textContent, 10) || 0;
@@ -645,7 +646,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px}
   // 職缺統計（每日由排程更新 /job365map/jobs/stats.json）
   fetch("/job365map/jobs/stats.json", {cache: "no-store"}).then(function(r){ return r.ok ? r.json() : null; }).then(function(s){
     if (!s) return;
-    var jt = Math.floor((s.total || s.open || 0) / 10) * 10; if (jt) document.getElementById("j-open").textContent = jt;
+    var jt = Math.floor((s.total || s.open || 0) / 10) * 10; if (jt) countUp(document.getElementById("j-open"), jt);
     if (s.new30 != null) countUp(document.getElementById("j-new"), s.new30, "筆");
     // 產業：合併「半導體／半導體業」這類同名
     var m = {}, order = [];
@@ -655,7 +656,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px}
     });
     var inds = order.map(function(k){ return m[k]; }).sort(function(a, b){ return b.n - a.n; });
     countUp(document.getElementById("j-ind"), inds.length, "類");
-    var i2 = document.getElementById("j-ind2"); if (i2) i2.textContent = inds.length;
+    var i2 = document.getElementById("j-ind2"); if (i2) countUp(i2, inds.length);
     var top = inds.slice(0, 8), max = top.length ? top[0].n : 1, ol = document.getElementById("j-bars"), fills = [], ws = [];
     top.forEach(function(i){
       var li = document.createElement("li");
@@ -677,6 +678,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px}
   }
 })();
 </script>
+<script src="/count.js"></script>
 <script src="/align.js" defer></script>
 </body>
 </html>
