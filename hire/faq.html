@@ -229,49 +229,6 @@ visibleID = setInterval(() => {
     c.addEventListener("pointerleave", function(){ c.style.transform = ""; });
   });
 
-  if (document.getElementById("days")) {
-  // 費用試算
-  var days = document.getElementById("days"), people = 1, feeEl = document.getElementById("feeOut"), shownFee = 10000, raf;
-  function fmt(n){ return n.toLocaleString("en-US"); }
-  function calc(){
-    var d = +days.value, per = Math.min(500 * d, 15000), total = per * people;
-    document.getElementById("daysOut").textContent = d;
-    document.getElementById("pOut").textContent = people + " 人";
-    days.style.setProperty("--p", ((d - 1) / 29 * 100) + "%");
-    document.getElementById("capTag").classList.toggle("on", 500 * d >= 15000);
-    document.getElementById("feeBd").textContent = 500 * d >= 15000 ? "上限 15,000 元 × " + people + " 人" : "500 元 × " + d + " 天 × " + people + " 人";
-    cancelAnimationFrame(raf);
-    if (reduce){ shownFee = total; feeEl.innerHTML = fmt(total) + "<small>元</small>"; return; }
-    var from = shownFee, t0 = performance.now();
-    (function step(t){ var p = Math.min(1, (t - t0) / 350); shownFee = Math.round(from + (total - from) * (1 - Math.pow(1 - p, 3))); feeEl.innerHTML = fmt(shownFee) + "<small>元</small>"; if (p < 1) raf = requestAnimationFrame(step); })(t0);
-  }
-  days.addEventListener("input", calc);
-  days.addEventListener("change", function(){ ev("fee_calc", {days: +days.value, people: people}); });
-  document.getElementById("pMinus").onclick = function(){ people = Math.max(1, people - 1); calc(); };
-  document.getElementById("pPlus").onclick = function(){ people = Math.min(20, people + 1); calc(); };
-  calc();
-
-  // 人力銀行 vs 正職代招
-  var vsSw = document.getElementById("vsSwitch"), vs = document.getElementById("vs");
-  vsSw.querySelectorAll("button").forEach(function(b){
-    b.addEventListener("click", function(){
-      var v = b.dataset.v; if (vs.dataset.v === v) return;
-      vsSw.dataset.v = v; vs.dataset.v = v;
-      vsSw.querySelectorAll("button").forEach(function(x){ x.setAttribute("aria-pressed", x === b); });
-      vs.querySelectorAll("dd").forEach(function(dd, i){
-        dd.classList.add("swap");
-        setTimeout(function(){ dd.textContent = dd.dataset[v]; dd.classList.remove("swap"); }, reduce ? 0 : 160 + i * 60);
-      });
-      ev("compare_toggle", {view: v});
-    });
-  });
-  // 捲到比較區時，自動示範切換一次
-  if ("IntersectionObserver" in window && !reduce){
-    var demo = new IntersectionObserver(function(es){ if (es[0].isIntersecting){ demo.disconnect(); setTimeout(function(){ if (vs.dataset.v === "bank") vsSw.querySelector('[data-v="us"]').click(); }, 1400); } }, {threshold: .6});
-    demo.observe(vs);
-  }
-
-  }
   // 淡色泡泡背景
   var cv = document.getElementById("bubbles"), ctx = cv.getContext && cv.getContext("2d");
   if (ctx && !reduce){
