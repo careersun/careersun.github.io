@@ -127,27 +127,27 @@ visibleID = setInterval(() => {
 <header class="page-head">
   <div class="wrap">
     <p class="crumb"><a href="/hire/">正職代招</a><span>›</span>判斷工具</p>
-    <h1>自己招，還是交給代招？<em><span class="dot">・</span>1 分鐘判斷</em></h1>
-    <p class="lead">回答 5 個問題，看你的職缺比較適合自己在人力銀行刊登，還是交給正職代招。結果會附上兩種做法的費用比較，不需要留任何資料。</p>
+    <h1>自己招，還是交給代招？<em><span class="dot">・</span>1分鐘判斷</em></h1>
+    <p class="lead">回答5個問題，看你的職缺比較適合自己在人力銀行刊登，還是交給正職代招。結果會附上兩種做法的費用比較，不需要留任何資料。</p>
   </div>
 </header>
 
 <section class="pg alt" id="check">
   <div class="wrap">
-    <h2>回答 5 個問題</h2>
+    <h2>回答5個問題</h2>
     <div class="calc ck">
       <div class="qs">
       <div class="q"><p class="qt">1. 公司有專職 HR 負責招募嗎？</p><div class="opts" role="group" data-q="hr"><button type="button" data-v="0" aria-pressed="false">有，HR 抽得出時間</button><button type="button" data-v="2" aria-pressed="false">沒有，老闆或主管自己找</button></div></div>
       <div class="q"><p class="qt">2. 這個職缺刊登多久了？</p><div class="opts" role="group" data-q="post"><button type="button" data-v="0" aria-pressed="false">還沒刊登</button><button type="button" data-v="1" aria-pressed="false">兩週內</button><button type="button" data-v="2" aria-pressed="false">超過兩週，履歷很少或約不到人</button></div></div>
       <div class="q"><p class="qt">3. 職缺空著，影響有多大？</p><div class="opts" role="group" data-q="gap"><button type="button" data-v="0" aria-pressed="false">還能等一兩個月</button><button type="button" data-v="1" aria-pressed="false">同事在加班補位</button><button type="button" data-v="2" aria-pressed="false">已經影響出貨、帳務或客服</button></div></div>
-      <div class="q"><p class="qt">4. 這次要補幾個人？</p><div class="opts" role="group" data-q="num"><button type="button" data-v="0" aria-pressed="false">1 位</button><button type="button" data-v="1" aria-pressed="false">2 位以上，或同時開不同職缺</button></div></div>
+      <div class="q"><p class="qt">4. 這次要補幾個人？</p><div class="opts" role="group" data-q="num"><button type="button" data-v="0" aria-pressed="false">1位</button><button type="button" data-v="1" aria-pressed="false">2位以上，或同時開不同職缺</button></div></div>
       <div class="q"><p class="qt">5. 需要有相關經驗的人嗎？</p><div class="opts" role="group" data-q="exp"><button type="button" data-v="0" aria-pressed="false">不需要，進來可以教</button><button type="button" data-v="1" aria-pressed="false">需要相關經驗</button></div></div>
-      <div class="q"><p class="qt">代招日費（依職缺條件而定，不確定可以先選 500）</p><div class="rates" role="group" aria-label="選擇日費"><button type="button" data-r="500" aria-pressed="true">500</button><button type="button" data-r="800" aria-pressed="false">800</button><button type="button" data-r="1000" aria-pressed="false">1,000</button><button type="button" data-r="1200" aria-pressed="false">1,200</button><button type="button" data-r="1500" aria-pressed="false">1,500</button><button type="button" data-r="2000" aria-pressed="false">2,000</button></div></div>
+      <div class="q"><p class="qt">代招日費（依職缺條件而定，不確定可以先選500）</p><div class="rates" role="group" aria-label="選擇日費"><button type="button" data-r="500" aria-pressed="true">500</button><button type="button" data-r="800" aria-pressed="false">800</button><button type="button" data-r="1000" aria-pressed="false">1,000</button><button type="button" data-r="1200" aria-pressed="false">1,200</button><button type="button" data-r="1500" aria-pressed="false">1,500</button><button type="button" data-r="2000" aria-pressed="false">2,000</button></div></div>
     </div>
 
       <div class="calc-out" id="ckOut" aria-live="polite">
         <div class="lbl">判斷結果</div>
-        <h3 id="ckTitle">回答完 5 題，就會看到建議</h3>
+        <h3 id="ckTitle">回答完5題，就會看到建議</h3>
         <p id="ckText">結果會列出判斷理由，以及自己刊登和交給代招的費用比較。</p>
         <ul id="ckWhy"></ul>
         <div class="cost" id="ckCost" hidden></div>
@@ -170,18 +170,18 @@ visibleID = setInterval(() => {
     <h2>兩種做法的費用比較</h2>
     <div class="table-wrap"><table>
       <thead><tr><th>找人方式</th><th>現金支出</th><th class="short">什麼時候付</th><th>沒找到人</th></tr></thead>
-      <tbody><tr><td>自己刊登人力銀行</td><td>以 104 為例，原價 30 天 4,600 元、60 天 7,500 元，另外要花篩履歷、邀約、面試的時間</td><td class="short">刊登前先付</td><td>刊登費照付，要再續買</td></tr><tr class="ours"><td>中基層獵才正職代招</td><td>依職缺 500～2,000 元／天，只收第一個月，最多約一個月薪資</td><td class="short">人選報到後</td><td>不收費</td></tr></tbody>
+      <tbody><tr><td>自己刊登人力銀行</td><td>以104為例，原價30天4,600元、60天7,500元，另外要花篩履歷、邀約、面試的時間</td><td class="short">刊登前先付</td><td>刊登費照付，要再續買</td></tr><tr class="ours"><td>中基層獵才正職代招</td><td>依職缺500～2,000元／天，只收第一個月，最多約一個月薪資</td><td class="short">人選報到後</td><td>不收費</td></tr></tbody>
     </table></div>
-    <p class="updated">最後更新：2026 年 11 月 17 日・104 刊登價格以 104 人力銀行 2026 年 11 月公告方案為準</p>
+    <p class="updated">最後更新：2026年11月17日・104刊登價格以104人力銀行2026年11月公告方案為準</p>
   </div>
 </section>
 
 <section class="pg" id="page-faq">
   <div class="wrap">
     <h2>判斷工具常見問題</h2>
-    <details><summary>這個工具怎麼判斷？</summary><p>依 5 個問題加總：有沒有專職 HR、職缺刊登多久、職缺空著的影響、要補幾個人、需不需要有經驗的人。偏向代招的條件越多，越建議交給代招；兩邊差不多時，建議先自己刊登兩週。</p></details>
+    <details><summary>這個工具怎麼判斷？</summary><p>依5個問題加總：有沒有專職 HR、職缺刊登多久、職缺空著的影響、要補幾個人、需不需要有經驗的人。偏向代招的條件越多，越建議交給代招；兩邊差不多時，建議先自己刊登兩週。</p></details>
     <details><summary>結果建議自己招，之後還能找代招嗎？</summary><p>可以。先自己刊登，兩三週履歷很少或約不到人，再交給代招，不必等刊登期滿。</p></details>
-    <details><summary>正職代招費用怎麼算？</summary><p>人選報到才收費，只收第一個月，依職缺 500～2,000 元／天計算，最多約人選一個月薪資，第二個月起不再收費；人選到職未滿 30 天，按實際在職天數計費。</p></details>
+    <details><summary>正職代招費用怎麼算？</summary><p>人選報到才收費，只收第一個月，依職缺500～2,000元／天計算，最多約人選一個月薪資，第二個月起不再收費；人選到職未滿30天，按實際在職天數計費。</p></details>
     <details><summary>使用這個工具要留資料嗎？</summary><p>不用。不需要填姓名或聯絡方式，答案只在你的瀏覽器裡計算。</p></details>
   </div>
 </section>
@@ -207,14 +207,14 @@ visibleID = setInterval(() => {
 
 <div class="wrap">
   <div class="trust">
-    <p><strong>JOB365中基層獵才團隊</strong>為 <a href="http://zjiou.com.tw/" target="_blank" rel="noopener" data-ga="parent_site_click">日玖國際</a> 旗下團隊，專注中基層人才正職代招。日玖國際是在地超過 30 年的人力資源公司，公司資訊都可公開查詢。<br><span style="color:var(--muted);font-size:.92rem">日玖國際總公司：新竹市東區關新路27號15樓之1（<a href="https://maps.google.com/?cid=6082274333580411568" target="_blank" rel="noopener" data-ga="gbp_click">Google 地圖・評論</a>）｜專線 <a href="tel:035643252" data-ga="employer_tel_click">03-5643252</a><br>由新竹總公司統一服務全台</span></p>
+    <p><strong>JOB365中基層獵才團隊</strong>為 <a href="http://zjiou.com.tw/" target="_blank" rel="noopener" data-ga="parent_site_click">日玖國際</a> 旗下團隊，專注中基層人才正職代招。日玖國際是在地超過30年的人力資源公司，公司資訊都可公開查詢。<br><span style="color:var(--muted);font-size:.92rem">日玖國際總公司：新竹市東區關新路27號15樓之1（<a href="https://maps.google.com/?cid=6082274333580411568" target="_blank" rel="noopener" data-ga="gbp_click">Google 地圖・評論</a>）｜專線<a href="tel:035643252" data-ga="employer_tel_click">03-5643252</a><br>由新竹總公司統一服務全台</span></p>
     <div style="display:flex;flex-wrap:wrap;gap:10px"><a class="btn btn-ghost" href="http://zjiou.com.tw/" target="_blank" rel="noopener" data-ga="parent_site_click">認識日玖國際</a></div>
   </div>
 </div>
 
 <footer>
   <p>© JOB365中基層獵才｜日玖國際旗下團隊</p>
-  <p style="font-size:.8em;opacity:.75">日玖國際股份有限公司・勞動部私立就業服務機構許可證字號 2024</p>
+  <p style="font-size:.8em;opacity:.75">日玖國際股份有限公司・勞動部私立就業服務機構許可證字號2024</p>
   <p>招募指南：<a href="/hire/guide/recruitment-fee.html" data-ga="hire_to_guide">代招費用怎麼算</a>・<a href="/hire/guide/what-is-recruitment-outsourcing.html" data-ga="hire_to_guide">正職代招是什麼</a>・<a href="/hire/guide/operator-hiring.html" data-ga="hire_to_guide">作業員招不到人</a>・<a href="/hire/guide/" data-ga="hire_to_guide">全部文章</a></p>
 </footer>
 
@@ -255,7 +255,7 @@ visibleID = setInterval(() => {
     document.getElementById("daysOut").textContent = d;
         days.style.setProperty("--p", ((d - 1) / 29 * 100) + "%");
     document.getElementById("capTag").classList.toggle("on", d >= 30);
-    document.getElementById("feeBd").textContent = "日費 " + fmt(rate) + " 元 × " + d + " 天";
+    document.getElementById("feeBd").textContent = "日費" + fmt(rate) + "元 × " + d + "天";
     cancelAnimationFrame(raf);
     if (reduce){ shownFee = total; feeEl.innerHTML = fmt(total) + "<small>元</small>"; return; }
     var from = shownFee, t0 = performance.now();
@@ -332,12 +332,12 @@ var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxbaaqzVKwTEWvMwTuU
     if (!s) return;
     document.getElementById("s-open").innerHTML = (s.total || s.open) + "<small>筆</small>";
     document.getElementById("s-ind").innerHTML = s.industries.length + "<small>類</small>";
-    document.getElementById("s-note").textContent = "資料來自 JOB365 職缺地圖，更新於 " + s.updated;
+    document.getElementById("s-note").textContent = "資料來自 JOB365 職缺地圖，更新於" + s.updated;
     if (s.monthly && s.monthly.length) {
       var max = Math.max.apply(null, s.monthly.map(function(m){ return m.n; })), bars = document.getElementById("s-bars");
       s.monthly.forEach(function(m){
         var d = document.createElement("div"), i = document.createElement("i");
-        i.style.height = Math.max(6, Math.round(m.n / max * 56)) + "px"; d.title = m.month + " 累計 " + m.n + " 筆";
+        i.style.height = Math.max(6, Math.round(m.n / max * 56)) + "px"; d.title = m.month + "累計" + m.n + "筆";
         d.appendChild(document.createTextNode(m.n)); d.appendChild(i); d.appendChild(document.createTextNode(+m.month.slice(5) + "月"));
         bars.appendChild(d);
       });
@@ -481,7 +481,7 @@ var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxbaaqzVKwTEWvMwTuU
     document.getElementById("ckText").textContent=text;
     var ul=document.getElementById("ckWhy"); ul.innerHTML="";
     keys.forEach(function(k){var w=WHY[k]&&WHY[k][ans[k]]; if(w){var li=document.createElement("li"); li.textContent=w[1]; ul.appendChild(li);}});
-    document.getElementById("ckCost").innerHTML="自己刊登：以 104 為例，60 天方案原價 7,500 元，刊登前先付。<br>交給代招：日費 "+fmt(rate)+" 元，人選做滿一個月 "+fmt(rate*30)+" 元，人選報到後才付；沒找到人不收費，到職未滿 30 天按實際天數計算。";
+    document.getElementById("ckCost").innerHTML="自己刊登：以104為例，60天方案原價7,500元，刊登前先付。<br>交給代招：日費"+fmt(rate)+"元，人選做滿一個月"+fmt(rate*30)+"元，人選報到後才付；沒找到人不收費，到職未滿30天按實際天數計算。";
     if(!sent[lv]){sent[lv]=1; ga("hire_check_result",{result:lv,score:score});}
   }
   box.querySelectorAll(".opts").forEach(function(g){
