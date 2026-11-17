@@ -311,7 +311,7 @@ html body .cta{padding-left:40px;margin-left:-40px}
 html body p.tag,html body a>.tag:first-child{margin-left:-10px}
 html body .chips{margin-left:-17.5px}
 html body .live .chips{margin-left:0}
-@media(max-width:1000px){html body .tldr,html body .live,html body .price-main,html body .pg .calc,html body .cta{margin-left:-12px;margin-right:-12px;padding-left:12px;padding-right:12px}html body .answer{margin-left:-12px;margin-right:-12px;padding-left:8px;padding-right:12px}html body .chips{margin-left:-13.5px}html body .chips .chip{padding-left:12px;padding-right:12px}html body .live .chips{margin-left:0}html body .trust .btn-ghost{margin-left:-14px;padding-left:12px;padding-right:12px}}
+@media(max-width:1000px){html body .tldr,html body .live,html body .price-main,html body .pg .calc,html body .cta{margin-left:-12px;margin-right:-12px;padding-left:12px;padding-right:12px}html body .answer{margin-left:-12px;margin-right:-12px;padding-left:8px;padding-right:12px}html body .chips{margin-left:-13.5px}html body .chips .chip{padding-left:12px;padding-right:12px}html body .live .chips{margin-left:0}}
 .pg .updated{margin:18px 0 0;font-size:.85rem;color:var(--sub)}.pg .updated a{color:inherit}
 /* 文章表格（2026-11-16） */
 .table-wrap{margin:28px 0 32px;overflow-x:auto;-webkit-overflow-scrolling:touch}
@@ -328,3 +328,9 @@ html body .live .chips{margin-left:0}
 @media (max-width:640px){.table-wrap{margin-right:calc(-1 * var(--pad));padding-right:var(--pad)}.table-wrap table{font-size:.9rem;min-width:540px}.table-wrap.narrow table{min-width:0}}
 .table-wrap td.short,.table-wrap th.short{white-space:nowrap}
 @media (max-width:400px){body nav.topnav .wrap{gap:8px}body nav.topnav .logo{gap:8px}body nav.topnav .logo span{letter-spacing:.06em}body nav.topnav .logo small{letter-spacing:0}body nav.topnav .nav-cta{padding:6px 10px}body nav.topnav .nav-right{gap:6px}}
+
+/* 公司資訊：標籤＋內容 */
+.trust .finfo{display:grid;grid-template-columns:auto 1fr;gap:0 18px;margin:10px 0 0;font-size:.92rem;color:var(--muted)}
+.trust .finfo dt{color:var(--sub)}
+.trust .finfo dd{margin:0}
+.trust .finfo a{text-decoration:none;color:var(--ink)}
