@@ -327,3 +327,4 @@ html body .live .chips{margin-left:0}
 .table-wrap tr.ours td:last-child{box-shadow:12px 0 0 var(--tint)}
 @media (max-width:640px){.table-wrap{margin-right:calc(-1 * var(--pad));padding-right:var(--pad)}.table-wrap table{font-size:.9rem;min-width:540px}.table-wrap.narrow table{min-width:0}}
 .table-wrap td.short,.table-wrap th.short{white-space:nowrap}
+@media (max-width:400px){body nav.topnav .wrap{gap:8px}body nav.topnav .logo{gap:8px}body nav.topnav .logo span{letter-spacing:.06em}body nav.topnav .logo small{letter-spacing:0}body nav.topnav .nav-cta{padding:6px 10px}body nav.topnav .nav-right{gap:6px}}
