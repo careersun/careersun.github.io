@@ -320,7 +320,8 @@ details.law p{line-height:1.9;padding-bottom:8px}
 }
 
 @media (max-width:980px){
-  .nav-right{display:block}
+  .nav-right{display:flex;align-items:center}
+  .nav-burger{margin-right:-12px}
   .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:0 var(--pad) 12px;background:var(--paper);border-bottom:1px solid var(--rule);display:none;font-size:1rem;margin:0}
   .topnav.open .nav-links{display:flex}
   .nav-links a{padding:13px 2px;border-bottom:1px solid var(--hair);background:none}
