@@ -24,6 +24,15 @@
     });
   });
 
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="tel:"]');
+    if (!a || typeof gtag !== 'function') return;
+    gtag('event', 'conversion', {
+      'send_to': 'AW-18319232545/4p8vCOz05bkdEKGcpZ9E',
+      'transport_type': 'beacon'
+    });
+  });
+
 
 var savedEmail = '';
 
