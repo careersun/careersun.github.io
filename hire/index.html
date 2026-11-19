@@ -219,16 +219,12 @@ h1 .a{display:block;font-size:clamp(2.6rem,5vw,4.8rem);line-height:1.15;letter-s
 .steps .n{font:600 1rem var(--cond);letter-spacing:.1em;color:var(--muted)}
 .steps h3{margin:4px 0 6px;font:900 1.12rem/1.5 var(--serif)}
 .steps p{font-size:.92rem;color:var(--sub);line-height:1.85}
-.zero{margin-top:24px;font:900 clamp(1.1rem,1.8vw,1.35rem)/1.6 var(--serif)}
-.zero b{color:#c2410c}
 
 /* 費用怎麼算 */
 .price{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:start}
-.plist{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
-.plist li{display:grid;grid-template-columns:28px 1fr;gap:4px 12px;padding:18px 0;border-bottom:1px solid var(--hair)}
-.plist svg{width:22px;height:22px;margin-top:4px;fill:none;stroke:#c2410c;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;grid-row:span 2}
-.plist b{font:900 1.12rem/1.5 var(--serif)}
-.plist span{font-size:.92rem;color:var(--sub)}
+.pdesc{border-top:1px solid var(--rule);padding-top:20px}
+.pdesc .plead{margin:0 0 12px;font:900 clamp(1.3rem,2.2vw,1.6rem)/1.5 var(--serif)}
+.pdesc p{margin:0;font-size:1rem;line-height:1.9;color:var(--sub)}
 .calc{background:var(--white);padding:26px 28px 24px;box-shadow:0 1px 0 var(--hair)}
 .calc h3{margin:0;font:900 1.1rem var(--serif);letter-spacing:.14em}
 .rate{font-size:.84rem;color:var(--muted);margin-top:2px}
@@ -352,7 +348,7 @@ details.law p{line-height:1.9;padding-bottom:8px}
   .row2{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr}
   .sticky{display:flex}
-  .to-top{bottom:calc(88px + env(safe-area-inset-bottom));right:14px;width:42px;height:42px}
+  .to-top{display:none}
   .foot{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
 }
 
@@ -449,7 +445,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px}
   <div class="facts">
     <div class="pf"><strong data-count="30">30<small>+年</small></strong><span><a class="ul" href="http://zjiou.com.tw/" target="_blank" rel="noopener" data-ga="parent_site_click">日玖國際</a>人力資源經驗</span></div>
     <div class="pf"><strong data-count="300">300<small>+</small></strong><span>客戶群涵蓋各行各業</span></div>
-    <div class="pf"><strong><span id="s-open"></span></strong><span id="s-open-label">合作職缺總數</span></div>
+    <div class="pf"><strong><span id="s-open">190<small>+筆</small></span></strong><span id="s-open-label">合作職缺總數</span></div>
     <div class="pf"><strong data-count="4.4">4.4<span class="star" aria-hidden="true">★</span></strong><span>Google 評論180+則・<a class="ul" href="https://maps.google.com/?cid=6082274333580411568" target="_blank" rel="noopener" data-ga="gbp_click">看評論</a></span></div>
   </div>
   <div hidden><span id="s-ind"></span><span id="s-chips"></span><p id="s-note"></p><div id="s-fresh" hidden><div id="s-bars"></div></div></div>
@@ -471,7 +467,6 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px}
     <li><span class="n">STEP 03</span><h3>只推薦篩過的人，排好面試</h3><ul><li>條件符合的人選才推薦給你</li><li>面試時間我們幫你約好</li><li>面試前再三提醒人選，減少放鳥</li><li>面試後雙方回饋，我們居中溝通</li></ul></li>
     <li><span class="n">STEP 04</span><h3>錄取報到，才收費</h3><ul><li>Offer 條件由我們協助溝通</li><li>人選報到才收費，只收第一個月</li><li>報到後持續關懷人員狀況</li></ul></li>
   </ol>
-  <p class="zero">以上這些，人選報到前都是<b>0元</b>。</p>
 </section>
 
 <section class="wrap sec" id="why">
@@ -479,11 +474,10 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px}
     <h2>正職代招費用怎麼算？</h2>
   </div>
   <div class="price">
-    <ul class="plist">
-      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><b>沒找到人，不用付錢</b><span>人選正式報到才收費，沒有開案費、訂金。</span></li>
-      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><b>依職缺500～2,000元／天，只收第一個月</b><span>做滿一個月最多約人選一個月薪資，第二個月起0元。</span></li>
-      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><b>第二個月起0元</b><span>沒有年薪抽成，人留得越久越划算。</span></li>
-    </ul>
+    <div class="pdesc">
+      <p class="plead">沒找到人，不用付錢。</p>
+      <p>人選正式報到那天才開始計費，沒有開案費、訂金。日費依職缺條件在500～2,000元之間，只算人選第一個月的在職天數，做滿一個月最多約一個月薪資。第二個月起不再收費，也沒有年薪抽成，人留得越久越划算。</p>
+    </div>
     <div class="calc" id="calc">
       <h3>單人招募費用試算</h3>
       <p class="rate">先選日費，再拉人選第一個月的在職天數</p>
