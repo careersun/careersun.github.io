@@ -553,12 +553,13 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px}
       <div class="recap"><span id="recap">—</span><button type="button" class="back" id="toStep1">修改需求</button></div>
       <div class="row2">
         <div class="field"><label for="f-company">公司名稱 <i>*</i></label><input id="f-company" name="company" required autocomplete="organization"></div>
-        <div class="field"><label for="f-name">聯絡人 <i>*</i></label><input id="f-name" name="name" required autocomplete="name"></div>
+        <div class="field"><label for="f-taxid">公司統編（選填）</label><input id="f-taxid" name="taxid" inputmode="numeric" maxlength="8" pattern="[0-9]{8}" autocomplete="off" placeholder="8碼數字"></div>
       </div>
       <div class="row2">
+        <div class="field"><label for="f-name">聯絡人 <i>*</i></label><input id="f-name" name="name" required autocomplete="name"></div>
         <div class="field"><label for="f-phone">電話 <i>*</i></label><input id="f-phone" name="phone" type="tel" required autocomplete="tel" placeholder="例如：0912-345-678"></div>
-        <div class="field"><label for="f-email">Email <i>*</i></label><input id="f-email" name="email" type="email" required autocomplete="email" placeholder="name@company.com"></div>
       </div>
+      <div class="field"><label for="f-email">Email <i>*</i></label><input id="f-email" name="email" type="email" required autocomplete="email" placeholder="name@company.com"></div>
       <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <button class="btn btn-brand btn-big" type="submit">送出徵才需求</button>
     </fieldset>
@@ -758,6 +759,7 @@ var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxbaaqzVKwTEWvMwTuU
     if (form.website.value) return; // 機器人
     var miss = ["company","name","phone","email","job","count","location"].filter(function(k){ return !form[k].value.trim(); });
     if (miss.length) { msg.style.color = "#c2410c"; msg.textContent = "請填寫標示 * 的欄位。"; form[miss[0]].focus(); return; }
+    if (form.taxid && form.taxid.value.trim() && !/^\d{8}$/.test(form.taxid.value.trim())) { msg.style.color = "#c2410c"; msg.textContent = "公司統編是8碼數字，不確定可以先空著。"; form.taxid.focus(); return; }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.value.trim())) { msg.style.color = "#c2410c"; msg.textContent = "Email 格式不正確，請再確認一次。"; form.email.focus(); return; }
     if (!FORM_ENDPOINT) { msg.style.color = "#c2410c"; msg.innerHTML = '表單尚未開通，請先透過 <a href="https://line.me/R/ti/p/@642ahllq" target="_blank" rel="noopener">LINE 諮詢</a>。'; return; }
     var btn = form.querySelector("button[type=submit]"); btn.disabled = true; btn.textContent = "送出中…";
