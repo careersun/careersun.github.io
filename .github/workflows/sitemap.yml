@@ -30,7 +30,9 @@ jobs:
               html = p.read_text(encoding="utf-8", errors="ignore")
               if re.search(r"<meta[^>]+name=[\"']robots[\"'][^>]+noindex", html, re.I):
                   continue
-              date = subprocess.run(["git", "log", "-1", "--format=%cs", "--", s],
+              # lastmod 以頁面結構化資料的 dateModified 為準（取最大值），沒有才用 git 最後提交日
+              dm = re.findall(r'"dateModified":\s*"(\d{4}-\d{2}-\d{2})', html)
+              date = max(dm) if dm else subprocess.run(["git", "log", "-1", "--format=%cs", "--", s],
                                     capture_output=True, text=True).stdout.strip()
               if not date:
                   continue
